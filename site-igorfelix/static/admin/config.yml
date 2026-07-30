@@ -3,7 +3,7 @@ backend:
   repo: igor839-ai/site-igorfelix
   branch: main
 
-media_folder: "static/assets/uploads"
+media_folder: "site-igorfelix/static/assets/uploads"
 public_folder: "/assets/uploads"
 
 locale: "pt"
@@ -13,8 +13,8 @@ collections:
     label: "Artigos do Blog"
     label_singular: "Artigo"
     description: "Escreva e publique um artigo. Ao salvar publicado, o site se atualiza sozinho."
-    folder: "src/blog/posts"
-    create: true
+    folder: "site-igorfelix/src/blog/posts"
+        create: true
     slug: "{{slug}}"
     extension: "md"
     format: "yaml-frontmatter"
