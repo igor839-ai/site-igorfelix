@@ -4,7 +4,7 @@ description: "Vínculo não aparece no CNIS? Entenda por que a anotação da CTP
 category: revisoes
 date: 2026-07-30
 sub: "O vínculo que não aparece no CNIS não está perdido. Veja o que a anotação da CTPS prova sozinha e quando o INSS ainda pode recusar."
-ogimage: "assets/anotacao-ctps-sem-registro-no-cnis-vale.png"
+ogimage: "assets/anotacao-ctps-sem-registro-no-cnis-vale-v2.png"
 ---
 
 O tempo continua sendo seu. A anotação na carteira de trabalho, quando não tem defeito que comprometa sua credibilidade, faz prova do período trabalhado mesmo que o vínculo não conste no CNIS. Quem precisa demonstrar que a anotação tem vício é o INSS, e não você.
@@ -31,7 +31,7 @@ Duas expressões importam aí. **Presunção relativa** quer dizer que a anotaç
 
 O mesmo raciocínio aparece na Súmula 225 do STF e no Enunciado 12 do TST, e está no [Decreto 3.048/99](https://www.planalto.gov.br/ccivil_03/decreto/d3048.htm), que trata as anotações da CTPS como prova dos vínculos ali registrados.
 
-<figure><img src="/assets/anotacao-ctps-sem-registro-no-cnis-vale.png" alt="Três perguntas para saber se a anotação da CTPS se sustenta sem registro no CNIS." loading="lazy" style="width:100%;height:auto;border-radius:14px;margin:1.6rem 0"></figure>
+<figure><img src="/assets/anotacao-ctps-sem-registro-no-cnis-vale-v2.png" alt="Três perguntas para saber se a anotação da CTPS se sustenta sem registro no CNIS." loading="lazy" style="width:100%;height:auto;border-radius:14px;margin:1.6rem 0"></figure>
 
 *Sem defeito formal apontado, a presunção joga a favor de quem tem a anotação.*
 
