@@ -154,4 +154,4 @@ footer h4{color:#fff;font-size:1rem;margin-bottom:1rem}
 .prose img{margin:1.8rem auto;border-radius:12px;box-shadow:0 12px 34px rgba(10,31,51,.14);border:1px solid var(--line);max-width:100%;height:auto}
 .prose figure{margin:1.8rem 0}
 .prose figure img{margin:0 auto .6rem}
-.prose figure figcaption,.prose .legenda{display:block;text-align:center;font-size:.86rem;color:var(--ink-soft);margin-top:.4rem;font-style:italic}
+.prose figure figcaption,.prose .legenda{display:block;text-align:center;font-size:.86rem;color:var(--ink-soft);margin-top:.4rem;font-style:italic}.article-wrap .breadcrumb,.article-wrap .article-head,.article-wrap .article-note,.article-wrap .prose,.article-wrap .author{margin-left:auto;margin-right:auto}.article-wrap .breadcrumb{max-width:760px}
