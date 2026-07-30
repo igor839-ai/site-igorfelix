@@ -2,6 +2,8 @@ backend:
   name: github
   repo: igor839-ai/site-igorfelix
   branch: main
+  base_url: https://igorfelixadv.com.br
+  auth_endpoint: .netlify/functions/auth
 
 media_folder: "site-igorfelix/static/assets/uploads"
 public_folder: "/assets/uploads"
@@ -14,7 +16,7 @@ collections:
     label_singular: "Artigo"
     description: "Escreva e publique um artigo. Ao salvar publicado, o site se atualiza sozinho."
     folder: "site-igorfelix/src/blog/posts"
-        create: true
+    create: true
     slug: "{{slug}}"
     extension: "md"
     format: "yaml-frontmatter"
