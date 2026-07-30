@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: igor839-ai/site-igorfelix
+  branch: main
+
+media_folder: "static/assets/uploads"
+public_folder: "/assets/uploads"
+
+locale: "pt"
+
+collections:
+  - name: "artigos"
+    label: "Artigos do Blog"
+    label_singular: "Artigo"
+    description: "Escreva e publique um artigo. Ao salvar publicado, o site se atualiza sozinho."
+    folder: "src/blog/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    fields:
+      - { label: "Título", name: "title", widget: "string", hint: "Título do artigo (aparece no site e no Google)." }
+      - { label: "Subtítulo", name: "sub", widget: "text", required: false, hint: "Uma frase de apoio logo abaixo do título." }
+      - { label: "Resumo", name: "description", widget: "text", hint: "2 a 3 linhas. Usado na listagem e no Google." }
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Revisões", value: "revisoes" }
+          - { label: "Aposentadorias", value: "aposentadorias" }
+          - { label: "Benefício por incapacidade", value: "incapacidade" }
+          - { label: "Outros benefícios", value: "outros" }
+      - { label: "Data", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Imagem de compartilhamento (opcional)", name: "ogimage", widget: "image", required: false }
+      - { label: "Texto do artigo", name: "body", widget: "markdown", hint: "Escreva como num editor. Use os títulos para separar as seções." }
