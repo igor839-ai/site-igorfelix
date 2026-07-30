@@ -1,10 +1,12 @@
 ---
-title: "Acordo trabalhista vale para aumentar a aposentadoria?"
-description: "Acordo trabalhista vale para aumentar a aposentadoria? Entenda por que o INSS trata a decisão como início de prova e o que mais é exigido."
+title: Acordo trabalhista vale para aumentar a aposentadoria?
+sub: Nem toda vitória na Justiça do Trabalho aumenta a aposentadoria. Veja o que
+  a Justiça Federal examina na sua decisão.
+description: Acordo trabalhista vale para aumentar a aposentadoria? Entenda por
+  que o INSS trata a decisão como início de prova e o que mais é exigido.
 category: revisoes
 date: 2026-07-30
-sub: "O acordo homologado e a sentença da Justiça do Trabalho contam como início de prova material, não como prova definitiva. Para virar revisão, o que foi reconhecido precisa estar amparado em documentos do próprio período."
-ogimage: "assets/acordo-trabalhista-x-sentenca-merito-inss.png"
+ogimage: assets/acordo-trabalhista-x-sentenca-merito-inss.png
 ---
 
 Vale, mas nunca sozinho. Tanto o acordo homologado quanto a sentença da Justiça do Trabalho são tratados pelo INSS e pela Justiça Federal como início de prova material, e não como prova definitiva do vínculo. Para render revisão do benefício, o que foi reconhecido na esfera trabalhista precisa estar amparado em documentos e provas do próprio período.
