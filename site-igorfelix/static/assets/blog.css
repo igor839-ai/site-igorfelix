@@ -155,3 +155,14 @@ footer h4{color:#fff;font-size:1rem;margin-bottom:1rem}
 .prose figure{margin:1.8rem 0}
 .prose figure img{margin:0 auto .6rem}
 .prose figure figcaption,.prose .legenda{display:block;text-align:center;font-size:.86rem;color:var(--ink-soft);margin-top:.4rem;font-style:italic}.article-wrap .breadcrumb,.article-wrap .article-head,.article-wrap .article-note,.article-wrap .prose,.article-wrap .author{margin-left:auto;margin-right:auto}.article-wrap .breadcrumb{max-width:760px}
+
+
+/* ===== Novo formato do artigo: destaques, tracinho no H2, FAQ em texto ===== */
+.article-wrap .prose h2{position:relative}
+.article-wrap .prose h2::before{content:"";display:block;width:44px;height:3px;border-radius:3px;background:var(--gold);margin-bottom:16px}
+.article-wrap .prose .pull{border-left:4px solid var(--gold);background:var(--gold-soft);padding:22px 28px;border-radius:0 14px 14px 0;margin:32px 0;font-family:var(--f-head);font-weight:500;font-size:19px;color:var(--navy);line-height:1.55}
+.article-wrap .prose .pull b{color:var(--navy)}
+.article-wrap .prose .pull.blue{border-left-color:var(--gold-l);background:var(--navy);color:#EAF0F7}
+.article-wrap .prose .pull.blue b{color:var(--gold-l)}
+.article-wrap .prose .faq .q{font-family:var(--f-head);font-weight:700;font-size:18.5px;color:var(--navy);margin:28px 0 8px}
+.article-wrap .prose .faq .a{font-size:18px;color:var(--ink);margin-bottom:6px}
