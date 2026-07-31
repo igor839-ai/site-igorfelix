@@ -3,7 +3,7 @@ backend:
   repo: igor839-ai/site-igorfelix
   branch: main
   base_url: https://igorfelixadv.com.br
-  auth_endpoint: .netlify/functions/auth
+  auth_endpoint: api/auth
 
 media_folder: "site-igorfelix/static/assets/uploads"
 public_folder: "/assets/uploads"
