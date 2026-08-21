@@ -164,7 +164,7 @@ header.scrolled .brand,header.scrolled .brand img{height:50px}
 .ht .stars{color:var(--gold-l);font-size:.66rem;letter-spacing:.04em}
 
 /* SERVIÇOS */
-.serv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+.serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
 .serv{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.9rem 1.6rem;transition:transform .3s,box-shadow .3s,border-color .3s;overflow:hidden}
 .serv::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold-l),transparent);opacity:0;transition:opacity .3s}
 .serv:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(203,165,92,.4)}
@@ -184,6 +184,10 @@ header.scrolled .brand,header.scrolled .brand img{height:50px}
 .serv.feat .flink{display:inline-flex;align-items:center;gap:.4rem;font-size:.86rem;font-weight:700;color:var(--gold-l);margin-top:.3rem}
 .serv.feat .flink svg{width:15px;height:15px;stroke:var(--gold-l);transition:transform .3s}
 .serv.feat:hover .flink svg{transform:translateX(4px)}
+.serv-link{cursor:pointer}
+.serv-link .flink{display:inline-flex;align-items:center;gap:.4rem;font-size:.86rem;font-weight:700;color:var(--gold-dark);margin-top:.5rem}
+.serv-link .flink svg{width:15px;height:15px;stroke:var(--gold-dark);transition:transform .3s}
+.serv-link:hover .flink svg{transform:translateX(4px)}
 
 /* DIFERENCIAIS (banda interior) */
 .dif{position:relative;color:#F7F5F0;overflow:hidden;padding:clamp(4.5rem,9vw,7rem) 0;border-top:1px solid rgba(203,165,92,.45);border-bottom:1px solid rgba(203,165,92,.45)}
@@ -425,30 +429,19 @@ footer{background:var(--navy-950);color:rgba(247,245,240,.72);padding:3.5rem 0 2
         <p>Benefício assistencial de um salário mínimo, mesmo sem contribuições ao INSS.</p>
         <div class="tags"><span>Idoso</span><span>Deficiente</span></div>
       </div>
-      <div class="serv reveal">
+      <a class="serv serv-link reveal" href="/revisao-de-aposentadoria">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
-        <h3>Revisões de benefício</h3>
-        <p>Recálculo de quem recebe menos do que deveria, corrigindo erros do INSS.</p>
-        <div class="tags"><span>Atividade especial</span><span>Concomitante</span><span>Carta de concessão</span></div>
-      </div>
+        <h3>Revisões de aposentadoria</h3>
+        <p>Recálculo de quem recebe menos do que deveria: atividade especial, deficiência (LC 142), ação trabalhista e outras teses.</p>
+        <div class="tags"><span>Atividade especial</span><span>Deficiência (LC 142)</span><span>Ação trabalhista</span></div>
+        <span class="flink">Ver as revisões <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
       <div class="serv reveal d1">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div>
         <h3>Planejamento previdenciário</h3>
         <p>Estudo do CNIS que projeta valores e indica o melhor momento para se aposentar.</p>
         <div class="tags"><span>Análise do CNIS</span><span>Simulações</span><span>Melhor regra</span></div>
       </div>
-      <div class="serv reveal d2">
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
-        <h3>Recursos e requerimentos</h3>
-        <p>Recurso administrativo contra o indeferimento e pedidos de celeridade na análise.</p>
-        <div class="tags"><span>Indeferimento</span><span>Recurso</span><span>Celeridade</span></div>
-      </div>
-      <a class="serv feat reveal d3" href="/revisao-inss">
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7l7-4 7 4M4 7h16M6 7v5a6 6 0 0 0 12 0V7"/></svg></div>
-        <h3>Revisão por ação trabalhista</h3>
-        <p>Ganhou uma ação trabalhista? Ela pode aumentar sua aposentadoria e gerar atrasados.</p>
-        <span class="flink">Conhecer a tese <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </a>
     </div>
   </div>
 </section>
@@ -616,7 +609,7 @@ footer{background:var(--navy-950);color:rgba(247,245,240,.72);padding:3.5rem 0 2
           <li><a href="#areas">Pensão por morte</a></li>
           <li><a href="#areas">BPC / LOAS</a></li>
           <li><a href="#areas">Revisões e planejamento</a></li>
-          <li><a href="/revisao-inss">Revisão por ação trabalhista</a></li>
+          <li><a href="/revisao-de-aposentadoria">Revisões de aposentadoria</a></li>
         </ul>
       </div>
       <div>
@@ -672,6 +665,5 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 </script>
-<script>document.querySelectorAll(".num[data-count]").forEach(function(el){el.textContent=(el.dataset.prefix||"")+"0"+(el.dataset.suffix||"");});</script>
 </body>
 </html>
