@@ -1,6 +1,7 @@
 {
-  "revisoes": "Revisões",
-  "aposentadorias": "Aposentadorias",
-  "incapacidade": "Benefício por incapacidade",
-  "outros": "Outros benefícios"
+  "atividade-especial": "Atividade especial",
+  "pcd": "Pessoa com deficiência (LC 142)",
+  "acao-trabalhista": "Ação trabalhista",
+  "concomitantes": "Atividades concomitantes",
+  "calculo-prazos": "Cálculo, prazos e outras revisões"
 }
