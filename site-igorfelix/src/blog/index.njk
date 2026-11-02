@@ -7,13 +7,13 @@ eleventyExcludeFromCollections: true
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | Igor Felix Advogados — Direito Previdenciário e INSS</title>
-<meta name="description" content="Artigos e vídeos sobre aposentadorias, revisões, benefícios por incapacidade e outros direitos do INSS, em linguagem clara. Conteúdo do escritório Igor Felix Advogados.">
+<title>Blog sobre Revisão de Aposentadoria | Igor Felix Advogados</title>
+<meta name="description" content="Artigos e vídeos sobre revisão de aposentadoria do INSS em linguagem clara: atividade especial, pessoa com deficiência, ação trabalhista, prazos e cálculo.">
 <link rel="canonical" href="{{ site.url }}/blog/">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Blog | Igor Felix Advogados — Direito Previdenciário e INSS">
-<meta property="og:description" content="Artigos e vídeos sobre aposentadorias, revisões, benefícios por incapacidade e outros direitos do INSS.">
+<meta property="og:title" content="Blog sobre Revisão de Aposentadoria | Igor Felix Advogados">
+<meta property="og:description" content="Artigos e vídeos sobre revisão de aposentadoria do INSS, em linguagem clara.">
 <meta property="og:url" content="{{ site.url }}/blog/">
 <meta property="og:image" content="{{ site.url }}/og-image.jpg">
 <meta property="og:locale" content="pt_BR">
@@ -32,12 +32,12 @@ eleventyExcludeFromCollections: true
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
     <nav class="nav-menu" id="navMenu">
-      <a href="/#areas">Áreas de atuação</a>
+      <a href="/#revisoes">Revisões</a>
       <a href="/#como-funciona">Como funciona</a>
       <a href="/#avaliacoes">Avaliações</a>
       <a href="/#onde">Onde estamos</a>
       <a href="/blog/" class="active">Blog</a>
-      <a class="nav-cta" href="{{ site.wa }}?text=Ol%C3%A1%21%20Vim%20pelo%20blog%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20um%20benef%C3%ADcio%20do%20INSS." target="_blank" rel="noopener">
+      <a class="nav-cta" href="{{ site.wa }}?text=Ol%C3%A1%21%20Vim%20pelo%20blog%20e%20gostaria%20de%20saber%20se%20a%20minha%20aposentadoria%20pode%20ser%20revisada." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.2z"/></svg>
         WhatsApp
       </a>
@@ -48,8 +48,8 @@ eleventyExcludeFromCollections: true
 <section class="blog-hero">
   <div class="container">
     <span class="eyebrow">Blog do escritório</span>
-    <h1>Seus direitos no INSS, explicados com clareza</h1>
-    <p>Artigos e vídeos sobre aposentadorias, revisões, benefícios por incapacidade e outros direitos previdenciários. Conteúdo informativo para você entender o seu caso antes de decidir.</p>
+    <h1>Revisão de aposentadoria, explicada com clareza</h1>
+    <p>Artigos e vídeos para você entender se a sua aposentadoria foi calculada a menor e como funciona a revisão. Conteúdo informativo para você entender o seu caso antes de decidir.</p>
   </div>
 </section>
 
@@ -57,10 +57,11 @@ eleventyExcludeFromCollections: true
   <div class="container">
     <div class="filter-chips" id="filterChips">
       <button class="chip active" data-filter="all">Todos</button>
-      <button class="chip" data-filter="revisoes">Revisões</button>
-      <button class="chip" data-filter="aposentadorias">Aposentadorias</button>
-      <button class="chip" data-filter="incapacidade">Benefício por incapacidade</button>
-      <button class="chip" data-filter="outros">Outros benefícios</button>
+      <button class="chip" data-filter="atividade-especial">Atividade especial</button>
+      <button class="chip" data-filter="pcd">Pessoa com deficiência (LC 142)</button>
+      <button class="chip" data-filter="acao-trabalhista">Ação trabalhista</button>
+      <button class="chip" data-filter="concomitantes">Atividades concomitantes</button>
+      <button class="chip" data-filter="calculo-prazos">Cálculo, prazos e outras revisões</button>
     </div>
   </div>
 </div>
@@ -91,9 +92,9 @@ eleventyExcludeFromCollections: true
 
 <section class="cta-band">
   <div class="container">
-    <h2>Tem uma dúvida sobre o seu benefício?</h2>
+    <h2>Sua aposentadoria pode estar menor?</h2>
     <p>Fale com a nossa equipe pelo WhatsApp. O primeiro atendimento é para entender o seu caso e orientar os próximos passos.</p>
-    <a class="btn btn-gold" href="{{ site.wa }}?text=Ol%C3%A1%21%20Vim%20pelo%20blog%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20um%20benef%C3%ADcio%20do%20INSS." target="_blank" rel="noopener">
+    <a class="btn btn-gold" href="{{ site.wa }}?text=Ol%C3%A1%21%20Vim%20pelo%20blog%20e%20gostaria%20de%20saber%20se%20a%20minha%20aposentadoria%20pode%20ser%20revisada." target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.2z"/></svg>
       Falar no WhatsApp
     </a>
@@ -105,7 +106,7 @@ eleventyExcludeFromCollections: true
     <div class="footer-grid">
       <div>
         <img src="/assets/logo.png" alt="Igor Felix Advogados Associados" style="width:210px;height:auto;margin-bottom:1.2rem">
-        <p style="max-width:340px;font-size:.86rem;color:rgba(247,245,240,.6)">Advocacia previdenciária especializada em aposentadorias, revisões e benefícios do INSS. Atendimento digital em todo o Brasil.</p>
+        <p style="max-width:340px;font-size:.86rem;color:rgba(247,245,240,.6)">Advocacia previdenciária dedicada à revisão de aposentadorias do INSS. Atendimento digital em todo o Brasil.</p>
       </div>
       <div>
         <h4>Contato</h4>
