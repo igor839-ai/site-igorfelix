@@ -102,6 +102,7 @@ strong{font-weight:700}
 .hero-home .hero-wrap{min-height:min(100svh,920px);display:flex;align-items:center;padding-bottom:4rem}
 .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(2rem,4.5vw,4rem);align-items:center;width:100%}
 .hero-copy{max-width:640px}
+@media (min-width:1001px){.hero-home .hero-grid{grid-template-columns:1.2fr .8fr}.hero-home .hero-copy{max-width:690px}}
 .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;font-size:.8rem;margin-bottom:1.1rem}
 .crumbs a{color:var(--gold-l);font-weight:600}
 .crumbs a:hover{text-decoration:underline}
@@ -310,6 +311,9 @@ a.card:hover::before{opacity:1}
 .adv-stats .as b{display:block;font-family:var(--f-head);font-weight:700;font-size:1.45rem;color:var(--navy);line-height:1.2}
 .adv-stats .as-stars{color:var(--gold);font-size:.78rem;letter-spacing:.16em}
 .adv-stats .as span{display:block;font-size:.68rem;color:var(--ink-soft);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem}
+.diag-visual{justify-self:center;width:100%;max-width:430px}
+.diag-visual .ddoc{box-shadow:0 24px 60px rgba(10,31,51,.16);animation:none}
+.diag-visual .dd-caption{color:var(--ink-soft)}
 
 /* ===== Onde estamos ===== */
 .local-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,4vw,3.4rem);align-items:center}
