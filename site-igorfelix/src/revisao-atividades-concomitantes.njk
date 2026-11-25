@@ -108,7 +108,7 @@ window.QUIZ = {
   result: function (a) {
     if (a[1] === 'Não') return { title: 'Essa revisão depende de duas fontes de contribuição', text: 'Existem outras revisões possíveis, como tempo especial, ação trabalhista e erro de cálculo. Envie as respostas e conte a sua situação.', link: { href: '/revisao/aposentadoria', label: 'Ver as outras revisões' } };
     if (a[4] === 'Mais de 10 anos') return { title: 'Vale conferir o prazo', text: 'Com mais de 10 anos de aposentadoria, o prazo de revisão pode ter terminado. A contagem começa no mês seguinte ao primeiro pagamento. Envie as respostas e a carta de concessão para conferirmos.' };
-    if (a[4] === 'Ainda não me aposentei') return { title: 'Antes de pedir, confira as duas fontes', text: 'Como você ainda não se aposentou, as duas fontes podem entrar certas já no pedido. Envie as respostas e o CNIS para a análise.', link: { href: '/analise-do-cnis', label: 'Ver a análise do CNIS antes da aposentadoria' } };
+    if (a[4] === 'Ainda não me aposentei') return { title: 'Antes de pedir, confira as duas fontes', text: 'Como você ainda não se aposentou, as duas fontes podem entrar certas já no pedido. Envie as respostas e o CNIS para a análise.', link: { href: '/#analise', label: 'Ver a análise do CNIS antes da aposentadoria' } };
     return { title: 'O seu caso merece uma análise', text: 'Pelas respostas, vale verificar se as duas fontes de contribuição foram somadas da forma correta. Envie as respostas, o CNIS e a carta de concessão. A nossa equipe responde com orientação clara.' };
   },
   summary: function (a) {
