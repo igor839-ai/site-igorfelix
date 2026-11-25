@@ -27,7 +27,7 @@ faq:
 {% set heroData = {
   badge: "Pessoa com deficiência · Análise do CNIS",
   h1: "Tem deficiência? <em>A aposentadoria pode exigir menos tempo de contribuição.</em>",
-  lead: "Pela LC 142, a pessoa com deficiência se aposenta com menos tempo de contribuição, conforme o grau da deficiência. A deficiência não entra sozinha na conta do INSS, e o pedido pela regra comum deixa esse direito de lado.",
+  lead: "Pela LC 142, a pessoa com deficiência se aposenta com menos tempo de contribuição, conforme o grau da deficiência. A deficiência não entra sozinha na conta do INSS. No pedido pela regra comum, esse direito fica de fora.",
   cta: "Conferir se a LC 142 vale para mim",
   cta2: { label: "Fazer a checagem", href: "/#checagem" }
 } %}
@@ -47,11 +47,11 @@ faq:
 <section class="section bg-white" id="problema">
   <div class="container split">
     <div class="reveal">
-      <span class="eyebrow">O problema</span>
+      <span class="eyebrow">Problema</span>
       <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">A deficiência reduz o tempo exigido, mas não entra sozinha no CNIS.</h2>
       <div class="prose-block">
         <p>A LC 142 reduz o tempo de contribuição de quem tem deficiência. Na deficiência grave, são 25 anos (homem) e 20 anos (mulher). Na moderada, 29 e 24 anos. Na leve, 33 e 28 anos. Na aposentadoria por tempo, não há idade mínima.</p>
-        <p>O INSS define o grau e a data de início da deficiência em uma avaliação médica e social. O tempo anterior à deficiência entra na conta com conversão, por isso faz diferença estar perto do tempo exigido no seu grau.</p>
+        <p>O INSS define o grau e a data de início da deficiência em uma avaliação médica e social. O tempo anterior à deficiência também entra na conta, convertido conforme o grau.</p>
       </div>
     </div>
     <div class="panel navy reveal d1">
@@ -71,7 +71,7 @@ faq:
     {{ m.head("Sinais de que é o seu caso", "Quando vale avaliar a aposentadoria da pessoa com deficiência.") }}
     {{ m.checks([
       { t: "Deficiência física", d: "Limitação de movimentos, amputação ou sequela de doença ou de acidente." },
-      { t: "Deficiência visual, inclusive visão monocular", d: "A Lei 14.126/2021 classifica a visão monocular como deficiência visual." },
+      { t: "Deficiência visual (inclusive visão monocular)", d: "A Lei 14.126/2021 classifica a visão monocular como deficiência visual." },
       { t: "Deficiência auditiva", d: "Perda auditiva de longo prazo, com ou sem uso de aparelho." },
       { t: "Deficiência intelectual ou mental", d: "Limitações de longo prazo que afetam o trabalho e a vida diária." },
       { t: "Trabalhou boa parte da vida com a deficiência", d: "Quanto maior o período com deficiência, maior a redução do tempo exigido." },
@@ -82,9 +82,9 @@ faq:
 
 <section class="section bg-white" id="o-que-fazemos">
   <div class="container">
-    {{ m.head("O que fazemos", "Como o escritório trata a aposentadoria da pessoa com deficiência.") }}
+    {{ m.head("O que fazemos", "Como cuidamos da aposentadoria da pessoa com deficiência.") }}
     {{ m.steps([
-      { icon: "search", t: "Lemos o CNIS e os laudos", d: "Conferimos o tempo de contribuição e a documentação médica da deficiência." },
+      { icon: "search", t: "Analisamos o CNIS e os laudos", d: "Conferimos o tempo de contribuição e a documentação médica da deficiência." },
       { icon: "calc", t: "Simulamos os cenários", d: "Calculamos o tempo exigido em cada grau e a data provável do direito em cada cenário." },
       { icon: "layers", t: "Organizamos a prova", d: "Reunimos laudos, exames e documentos que mostram desde quando existe a deficiência." },
       { icon: "docCheck", t: "Fazemos o pedido", d: "Pedimos a aposentadoria pela LC 142 e acompanhamos a avaliação médica e social no INSS." }

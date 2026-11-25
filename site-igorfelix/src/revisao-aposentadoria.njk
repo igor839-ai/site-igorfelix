@@ -85,7 +85,7 @@ faq:
 
 <section class="section bg-white" id="ganhos">
   <div class="container">
-    {{ m.head("O que está em jogo", "A revisão pode trazer dois ganhos.") }}
+    {{ m.head("O que muda no benefício", "A revisão pode trazer dois ganhos.") }}
     <div class="cards two">
       <div class="card reveal"><div class="c-ic">{% icon "chart" %}</div><h3>Aumento no valor mensal</h3><p>Com o período, o salário ou a regra correta dentro do cálculo, o benefício é recalculado e pode aumentar de forma permanente.</p></div>
       <div class="card reveal d1"><div class="c-ic">{% icon "wallet" %}</div><h3>Diferenças dos últimos 5 anos</h3><p>Além do aumento, você pode receber a diferença entre o que foi pago e o que deveria ter sido pago, com correção, respeitado o limite de 5 anos.</p></div>
@@ -95,13 +95,13 @@ faq:
 
 <section class="section bg-band" id="como-funciona">
   <div class="container">
-    {{ m.head("Como funciona", "Da sua dúvida à revisão, em passos simples.", "Você não precisa entender de lei. A gente cuida de cada etapa.") }}
+    {{ m.head("Como funciona", "Da sua dúvida ao pedido de revisão.", "Cuidamos de cada etapa, e você acompanha tudo pelo WhatsApp.") }}
     {{ m.steps([
       { icon: "chat", t: "Você fala com a gente", d: "Conta a sua situação pelo WhatsApp." },
       { icon: "list", t: "Conferimos os documentos", d: "Carta de concessão e CNIS, que saem no aplicativo Meu INSS." },
-      { icon: "search", t: "Identificamos a revisão", d: "Qual revisão se aplica ao seu caso e se ela compensa." },
-      { icon: "doc", t: "Proposta por escrito", d: "Honorários claros, antes de qualquer contratação." },
-      { icon: "scale", t: "Pedimos a revisão", d: "No INSS ou na Justiça Federal, com o aumento e as diferenças." }
+      { icon: "search", t: "Identificamos a revisão", d: "Dizemos qual revisão se aplica ao seu caso e se ela compensa." },
+      { icon: "doc", t: "Proposta por escrito", d: "Os honorários são informados por escrito, antes de qualquer contratação." },
+      { icon: "scale", t: "Pedimos a revisão", d: "Fazemos o pedido no INSS ou entramos com ação na Justiça Federal." }
     ]) }}
   </div>
 </section>
@@ -125,4 +125,4 @@ faq:
 
 {{ m.faqSection(faq, "O que mais nos perguntam sobre revisão.", "bg-band-end") }}
 
-{{ m.cta("Comece agora", "A sua aposentadoria pode estar menor. <em>Vale conferir.</em>", "Envie a carta de concessão e o CNIS pelo WhatsApp. A nossa equipe analisa e responde com orientação clara.", wa) }}
+{{ m.cta("Comece agora", "A sua aposentadoria pode estar menor. <em>Vale conferir.</em>", "Envie a carta de concessão e o CNIS pelo WhatsApp. A nossa equipe analisa os documentos e explica se a revisão vale a pena.", wa) }}

@@ -54,7 +54,7 @@ faq:
 
 <section class="section bg-band" id="como-funciona">
   <div class="container">
-    {{ m.head("Entenda em 1 minuto", "Como uma ação trabalhista antiga pode aumentar a sua aposentadoria hoje.", "Você não precisa processar a empresa de novo.") }}
+    {{ m.head("Como funciona", "Como uma ação trabalhista antiga pode aumentar a sua aposentadoria hoje.", "Você não precisa processar a empresa de novo.") }}
     {{ m.steps([
       { icon: "briefcase", t: "Você trabalhou", d: "Mas parte do vínculo, do salário ou dos adicionais ficou fora da carteira." },
       { icon: "scale", t: "Ganhou na Justiça", d: "Sentença ou acordo reconheceu vínculo, salários ou adicionais." },
@@ -67,7 +67,7 @@ faq:
 
 <section class="section bg-white" id="direito">
   <div class="container">
-    {{ m.head("Você pode ter direito se", "Situações que costumam dar origem à revisão.", "Basta uma delas para valer a pena analisar o seu caso.") }}
+    {{ m.head("Quem pode ter direito", "Situações que costumam dar origem à revisão.", "Se uma delas aconteceu com você, vale analisar o seu caso.") }}
     {{ m.checks([
       { t: "A Justiça reconheceu um vínculo de emprego", d: "Você trabalhou sem registro e o juiz determinou a anotação do período na carteira." },
       { t: "Ganhou diferenças salariais", d: "Salário \"por fora\", equiparação salarial, desvio de função ou reajustes reconhecidos na ação." },
@@ -117,7 +117,7 @@ faq:
 
 <section class="section bg-band" id="documentos">
   <div class="container">
-    {{ m.head("Simples de começar", "Três documentos para a análise.") }}
+    {{ m.head("O que enviar", "Três documentos para a análise.") }}
     {{ m.docs([
       { icon: "scale", t: "Ação trabalhista", d: "Sentença ou acordo, ou apenas o número do processo." },
       { icon: "list", t: "CNIS", d: "O extrato com vínculos e salários. Sai na hora no aplicativo ou no site Meu INSS." },
@@ -143,7 +143,7 @@ window.QUIZ = {
   result: function (a) {
     if (a[1] === 'Não tive ação trabalhista') return { title: 'Essa revisão depende de uma ação trabalhista', text: 'Existem outras revisões possíveis, como tempo especial, atividades concomitantes e erro de cálculo. Envie as respostas e conte a sua situação.', link: { href: '/revisao/aposentadoria', label: 'Ver as outras revisões' } };
     if (a[0] === 'Ainda não, mas vou pedir em breve') return { title: 'Inclua a ação já no pedido', text: 'Como você ainda não se aposentou, o vínculo e os salários reconhecidos podem entrar já no pedido de aposentadoria. Envie as respostas e o número do processo trabalhista.', link: { href: '/analise-do-cnis/vinculo-com-pendencia', label: 'Ver a página sobre vínculo com pendência no CNIS' } };
-    return { title: 'O seu caso merece uma análise', text: 'Pelas respostas, vale verificar se a ação trabalhista pode aumentar o seu benefício. Envie as respostas e, se tiver, a sentença ou o número do processo. A nossa equipe responde com orientação clara.' };
+    return { title: 'O seu caso merece uma análise', text: 'Pelas respostas, vale verificar se a ação trabalhista pode aumentar o seu benefício. Envie as respostas e, se tiver, a sentença ou o número do processo. A nossa equipe analisa e explica o próximo passo.' };
   },
   summary: function (a) {
     return 'Olá! Vim pelo site e fiz o teste da revisão por ação trabalhista. Minhas respostas: 1) Aposentadoria do INSS: ' + a[0] + '; 2) Ação trabalhista: ' + a[1] + '; 3) Reconheceu vínculo, salários ou adicionais: ' + a[2] + '; 4) INSS recalculou: ' + a[3] + '. Gostaria de uma análise do meu caso.';
@@ -157,6 +157,6 @@ window.QUIZ = {
 
 {{ m.cnisBand() }}
 
-{{ m.faqSection(faq, "O que todo mundo pergunta antes de começar.", "bg-band-end") }}
+{{ m.faqSection(faq, "Dúvidas sobre a revisão por ação trabalhista.", "bg-band-end") }}
 
-{{ m.cta("Comece agora", "Você já venceu uma vez na Justiça. <em>Essa vitória também conta na aposentadoria.</em>", "Envie a sua situação pelo WhatsApp. A nossa equipe analisa o seu caso e responde com orientação clara.", wa) }}
+{{ m.cta("Comece agora", "Ganhou uma ação trabalhista? <em>Ela pode aumentar a sua aposentadoria.</em>", "Conte a sua situação pelo WhatsApp. A nossa equipe analisa o caso e explica o próximo passo.", wa) }}

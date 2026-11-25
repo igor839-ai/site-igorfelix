@@ -15,7 +15,7 @@ faq:
   - q: "Posso cuidar da aposentadoria do meu pai ou da minha mãe?"
     a: "Pode conduzir a conversa, reunir os documentos e acompanhar o caso. A pessoa que vai se aposentar precisa autorizar o atendimento e assinar a procuração."
   - q: "Meu pai não se dá bem com o celular. Como ele assina?"
-    a: "A assinatura é feita pelo celular, com a ajuda de quem estiver com ele. Se preferir, ela pode ser feita no escritório, em Pinheiros, com horário marcado."
+    a: "A assinatura é feita pelo celular, e alguém da família pode ajudar. Se preferir, ela pode ser feita no escritório, em Pinheiros, com horário marcado."
   - q: "Minha mãe não tem conta no gov.br. Dá para seguir?"
     a: "Dá. Orientamos como criar ou recuperar o acesso e indicamos as alternativas quando a conta não funciona."
   - q: "Moro em outra cidade. Vocês atendem?"
@@ -27,7 +27,7 @@ faq:
 {% set heroData = {
   badge: "Para a família · Análise do CNIS",
   h1: "Está ajudando o seu pai ou a sua mãe <em>a se aposentar?</em>",
-  lead: "Muitas vezes quem nos procura é um filho, uma filha ou o cônjuge. Você conduz a conversa e reúne os documentos. A pessoa que vai se aposentar autoriza o atendimento e assina a procuração, o que pode ser feito pelo celular.",
+  lead: "Muitas vezes quem nos procura é um filho, uma filha ou o cônjuge. Você conduz a conversa e reúne os documentos. A pessoa que vai se aposentar autoriza o atendimento e assina a procuração pelo celular.",
   cta: "Quero ajudar a minha família",
   cta2: { label: "Fazer a checagem por ela", href: "/#checagem" }
 } %}
@@ -88,7 +88,7 @@ faq:
     {{ m.head("Como atendemos a família", "Você conversa com a nossa equipe. Quem vai se aposentar participa quando precisa decidir.") }}
     {{ m.steps([
       { icon: "chat", t: "Você chama no WhatsApp", d: "Conte a idade, o tempo de trabalho e o que já foi feito no INSS." },
-      { icon: "search", t: "Fazemos a checagem", d: "Com as respostas, indicamos se o CNIS tem sinais de risco e quais documentos faltam." },
+      { icon: "search", t: "Fazemos a checagem", d: "Com as respostas, indicamos se o CNIS tem sinais de erro e quais documentos faltam." },
       { icon: "docCheck", t: "A pessoa autoriza e assina", d: "A procuração é assinada pelo celular ou, se preferir, no escritório." },
       { icon: "users", t: "Vocês acompanham juntos", d: "As atualizações chegam pelo WhatsApp, e a pessoa participa das decisões." }
     ]) }}
@@ -97,7 +97,7 @@ faq:
 
 <section class="section bg-band" id="sinais">
   <div class="container">
-    {{ m.head("Sinais de risco", "O que observar na vida profissional dela.", "Se um destes aconteceu, vale conferir o CNIS antes de pedir a aposentadoria.") }}
+    {{ m.head("Sinais de erro", "O que observar na vida profissional dela.", "Se alguma das situações abaixo aconteceu, vale conferir o CNIS antes de pedir a aposentadoria.") }}
     {{ m.sinais(sinais, true) }}
   </div>
 </section>

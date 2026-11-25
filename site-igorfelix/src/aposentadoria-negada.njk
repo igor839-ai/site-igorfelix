@@ -31,7 +31,7 @@ faq:
 {% set heroData = {
   badge: "Aposentadoria negada · Pinheiros (SP) e on-line",
   h1: "Aposentadoria negada pelo INSS? <em>Veja o que fazer agora.</em>",
-  lead: "A negativa tem um motivo, escrito na carta de indeferimento, e um prazo de 30 dias para o recurso. A carta de exigência também tem prazo. Envie a carta e o CNIS para analisarmos o seu caso.",
+  lead: "O motivo da negativa está na carta de indeferimento, e o recurso tem prazo de 30 dias. A carta de exigência também tem prazo. Envie a carta e o CNIS para analisarmos o seu caso.",
   cta: "Enviar a carta do INSS",
   cta2: { label: "Entender os caminhos", href: "#caminhos" }
 } %}
@@ -122,12 +122,12 @@ faq:
 
 <section class="section bg-white" id="como-funciona">
   <div class="container">
-    {{ m.head("Como analisamos", "Como analisamos a negativa ou a exigência.") }}
+    {{ m.head("Como funciona", "Como analisamos a negativa ou a exigência.") }}
     {{ m.steps([
       { icon: "chat", t: "Você envia a carta", d: "A carta de indeferimento ou de exigência e o CNIS, pelo WhatsApp." },
-      { icon: "search", t: "Lemos o processo do INSS", d: "Conferimos o que foi analisado, o que faltou e onde está o erro." },
+      { icon: "search", t: "Analisamos o processo do INSS", d: "Conferimos o que o INSS considerou, o que faltou e onde está o erro." },
       { icon: "calc", t: "Refazemos a conta", d: "Calculamos o tempo com os períodos que ficaram de fora." },
-      { icon: "route", t: "Indicamos o caminho", d: "Resposta à exigência, recurso, novo pedido ou ação, com os prós e contras de cada um." }
+      { icon: "route", t: "Indicamos o caminho", d: "Explicamos os prós e contras da resposta à exigência, do recurso, do novo pedido e da ação." }
     ]) }}
   </div>
 </section>
@@ -150,4 +150,4 @@ faq:
 
 {{ m.faqSection(faq, "Dúvidas de quem teve a aposentadoria negada.", "bg-band-end") }}
 
-{{ m.cta("Não deixe o prazo passar", "O INSS negou ou fez uma exigência? <em>Envie a carta e o CNIS.</em>", "Analisamos o motivo e dizemos qual caminho faz sentido no seu caso, com atenção aos prazos.", wa, "Enviar a carta pelo WhatsApp") }}
+{{ m.cta("Não deixe o prazo passar", "O INSS negou ou fez uma exigência? <em>Envie a carta e o CNIS.</em>", "Analisamos o motivo e indicamos o caminho para o seu caso.", wa, "Enviar a carta pelo WhatsApp") }}

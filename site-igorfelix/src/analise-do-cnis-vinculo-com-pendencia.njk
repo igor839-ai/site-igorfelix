@@ -27,7 +27,7 @@ faq:
 {% set heroData = {
   badge: "Vínculo com pendência · Análise do CNIS",
   h1: "Vínculo que não aparece no CNIS <em>fica fora da conta da aposentadoria.</em>",
-  lead: "Vínculo ausente, sem data de saída ou com indicador de pendência pode ser ignorado ou contado só em parte pelo INSS. O pedido sai com menos tempo, ou com um valor menor, do que você trabalhou.",
+  lead: "Vínculo ausente, sem data de saída ou com indicador de pendência pode ser ignorado ou contado só em parte pelo INSS. O pedido pode sair com menos tempo do que você trabalhou ou com um valor menor.",
   cta: "Conferir os meus vínculos",
   cta2: { label: "Fazer a checagem", href: "/#checagem" }
 } %}
@@ -49,15 +49,15 @@ faq:
 <section class="section bg-white" id="problema">
   <div class="container split">
     <div class="reveal">
-      <span class="eyebrow">O problema</span>
+      <span class="eyebrow">Problema</span>
       <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">O INSS conta o tempo pelo que está no CNIS.</h2>
       <div class="prose-block">
         <p>Vínculo que não aparece fica fora da conta. Vínculo sem data de saída pode ser contado só até a última remuneração informada. Vínculo com indicador de pendência, como PEXT ou PREM-EXT, depende de comprovação antes de entrar no cálculo.</p>
-        <p>O mesmo acontece com o trabalho em empresa que fechou ou faliu, com o empregado doméstico lançado como contribuinte individual e com o vínculo reconhecido em acordo trabalhista, que o INSS nem sempre aceita sem outras provas.</p>
+        <p>O trabalho em empresa que fechou ou faliu, o empregado doméstico lançado como contribuinte individual e o vínculo reconhecido em acordo trabalhista também dependem de prova. O INSS nem sempre aceita o acordo sem outros documentos da época.</p>
       </div>
     </div>
     <div class="panel navy reveal d1">
-      <h3>Como isso muda a aposentadoria</h3>
+      <h3>Como o vínculo com pendência muda a aposentadoria</h3>
       <ul>
         <li>{% icon "check" %}Anos de trabalho ficam fora do tempo de contribuição</li>
         <li>{% icon "check" %}Salários faltando ou menores baixam a média do benefício</li>
@@ -86,12 +86,12 @@ faq:
 
 <section class="section bg-white" id="o-que-fazemos">
   <div class="container">
-    {{ m.head("O que fazemos", "Como o escritório trata os vínculos com pendência.") }}
+    {{ m.head("O que fazemos", "Como cuidamos dos vínculos com pendência.") }}
     {{ m.steps([
       { icon: "search", t: "Comparamos CNIS e carteiras", d: "Conferimos cada vínculo e cada salário com as carteiras de trabalho e os demais documentos." },
       { icon: "calc", t: "Medimos o impacto", d: "Mostramos quanto tempo e quanto do valor cada pendência pode tirar da aposentadoria." },
       { icon: "layers", t: "Reunimos as provas", d: "Buscamos os documentos da época que comprovam o vínculo e as remunerações." },
-      { icon: "scale", t: "Pedimos a correção", d: "No INSS, antes ou junto com o pedido da aposentadoria, ou na Justiça Federal, quando necessário." }
+      { icon: "scale", t: "Pedimos a correção", d: "A correção é pedida ao INSS antes ou junto com o pedido da aposentadoria. Se o INSS não corrigir, entramos com ação na Justiça Federal." }
     ]) }}
   </div>
 </section>
@@ -112,4 +112,4 @@ faq:
 
 {{ m.faqSection(faq, "Dúvidas sobre vínculos no CNIS.", "bg-band-end") }}
 
-{{ m.cta("Vínculo com pendência", "Trabalhou e não aparece? <em>Esse tempo precisa estar no seu CNIS.</em>", "Envie o CNIS e as fotos das carteiras de trabalho. Mostramos o que falta e quanto isso muda a aposentadoria.", wa, "Enviar o CNIS pelo WhatsApp") }}
+{{ m.cta("Vínculo com pendência", "Trabalhou e não aparece? <em>Esse tempo precisa estar no seu CNIS.</em>", "Envie o CNIS e as fotos das carteiras de trabalho. Mostramos o que falta no CNIS e quanto a correção pode mudar a sua aposentadoria.", wa, "Enviar o CNIS pelo WhatsApp") }}

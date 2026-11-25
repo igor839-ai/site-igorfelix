@@ -32,7 +32,7 @@ faq:
 {% set heroData = {
   badge: "Revisão de aposentadoria · Atividades concomitantes",
   h1: "Teve dois empregos ou contribuiu por duas fontes ao mesmo tempo? <em>Sua aposentadoria pode estar menor.</em>",
-  lead: "Quem teve atividades concomitantes, com mais de um vínculo ou fonte de contribuição no mesmo período, muitas vezes teve o cálculo feito de forma desfavorável. A revisão soma as remunerações da forma correta e pode aumentar o benefício, com atrasados.",
+  lead: "Quem teve mais de um vínculo ou fonte de contribuição no mesmo período (atividades concomitantes) muitas vezes teve o cálculo feito de forma desfavorável. A revisão soma as remunerações da forma correta e pode aumentar o benefício e gerar o pagamento dos atrasados.",
   cta: "Descobrir se tenho direito",
   cta2: { label: "Fazer o teste de 1 minuto", href: "#teste" }
 } %}
@@ -54,11 +54,11 @@ faq:
 
 <section class="section bg-band" id="como-funciona">
   <div class="container">
-    {{ m.head("Entenda em 1 minuto", "Como as duas fontes de contribuição podem aumentar a sua aposentadoria.", "Na maioria das vezes, a prova já está no seu próprio CNIS.") }}
+    {{ m.head("Como funciona", "Como as duas fontes de contribuição podem aumentar a sua aposentadoria.", "Na maioria das vezes, a prova já está no seu próprio CNIS.") }}
     {{ m.steps([
       { icon: "layers", t: "Você teve duas fontes", d: "Mais de um emprego, ou emprego e contribuição como autônomo, ao mesmo tempo." },
       { icon: "list", t: "As contribuições existem", d: "Os salários e recolhimentos das duas atividades constam no CNIS." },
-      { icon: "x", t: "O INSS somou errado", d: "Muitas vezes uma das atividades entrou só em parte, reduzindo a média." },
+      { icon: "x", t: "O INSS somou errado", d: "Muitas vezes uma das atividades entrou só em parte e reduziu a média." },
       { icon: "scale", t: "Pedimos a revisão", d: "No INSS ou na Justiça Federal, para somar as remunerações da forma correta." },
       { icon: "chart", t: "Benefício maior e atrasados", d: "Novo valor mensal e as diferenças dos últimos 5 anos." }
     ]) }}
@@ -67,7 +67,7 @@ faq:
 
 <section class="section bg-white" id="direito">
   <div class="container">
-    {{ m.head("Você pode ter direito se", "Situações que costumam dar origem à revisão.", "Basta uma delas para valer a pena analisar o seu caso.") }}
+    {{ m.head("Quem pode ter direito", "Situações que costumam dar origem à revisão.", "Se uma delas aconteceu com você, vale analisar o seu caso.") }}
     {{ m.checks([
       { t: "Teve dois empregos ao mesmo tempo", d: "Dois vínculos de carteira assinada no mesmo período." },
       { t: "Foi empregado e contribuinte individual", d: "Carteira assinada e contribuição como autônomo no mesmo período." },
@@ -81,7 +81,7 @@ faq:
 
 <section class="section bg-band" id="documentos">
   <div class="container">
-    {{ m.head("Simples de começar", "Três documentos para a análise.") }}
+    {{ m.head("O que enviar", "Três documentos para a análise.") }}
     {{ m.docs([
       { icon: "list", t: "CNIS", d: "O extrato do INSS com todos os vínculos e salários. Sai na hora no Meu INSS." },
       { icon: "doc", t: "Carta de concessão", d: "O documento com o cálculo do benefício. Também sai no Meu INSS." },
@@ -109,7 +109,7 @@ window.QUIZ = {
     if (a[1] === 'Não') return { title: 'Essa revisão depende de duas fontes de contribuição', text: 'Existem outras revisões possíveis, como tempo especial, ação trabalhista e erro de cálculo. Envie as respostas e conte a sua situação.', link: { href: '/revisao/aposentadoria', label: 'Ver as outras revisões' } };
     if (a[4] === 'Mais de 10 anos') return { title: 'Vale conferir o prazo', text: 'Com mais de 10 anos de aposentadoria, o prazo de revisão pode ter terminado. A contagem começa no mês seguinte ao primeiro pagamento. Envie as respostas e a carta de concessão para conferirmos.' };
     if (a[4] === 'Ainda não me aposentei') return { title: 'Antes de pedir, confira as duas fontes', text: 'Como você ainda não se aposentou, as duas fontes podem entrar certas já no pedido. Envie as respostas e o CNIS para a análise.', link: { href: '/#analise', label: 'Ver a análise do CNIS antes da aposentadoria' } };
-    return { title: 'O seu caso merece uma análise', text: 'Pelas respostas, vale verificar se as duas fontes de contribuição foram somadas da forma correta. Envie as respostas, o CNIS e a carta de concessão. A nossa equipe responde com orientação clara.' };
+    return { title: 'O seu caso merece uma análise', text: 'Pelas respostas, vale verificar se as duas fontes de contribuição foram somadas da forma correta. Envie as respostas, o CNIS e a carta de concessão. A nossa equipe analisa e explica o próximo passo.' };
   },
   summary: function (a) {
     return 'Olá! Vim pelo site e fiz o teste da revisão por atividades concomitantes. Minhas respostas: 1) Benefício do INSS: ' + a[0] + '; 2) Duas fontes no mesmo período: ' + a[1] + '; 3) Aparecem no CNIS: ' + a[2] + '; 4) Aposentadoria ficou menor: ' + a[3] + '; 5) Tempo desde a aposentadoria: ' + a[4] + '. Gostaria de uma análise do meu caso.';
@@ -123,6 +123,6 @@ window.QUIZ = {
 
 {{ m.cnisBand() }}
 
-{{ m.faqSection(faq, "O que todo mundo pergunta antes de começar.", "bg-band-end") }}
+{{ m.faqSection(faq, "Dúvidas sobre a revisão por atividades concomitantes.", "bg-band-end") }}
 
-{{ m.cta("Comece agora", "Você contribuiu por duas fontes. <em>As duas precisam estar no cálculo.</em>", "Envie a sua situação pelo WhatsApp. A nossa equipe analisa o seu caso e responde com orientação clara.", wa) }}
+{{ m.cta("Comece agora", "Contribuiu por duas fontes ao mesmo tempo? <em>As duas precisam estar no cálculo.</em>", "Conte a sua situação pelo WhatsApp. A nossa equipe analisa o caso e explica o próximo passo.", wa) }}

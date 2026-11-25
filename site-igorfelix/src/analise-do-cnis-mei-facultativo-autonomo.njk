@@ -27,7 +27,7 @@ faq:
 {% set heroData = {
   badge: "MEI, facultativo e autônomo · Análise do CNIS",
   h1: "Contribuiu por conta própria? <em>Nem todo mês conta para o tempo de contribuição.</em>",
-  lead: "Quem paga a própria contribuição pode ter meses que só valem para a aposentadoria por idade, meses abaixo do mínimo e guias em atraso que não contam para tudo. O simulador do Meu INSS não avisa o que ficou de fora.",
+  lead: "Quem paga a própria contribuição pode ter meses que só valem para a aposentadoria por idade, meses abaixo do mínimo e guias em atraso que não contam para a carência. O simulador do Meu INSS não avisa o que ficou de fora.",
   cta: "Conferir as minhas contribuições",
   cta2: { label: "Fazer a checagem", href: "/#checagem" }
 } %}
@@ -48,7 +48,7 @@ faq:
 <section class="section bg-white" id="problema">
   <div class="container split">
     <div class="reveal">
-      <span class="eyebrow">O problema</span>
+      <span class="eyebrow">Problema</span>
       <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">Cada forma de contribuir tem um efeito diferente na aposentadoria.</h2>
       <div class="prose-block">
         <p>A contribuição de 20% como contribuinte individual ou facultativo conta para todas as regras. O plano simplificado (11%) e o MEI (5%) contam para a aposentadoria por idade e ficam fora das regras por tempo de contribuição sem a complementação.</p>
@@ -56,7 +56,7 @@ faq:
       </div>
     </div>
     <div class="panel navy reveal d1">
-      <h3>Como isso muda a aposentadoria</h3>
+      <h3>Como a forma de contribuir muda a aposentadoria</h3>
       <ul>
         <li>{% icon "check" %}Meses fora das regras por tempo de contribuição atrasam a data do direito</li>
         <li>{% icon "check" %}Contribuições sobre o salário mínimo puxam a média para baixo</li>
@@ -83,11 +83,11 @@ faq:
 
 <section class="section bg-white" id="o-que-fazemos">
   <div class="container">
-    {{ m.head("O que fazemos", "Como o escritório trata as contribuições por conta própria.") }}
+    {{ m.head("O que fazemos", "Como cuidamos das contribuições por conta própria.") }}
     {{ m.steps([
-      { icon: "search", t: "Lemos cada competência", d: "Conferimos mês a mês o código, o valor e a data de pagamento das contribuições." },
+      { icon: "search", t: "Analisamos cada competência", d: "Conferimos mês a mês o código, o valor e a data de pagamento das contribuições." },
       { icon: "list", t: "Separamos o que conta", d: "Mostramos os meses que contam para o tempo, os que só valem para a idade e os pendentes." },
-      { icon: "calc", t: "Calculamos o impacto", d: "Comparamos o efeito da complementação na data e no valor da aposentadoria, para você decidir se vale a pena." },
+      { icon: "calc", t: "Calculamos o impacto", d: "Comparamos o custo da complementação com o ganho na data e no valor da aposentadoria, e você decide se vale a pena." },
       { icon: "refresh", t: "Fazemos o acerto", d: "Cuidamos da complementação, do agrupamento e da correção dos recolhimentos no INSS." }
     ]) }}
   </div>

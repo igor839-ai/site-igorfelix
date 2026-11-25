@@ -3,7 +3,7 @@ layout: layouts/base.njk
 permalink: /revisao/tempo-especial.html
 title: "Revisão por atividade especial: PPP que ficou de fora"
 titleFull: "Revisão por Atividade Especial: PPP que ficou de fora"
-description: "Trabalhou exposto a agentes nocivos e o tempo especial não entrou no cálculo? A aposentadoria pode ser revisada, com aumento e atrasados. Prazo de 10 anos."
+description: "Trabalhou exposto a agentes nocivos e o tempo especial não entrou no cálculo? A revisão pode aumentar a aposentadoria e gerar atrasados. Prazo de 10 anos."
 ogimage: "og-revisao.jpg"
 wa: "Olá! Vim pelo site. Trabalhei exposto a agente nocivo e quero saber se cabe a revisão da minha aposentadoria pelo tempo especial."
 area: revisao
@@ -32,7 +32,7 @@ faq:
 {% set heroData = {
   badge: "Revisão de aposentadoria · Tempo especial",
   h1: "Trabalhou exposto a agente nocivo? <em>Sua aposentadoria pode estar sendo paga a menos.</em>",
-  lead: "Se você teve atividade especial comprovada por PPP ou LTCAT (ruído, calor, agentes químicos, insalubridade ou periculosidade) e o INSS não converteu esse tempo, o benefício pode ser recalculado, com aumento e atrasados.",
+  lead: "O tempo de trabalho com ruído, calor, agentes químicos, insalubridade ou periculosidade, comprovado por PPP ou LTCAT, vale mais na aposentadoria. Se o INSS não converteu esse tempo, a revisão pode aumentar o valor mensal e gerar o pagamento dos atrasados.",
   cta: "Descobrir se tenho direito",
   cta2: { label: "Fazer o teste de 1 minuto", href: "#teste" }
 } %}
@@ -54,7 +54,7 @@ faq:
 
 <section class="section bg-band" id="como-funciona">
   <div class="container">
-    {{ m.head("Entenda em 1 minuto", "Como o tempo especial que ficou de fora pode aumentar a sua aposentadoria.", "Na maioria das vezes, a prova já existe no seu PPP ou no LTCAT.") }}
+    {{ m.head("Como funciona", "Como o tempo especial que ficou de fora pode aumentar a sua aposentadoria.", "Na maioria das vezes, a prova já existe no seu PPP ou no LTCAT.") }}
     {{ m.steps([
       { icon: "hat", t: "Você trabalhou exposto", d: "A ruído, calor, agentes químicos, insalubridade ou periculosidade." },
       { icon: "doc", t: "A prova existe", d: "O PPP ou o LTCAT do período comprova a exposição." },
@@ -67,7 +67,7 @@ faq:
 
 <section class="section bg-white" id="direito">
   <div class="container">
-    {{ m.head("Você pode ter direito se", "Situações que costumam dar origem à revisão.", "Basta uma delas para valer a pena analisar o seu caso.") }}
+    {{ m.head("Quem pode ter direito", "Situações que costumam dar origem à revisão.", "Se uma delas aconteceu com você, vale analisar o seu caso.") }}
     {{ m.checks([
       { t: "Trabalhou exposto a ruído acima do limite", d: "Ruído acima do limite legal da época, medido no seu ambiente de trabalho." },
       { t: "Teve contato com agentes químicos ou biológicos", d: "Produtos químicos, hidrocarbonetos, agentes biológicos ou insalubridade habitual." },
@@ -81,7 +81,7 @@ faq:
 
 <section class="section bg-band" id="ganhos">
   <div class="container">
-    {{ m.head("O que está em jogo", "A revisão pode trazer dois ganhos.") }}
+    {{ m.head("O que muda no benefício", "A revisão pode trazer dois ganhos.") }}
     <div class="cards two">
       <div class="card reveal"><div class="c-ic">{% icon "chart" %}</div><h3>Aumento no valor mensal</h3><p>Com o tempo especial convertido e dentro do cálculo, o benefício é recalculado e pode aumentar de forma permanente.</p></div>
       <div class="card reveal d1"><div class="c-ic">{% icon "wallet" %}</div><h3>Diferenças dos últimos 5 anos</h3><p>Além do aumento, você pode receber a diferença entre o que foi pago e o que deveria ter sido pago, com correção.</p></div>
@@ -91,7 +91,7 @@ faq:
 
 <section class="section bg-white" id="documentos">
   <div class="container">
-    {{ m.head("Simples de começar", "Três documentos para a análise.") }}
+    {{ m.head("O que enviar", "Três documentos para a análise.") }}
     {{ m.docs([
       { icon: "hat", t: "PPP ou LTCAT", d: "Os documentos da empresa que comprovam a exposição. Se não tiver, orientamos como pedir." },
       { icon: "list", t: "CNIS", d: "O extrato com vínculos e salários. Sai na hora no aplicativo ou no site Meu INSS." },
@@ -119,7 +119,7 @@ window.QUIZ = {
     if (a[1] === 'Não') return { title: 'Essa revisão depende de exposição a agente nocivo', text: 'Existem outras revisões possíveis, como erro de cálculo, ação trabalhista e atividades concomitantes. Envie as respostas e conte a sua situação.', link: { href: '/revisao/aposentadoria', label: 'Ver as outras revisões' } };
     if (a[4] === 'Mais de 10 anos') return { title: 'Vale conferir o prazo', text: 'Com mais de 10 anos de aposentadoria, o prazo de revisão pode ter terminado. A contagem começa no mês seguinte ao primeiro pagamento. Envie as respostas e a carta de concessão para conferirmos.' };
     if (a[4] === 'Ainda não me aposentei') return { title: 'Antes de pedir, inclua o tempo especial', text: 'Como você ainda não se aposentou, o tempo especial pode entrar já no pedido. Envie as respostas e o PPP para calcularmos a regra mais vantajosa.', link: { href: '/analise-do-cnis/tempo-especial', label: 'Ver a página sobre tempo especial antes da aposentadoria' } };
-    return { title: 'O seu caso merece uma análise', text: 'Pelas respostas, vale verificar se o tempo especial pode aumentar o seu benefício. Envie as respostas e a carta de concessão. A nossa equipe responde com orientação clara.' };
+    return { title: 'O seu caso merece uma análise', text: 'Pelas respostas, vale verificar se o tempo especial pode aumentar o seu benefício. Envie as respostas e a carta de concessão. A nossa equipe analisa e explica o próximo passo.' };
   },
   summary: function (a) {
     return 'Olá! Vim pelo site e fiz o teste da revisão por tempo especial. Minhas respostas: 1) Benefício do INSS: ' + a[0] + '; 2) Exposição a agente nocivo: ' + a[1] + '; 3) PPP/LTCAT: ' + a[2] + '; 4) INSS considerou como especial: ' + a[3] + '; 5) Tempo desde a aposentadoria: ' + a[4] + '. Gostaria de uma análise do meu caso.';
@@ -133,6 +133,6 @@ window.QUIZ = {
 
 {{ m.cnisBand() }}
 
-{{ m.faqSection(faq, "O que todo mundo pergunta antes de começar.", "bg-band-end") }}
+{{ m.faqSection(faq, "Dúvidas sobre a revisão por tempo especial.", "bg-band-end") }}
 
-{{ m.cta("Comece agora", "Você trabalhou exposto ao risco. <em>Esse tempo precisa estar na sua aposentadoria.</em>", "Envie a sua situação pelo WhatsApp. A nossa equipe analisa o seu caso e responde com orientação clara.", wa) }}
+{{ m.cta("Comece agora", "Trabalhou exposto a agente nocivo? <em>Esse tempo precisa estar na sua aposentadoria.</em>", "Conte a sua situação pelo WhatsApp. A nossa equipe analisa o caso e explica o próximo passo.", wa) }}
