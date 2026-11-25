@@ -1,8 +1,7 @@
 {
   "cnis": {
     "label": "Análise do CNIS",
-    "url": "/analise-do-cnis",
-    "head": "Como funciona a análise",
+    "url": "/#analise",
     "items": [
       { "label": "Tempo especial", "url": "/analise-do-cnis/tempo-especial", "icon": "hat", "text": "PPP ausente ou errado, insalubridade não reconhecida e conversão do tempo especial até 2019." },
       { "label": "Pessoa com deficiência", "url": "/analise-do-cnis/pessoa-com-deficiencia", "icon": "access", "text": "Aposentadoria da LC 142, com tempo de contribuição reduzido conforme o grau da deficiência." },
