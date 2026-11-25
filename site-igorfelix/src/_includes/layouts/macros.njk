@@ -16,9 +16,14 @@
         <h1>{{ d.h1 | safe }}</h1>
         <p class="lead">{{ d.lead | safe }}</p>
         <div class="hero-actions">
+          {%- if d.primary %}
+          <a class="btn btn-gold" href="{{ d.primary.href }}">{% icon d.primary.icon or "search" %}{{ d.primary.label }}</a>
+          <a class="btn btn-glass" href="{{ wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}{{ d.cta or "Falar no WhatsApp" }}</a>
+          {%- else %}
           <a class="btn btn-gold" href="{{ wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}{{ d.cta or "Falar no WhatsApp" }}</a>
           {%- if d.cta2 %}
           <a class="btn btn-glass" href="{{ d.cta2.href }}">{{ d.cta2.label }}</a>
+          {%- endif %}
           {%- endif %}
         </div>
         {%- if d.note %}
@@ -246,6 +251,93 @@
     <p class="reveal d1">{{ p | safe }}</p>
     <a class="btn btn-gold reveal d2" href="{{ wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}{{ btn or "Falar no WhatsApp: (11) 97169-4420" }}</a>
     <p class="cta-sub">Atendimento em Pinheiros (SP) e on-line, de segunda a sexta, das 9h às 18h.</p>
+  </div>
+</section>
+{% endmacro %}
+
+{# ===== Análise do CNIS ===== #}
+
+{% macro sinais(list, linked) %}
+<div class="sinais">
+  {%- for s in list %}
+  {%- set dl = " d1" if loop.index0 % 5 == 1 else (" d2" if loop.index0 % 5 == 2 else (" d3" if loop.index0 % 5 == 3 else "")) %}
+  {%- if linked %}
+  <a class="sinal reveal{{ dl }}" href="{{ s.url }}"><div class="c-ic">{% icon s.icon %}</div><h3>{{ s.t }}</h3><p>{{ s.d }}</p></a>
+  {%- else %}
+  <div class="sinal reveal{{ dl }}"><div class="c-ic">{% icon s.icon %}</div><h3>{{ s.t }}</h3><p>{{ s.d }}</p></div>
+  {%- endif %}
+  {%- endfor %}
+</div>
+{% endmacro %}
+
+{% macro jornada() %}
+{{ steps([
+  { icon: "search", t: "Checagem de sinais de risco", d: "Em 2 minutos, no site ou no WhatsApp, você responde a algumas perguntas e descobre se o CNIS tem sinais de problema. A checagem não analisa o documento, só indica o risco." },
+  { icon: "docCheck", t: "Diagnóstico do CNIS", d: "Lemos o CNIS e os documentos e entregamos um relatório com os problemas encontrados, quanto cada um pode mudar o tempo e o valor da aposentadoria e a data provável do direito." },
+  { icon: "refresh", t: "Correção do CNIS", d: "Fazemos o acerto de vínculos, a inclusão de tempo especial, de deficiência, de CTC, de trabalho rural ou militar e a complementação de contribuições." },
+  { icon: "calendar", t: "Pedido da aposentadoria", d: "Fazemos o requerimento no INSS no melhor momento e pela regra mais vantajosa." },
+  { icon: "scale", t: "Recurso ou ação judicial", d: "Se o INSS negar, recorremos ou entramos com ação na Justiça Federal." }
+]) }}
+<p class="motto reveal"><b>Corrija antes de pedir.</b> Pedido com CNIS errado pode sair negado ou com valor menor.</p>
+{% endmacro %}
+
+{% macro checagem(d) %}
+<section class="section quiz-sec" id="checagem">
+  <div class="container center">
+    {{ head(d.eyebrow or "Checagem de sinais de risco", d.h2, d.p) }}
+    <div class="quiz-card reveal" id="chkCard">
+      <div class="quiz-progress" id="chkProgress"></div>
+      <div id="chkBody">
+        <div class="quiz-step" id="chkStep"></div>
+        <div class="quiz-q" id="chkQ">{{ d.first }}</div>
+        <p class="quiz-hint" id="chkHint" hidden></p>
+        <div class="quiz-opts" id="chkOpts"><noscript><a class="btn btn-gold" href="{{ d.wa | waLink }}" target="_blank" rel="noopener">Fazer a checagem pelo WhatsApp</a></noscript></div>
+        <button class="btn btn-gold quiz-next" id="chkNext" type="button" hidden>Continuar</button>
+        <button class="quiz-back" id="chkBack" type="button" style="display:none">Voltar à pergunta anterior</button>
+      </div>
+      <div class="quiz-result" id="chkResult">
+        <div class="icon-big">{% icon "docCheck" %}</div>
+        <h3 id="chkTitle"></h3>
+        <p id="chkText"></p>
+        <a class="q-link" id="chkLink" href="#" style="display:none"></a>
+        <a class="btn btn-gold" id="chkBtn" href="{{ d.wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}<span id="chkBtnTxt">Enviar minhas respostas pelo WhatsApp</span></a>
+        <br><button class="quiz-restart" id="chkRestart" type="button">Refazer a checagem</button>
+      </div>
+      <p class="quiz-disclaimer">A checagem indica sinais de risco e não substitui a leitura do CNIS e dos documentos.</p>
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro checkCta(wa, h, p, cls) %}
+<section class="section {{ cls or 'bg-white' }} slim" id="checagem-cnis">
+  <div class="container">
+    <div class="check-cta reveal">
+      <div>
+        <span class="eyebrow">Checagem do CNIS</span>
+        <h2>{{ h or "Veja em 2 minutos se o seu CNIS tem sinais de risco." }}</h2>
+        <p>{{ p or "São seis perguntas rápidas. No fim, você envia as respostas pelo WhatsApp e a nossa equipe indica o próximo passo." }}</p>
+      </div>
+      <div class="check-cta-actions">
+        <a class="btn btn-gold" href="/analise-do-cnis#checagem">{% icon "search" %}Fazer a checagem</a>
+        <a class="btn btn-glass" href="{{ wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}Falar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro cnisBand(cls) %}
+<section class="section {{ cls or 'bg-white' }} slim" id="antes-de-aposentar">
+  <div class="container">
+    <div class="notice reveal">
+      <div class="n-ic">{% icon "list" %}</div>
+      <div>
+        <h3>Ainda não se aposentou? Corrija o CNIS antes.</h3>
+        <p>A revisão é para quem já recebe a aposentadoria. Quem ainda vai pedir pode conferir e corrigir o CNIS antes do pedido, o que reduz o risco de negativa ou de um valor menor.</p>
+        <p><a class="link-arrow" href="/analise-do-cnis">Ver a análise do CNIS {% icon "arrow" %}</a></p>
+      </div>
+    </div>
   </div>
 </section>
 {% endmacro %}

@@ -5,12 +5,12 @@
       <img src="/assets/logo-topo.png" alt="Igor Felix Advogados Associados" width="244" height="64">
     </a>
     <nav class="menu" id="menu" aria-label="Menu principal">
-      {%- for key in ["aposentadoria", "revisao"] %}{% set grp = nav[key] %}
+      {%- for key in ["cnis", "revisao"] %}{% set grp = nav[key] %}
       <div class="menu-group{% if area == key %} current{% endif %}">
         <a class="menu-link" href="{{ grp.url }}">{{ grp.label }}</a>
         <button class="menu-caret" type="button" aria-expanded="false" aria-label="Ver as páginas de {{ grp.label }}">{% icon "chev" %}</button>
         <div class="submenu">
-          <a class="submenu-head" href="{{ grp.url }}">{% if key == "aposentadoria" %}Aposentadoria: visão geral{% else %}Revisão: visão geral{% endif %}</a>
+          <a class="submenu-head" href="{{ grp.url }}">{{ grp.head }}</a>
           {%- for it in grp.items %}
           <a href="{{ it.url }}">{{ it.label }}</a>
           {%- endfor %}

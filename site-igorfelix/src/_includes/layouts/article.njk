@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {%- set catLabel = categories[category] or "Artigo" %}
 {%- set isAposentadoria = (category == "aposentadorias") %}
-{%- set waMsg = "Olá! Li um artigo no blog do site e quero saber se já posso me aposentar." if isAposentadoria else "Olá! Li um artigo no blog do site e quero saber se a minha aposentadoria pode ser revisada." %}
+{%- set waMsg = "Olá! Li um artigo no blog do site e quero conferir o meu CNIS antes de me aposentar." if isAposentadoria else "Olá! Li um artigo no blog do site e quero saber se a minha aposentadoria pode ser revisada." %}
 {%- set headerSolid = true %}
 {%- set area = "" %}
 <title>{{ title }} | Igor Felix Advogados</title>
@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=20261125">
+<link rel="stylesheet" href="/assets/site.css?v=20261125b">
 <link rel="stylesheet" href="/assets/blog.css?v=20261125">
 <script type="application/ld+json">
 {
@@ -93,7 +93,7 @@
       <div class="av">IF</div>
       <div>
         <h4>Dr. Igor Felix</h4>
-        <p>Advogado previdenciário, OAB/SP 321.638. Atua na concessão e na revisão de aposentadorias do INSS, em Pinheiros (SP) e on-line.</p>
+        <p>Advogado previdenciário, OAB/SP 321.638. Atua na análise do CNIS, no pedido e na revisão de aposentadorias do INSS, em Pinheiros (SP) e on-line.</p>
       </div>
     </div>
   </div>
@@ -141,19 +141,19 @@
 <section class="cta-band">
   <div class="container">
     {% if isAposentadoria %}
-    <h2>Quer saber se já pode se aposentar?</h2>
-    <p>Fale com a nossa equipe pelo WhatsApp. Conferimos o CNIS e mostramos quando você pode pedir e quanto vai receber.</p>
+    <h2>Seu CNIS pode estar diminuindo a sua aposentadoria.</h2>
+    <p>Fale com a nossa equipe pelo WhatsApp. Conferimos o CNIS e mostramos o que está errado ou faltando antes do pedido.</p>
     {% else %}
     <h2>A sua aposentadoria pode estar menor?</h2>
     <p>Fale com a nossa equipe pelo WhatsApp. Conferimos a carta de concessão e o CNIS e dizemos se a revisão vale a pena.</p>
     {% endif %}
     <a class="btn btn-gold" href="{{ waMsg | waLink }}" target="_blank" rel="noopener">{% waIcon %}Falar no WhatsApp</a>
-    <p class="cta-links"><a href="{{ '/aposentadoria' if isAposentadoria else '/revisao/aposentadoria' }}">{{ "Ver a área de aposentadoria" if isAposentadoria else "Ver a área de revisão de aposentadoria" }}</a></p>
+    <p class="cta-links"><a href="{{ '/analise-do-cnis' if isAposentadoria else '/revisao/aposentadoria' }}">{{ "Ver a análise do CNIS" if isAposentadoria else "Ver a área de revisão de aposentadoria" }}</a></p>
   </div>
 </section>
 </main>
 
 {% include "layouts/footer.njk" %}
-<script src="/assets/site.js?v=20261125" defer></script>
+<script src="/assets/site.js?v=20261125b" defer></script>
 </body>
 </html>

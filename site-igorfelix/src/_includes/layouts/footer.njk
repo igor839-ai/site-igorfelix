@@ -4,13 +4,13 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="/assets/logo-rodape.png" alt="Igor Felix Advogados Associados" width="210" height="119" loading="lazy">
-        <p>Advocacia previdenciária desde 2013. Concessão e revisão de aposentadoria do INSS, com atendimento em Pinheiros (SP) e on-line.</p>
+        <p>Advocacia previdenciária desde 2013. Análise e correção do CNIS, pedido de aposentadoria e revisão, com atendimento em Pinheiros (SP) e on-line.</p>
         <a class="btn btn-gold btn-sm" href="{{ waMsg | waLink }}" target="_blank" rel="noopener">{% waIcon %}(11) 97169-4420</a>
       </div>
       <div>
-        <h4><a href="{{ nav.aposentadoria.url }}">Aposentadoria</a></h4>
+        <h4><a href="{{ nav.cnis.url }}">Análise do CNIS</a></h4>
         <ul>
-          {%- for it in nav.aposentadoria.items %}
+          {%- for it in nav.cnis.items %}
           <li><a href="{{ it.url }}">{{ it.label }}</a></li>
           {%- endfor %}
         </ul>
