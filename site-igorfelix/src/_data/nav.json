@@ -1,0 +1,26 @@
+{
+  "aposentadoria": {
+    "label": "Aposentadoria",
+    "url": "/aposentadoria",
+    "items": [
+      { "label": "Já posso me aposentar?", "url": "/aposentadoria/ja-posso-me-aposentar", "icon": "calendar", "text": "Conferimos o CNIS e calculamos as regras para dizer quando você pode pedir e quanto vai receber." },
+      { "label": "Aposentadoria negada pelo INSS", "url": "/aposentadoria/negada-pelo-inss", "icon": "docX", "text": "Entenda o motivo do indeferimento e quando cabe recurso, novo pedido ou ação na Justiça Federal." },
+      { "label": "CNIS com erro", "url": "/aposentadoria/cnis-com-erro", "icon": "list", "text": "Vínculo que não aparece, empresa que fechou, contribuição abaixo do mínimo ou como MEI." },
+      { "label": "Aposentadoria por idade", "url": "/aposentadoria/por-idade", "icon": "users", "text": "62 anos (mulher) ou 65 anos (homem) e 15 anos de contribuição. Com orientação para filhos e cônjuges." },
+      { "label": "Aposentadoria especial", "url": "/aposentadoria/especial", "icon": "hat", "text": "Para quem trabalhou exposto a ruído, calor, químicos ou agentes biológicos e tem o PPP." },
+      { "label": "Pessoa com deficiência", "url": "/aposentadoria/pessoa-com-deficiencia", "icon": "access", "text": "Regras da LC 142, com menos tempo de contribuição. Inclui visão monocular e perda auditiva." },
+      { "label": "Planejamento previdenciário", "url": "/aposentadoria/planejamento-previdenciario", "icon": "route", "text": "O cálculo de todas as regras, com a data e o valor estimado de cada uma, para decidir com segurança." }
+    ]
+  },
+  "revisao": {
+    "label": "Revisão",
+    "url": "/revisao/aposentadoria",
+    "items": [
+      { "label": "Tempo especial fora do cálculo", "url": "/revisao/tempo-especial", "icon": "hat", "text": "Trabalhou exposto a agente nocivo, tem PPP ou LTCAT e o INSS contou o período como comum." },
+      { "label": "Atividades concomitantes", "url": "/revisao/atividades-concomitantes", "icon": "layers", "text": "Dois empregos ou duas fontes de contribuição no mesmo período, somados de forma errada." },
+      { "label": "Ação trabalhista", "url": "/revisao/acao-trabalhista", "icon": "scale", "text": "Vínculo, salários ou adicionais reconhecidos na Justiça do Trabalho que não entraram no cálculo." },
+      { "label": "Erro de cálculo", "url": "/revisao/erro-de-calculo", "icon": "calc", "text": "Conferência dos salários, do tempo, da regra e da média usados na carta de concessão." },
+      { "label": "Pessoa com deficiência", "url": "/revisao/pessoa-com-deficiencia", "icon": "access", "text": "Já tinha deficiência e se aposentou pela regra comum? A LC 142 pode valer mais." }
+    ]
+  }
+}

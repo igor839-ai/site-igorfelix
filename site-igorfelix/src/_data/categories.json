@@ -1,7 +1,10 @@
 {
-  "atividade-especial": "Atividade especial",
+  "aposentadorias": "Aposentadoria",
+  "revisoes": "Revisão de aposentadoria",
+  "atividade-especial": "Revisão por atividade especial",
   "pcd": "Pessoa com deficiência (LC 142)",
-  "acao-trabalhista": "Ação trabalhista",
+  "acao-trabalhista": "Revisão por ação trabalhista",
   "concomitantes": "Atividades concomitantes",
-  "calculo-prazos": "Cálculo, prazos e outras revisões"
+  "calculo-prazos": "Cálculo, prazos e outras revisões",
+  "outros": "Outros assuntos"
 }
