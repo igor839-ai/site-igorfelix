@@ -28,11 +28,14 @@ collections:
         name: "category"
         widget: "select"
         options:
-          - { label: "Atividade especial", value: "atividade-especial" }
+          - { label: "Aposentadoria (concessão, CNIS, regras, planejamento)", value: "aposentadorias" }
+          - { label: "Revisão de aposentadoria (geral)", value: "revisoes" }
+          - { label: "Revisão por atividade especial", value: "atividade-especial" }
           - { label: "Pessoa com deficiência (LC 142)", value: "pcd" }
-          - { label: "Ação trabalhista", value: "acao-trabalhista" }
+          - { label: "Revisão por ação trabalhista", value: "acao-trabalhista" }
           - { label: "Atividades concomitantes", value: "concomitantes" }
           - { label: "Cálculo, prazos e outras revisões", value: "calculo-prazos" }
+          - { label: "Outros assuntos", value: "outros" }
       - { label: "Data", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
       - { label: "Imagem de compartilhamento (opcional)", name: "ogimage", widget: "image", required: false }
       - { label: "Texto do artigo", name: "body", widget: "markdown", hint: "Escreva como num editor. Use os títulos para separar as seções." }
