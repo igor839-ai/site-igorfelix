@@ -10,7 +10,9 @@
         <a class="menu-link" href="{{ grp.url }}">{{ grp.label }}</a>
         <button class="menu-caret" type="button" aria-expanded="false" aria-label="Ver as páginas de {{ grp.label }}">{% icon "chev" %}</button>
         <div class="submenu">
+          {%- if grp.head %}
           <a class="submenu-head" href="{{ grp.url }}">{{ grp.head }}</a>
+          {%- endif %}
           {%- for it in grp.items %}
           <a href="{{ it.url }}">{{ it.label }}</a>
           {%- endfor %}

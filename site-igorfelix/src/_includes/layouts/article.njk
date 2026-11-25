@@ -141,14 +141,14 @@
 <section class="cta-band">
   <div class="container">
     {% if isAposentadoria %}
-    <h2>Seu CNIS pode estar diminuindo a sua aposentadoria.</h2>
+    <h2>Análise do seu CNIS para a concessão da melhor aposentadoria.</h2>
     <p>Fale com a nossa equipe pelo WhatsApp. Conferimos o CNIS e mostramos o que está errado ou faltando antes do pedido.</p>
     {% else %}
     <h2>A sua aposentadoria pode estar menor?</h2>
     <p>Fale com a nossa equipe pelo WhatsApp. Conferimos a carta de concessão e o CNIS e dizemos se a revisão vale a pena.</p>
     {% endif %}
     <a class="btn btn-gold" href="{{ waMsg | waLink }}" target="_blank" rel="noopener">{% waIcon %}Falar no WhatsApp</a>
-    <p class="cta-links"><a href="{{ '/analise-do-cnis' if isAposentadoria else '/revisao/aposentadoria' }}">{{ "Ver a análise do CNIS" if isAposentadoria else "Ver a área de revisão de aposentadoria" }}</a></p>
+    <p class="cta-links"><a href="{{ '/#analise' if isAposentadoria else '/revisao/aposentadoria' }}">{{ "Ver a análise do CNIS" if isAposentadoria else "Ver a área de revisão de aposentadoria" }}</a></p>
   </div>
 </section>
 </main>
