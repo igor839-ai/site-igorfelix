@@ -173,4 +173,102 @@
     });
     render();
   }
+
+  // Checagem de sinais de risco do CNIS (envia checagem_inicio e checagem_conclusao ao dataLayer)
+  var C = window.CHECK;
+  var cCard = document.getElementById('chkCard');
+  if (C && cCard) {
+    var byId = function (id) { return document.getElementById(id); };
+    var cQ = byId('chkQ'), cStep = byId('chkStep'), cHint = byId('chkHint'), cOpts = byId('chkOpts');
+    var cNext = byId('chkNext'), cBack = byId('chkBack'), cBody = byId('chkBody'), cRes = byId('chkResult');
+    var cProgWrap = byId('chkProgress');
+    var cs = 0, ca = [], sel = [], started = false;
+    window.dataLayer = window.dataLayer || [];
+    cProgWrap.innerHTML = '';
+    C.questions.forEach(function () { cProgWrap.appendChild(document.createElement('span')); });
+    var cProg = cProgWrap.querySelectorAll('span');
+
+    function markSel() {
+      cOpts.querySelectorAll('button').forEach(function (b, j) { b.setAttribute('aria-pressed', sel.indexOf(j) > -1 ? 'true' : 'false'); });
+      cNext.disabled = sel.length === 0;
+    }
+    function cRender() {
+      var item = C.questions[cs];
+      cStep.textContent = 'Pergunta ' + (cs + 1) + ' de ' + C.questions.length;
+      cQ.textContent = item.q;
+      cHint.textContent = item.hint || '';
+      cHint.hidden = !item.hint;
+      cOpts.innerHTML = '';
+      cOpts.classList.toggle('multi', !!item.multi);
+      sel = item.multi && Array.isArray(ca[cs]) ? ca[cs].slice() : [];
+      item.opts.forEach(function (o, i) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.appendChild(document.createTextNode(o.t));
+        if (o.d) { var sm = document.createElement('small'); sm.textContent = o.d; b.appendChild(sm); }
+        b.addEventListener('click', function () { if (item.multi) toggle(i); else cAnswer(i); });
+        cOpts.appendChild(b);
+      });
+      cNext.hidden = !item.multi;
+      if (item.multi) markSel();
+      cProg.forEach(function (p, i) { p.classList.toggle('done', i < cs); });
+      cBack.style.display = cs > 0 ? 'inline-block' : 'none';
+    }
+    function toggle(i) {
+      var item = C.questions[cs], last = item.opts.length - 1, k = sel.indexOf(i);
+      if (k > -1) sel.splice(k, 1);
+      else if (item.none && i === last) sel = [i];
+      else {
+        sel.push(i);
+        var n = sel.indexOf(last);
+        if (item.none && n > -1) sel.splice(n, 1);
+      }
+      markSel();
+    }
+    function begin() {
+      if (!started) { started = true; window.dataLayer.push({ event: 'checagem_inicio' }); }
+    }
+    function advance() {
+      cs++;
+      if (cs < C.questions.length) cRender(); else cFinish();
+    }
+    function cAnswer(i) { begin(); ca[cs] = i; advance(); }
+    cNext.addEventListener('click', function () {
+      if (!sel.length) return;
+      begin();
+      ca[cs] = sel.slice().sort(function (x, y) { return x - y; });
+      advance();
+    });
+    function cFinish() {
+      cProg.forEach(function (p) { p.classList.add('done'); });
+      cBody.style.display = 'none';
+      var r = C.result(ca);
+      byId('chkTitle').textContent = r.title;
+      byId('chkText').textContent = r.text;
+      var link = byId('chkLink');
+      if (r.link) { link.href = r.link.href; link.textContent = r.link.label; link.style.display = 'block'; }
+      else { link.style.display = 'none'; }
+      var btn = byId('chkBtn');
+      btn.href = 'https://wa.me/5511971694420?text=' + encodeURIComponent(r.wa || C.summary(ca));
+      byId('chkBtnTxt').textContent = r.btn || 'Enviar minhas respostas pelo WhatsApp';
+      btn.classList.toggle('btn-outline', !!r.quiet);
+      btn.classList.toggle('btn-gold', !r.quiet);
+      cRes.classList.add('show');
+      var ev = { event: 'checagem_conclusao' }, extra = C.track ? C.track(ca) : {};
+      for (var key in extra) { if (Object.prototype.hasOwnProperty.call(extra, key)) ev[key] = extra[key]; }
+      window.dataLayer.push(ev);
+      var top = cCard.getBoundingClientRect().top;
+      if (top < 0 || top > window.innerHeight * 0.6) cCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    cBack.addEventListener('click', function () {
+      if (cs > 0) { cs--; ca.length = cs + 1; cRender(); }
+    });
+    byId('chkRestart').addEventListener('click', function () {
+      cs = 0; ca = [];
+      cRes.classList.remove('show');
+      cBody.style.display = 'block';
+      cRender();
+    });
+    cRender();
+  }
 })();
