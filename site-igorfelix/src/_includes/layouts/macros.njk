@@ -272,19 +272,18 @@
 
 {% macro jornada() %}
 {{ steps([
-  { icon: "search", t: "Checagem de sinais de risco", d: "Em 2 minutos, no site ou no WhatsApp, você responde a algumas perguntas e descobre se o CNIS tem sinais de problema. A checagem não analisa o documento, só indica o risco." },
-  { icon: "docCheck", t: "Diagnóstico do CNIS", d: "Lemos o CNIS e os documentos e entregamos um relatório com os problemas encontrados, quanto cada um pode mudar o tempo e o valor da aposentadoria e a data provável do direito." },
-  { icon: "refresh", t: "Correção do CNIS", d: "Fazemos o acerto de vínculos, a inclusão de tempo especial, de deficiência, de CTC, de trabalho rural ou militar e a complementação de contribuições." },
+  { icon: "search", t: "Checagem de sinais de erro", d: "Em 2 minutos, no site ou no WhatsApp, você responde a algumas perguntas e descobre se o CNIS tem sinais de erro." },
+  { icon: "docCheck", t: "Diagnóstico do CNIS", d: "Analisamos o CNIS e os documentos e diagnosticamos os problemas que podem mudar o tempo e o valor da aposentadoria e a data provável do direito." },
+  { icon: "refresh", t: "Correção do CNIS", d: "Com o diagnóstico feito, fazemos o acerto dos vínculos, a inclusão de tempo especial, de deficiência, de CTC, de trabalho rural ou militar e a complementação de contribuições." },
   { icon: "calendar", t: "Pedido da aposentadoria", d: "Fazemos o requerimento no INSS no melhor momento e pela regra mais vantajosa." },
   { icon: "scale", t: "Recurso ou ação judicial", d: "Se o INSS negar, recorremos ou entramos com ação na Justiça Federal." }
 ]) }}
-<p class="motto reveal"><b>Corrija antes de pedir.</b> Pedido com CNIS errado pode sair negado ou com valor menor.</p>
 {% endmacro %}
 
 {% macro checagem(d) %}
 <section class="section quiz-sec" id="checagem">
   <div class="container center">
-    {{ head(d.eyebrow or "Checagem de sinais de risco", d.h2, d.p) }}
+    {{ head(d.eyebrow or "Checagem do CNIS", d.h2, d.p) }}
     <div class="quiz-card reveal" id="chkCard">
       <div class="quiz-progress" id="chkProgress"></div>
       <div id="chkBody">
@@ -303,7 +302,7 @@
         <a class="btn btn-gold" id="chkBtn" href="{{ d.wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}<span id="chkBtnTxt">Enviar minhas respostas pelo WhatsApp</span></a>
         <br><button class="quiz-restart" id="chkRestart" type="button">Refazer a checagem</button>
       </div>
-      <p class="quiz-disclaimer">A checagem indica sinais de risco e não substitui a leitura do CNIS e dos documentos.</p>
+      <p class="quiz-disclaimer">A checagem indica sinais de erro e não substitui a análise do CNIS e dos documentos.</p>
     </div>
   </div>
 </section>
@@ -315,7 +314,7 @@
     <div class="check-cta reveal">
       <div>
         <span class="eyebrow">Checagem do CNIS</span>
-        <h2>{{ h or "Veja em 2 minutos se o seu CNIS tem sinais de risco." }}</h2>
+        <h2>{{ h or "Veja em 2 minutos se o seu CNIS tem sinais de erro." }}</h2>
         <p>{{ p or "São seis perguntas rápidas. No fim, você envia as respostas pelo WhatsApp e a nossa equipe indica o próximo passo." }}</p>
       </div>
       <div class="check-cta-actions">
@@ -334,7 +333,7 @@
       <div class="n-ic">{% icon "list" %}</div>
       <div>
         <h3>Ainda não se aposentou? Corrija o CNIS antes.</h3>
-        <p>A revisão é para quem já recebe a aposentadoria. Quem ainda vai pedir pode conferir e corrigir o CNIS antes do pedido, o que reduz o risco de negativa ou de um valor menor.</p>
+        <p>A revisão é para quem já recebe a aposentadoria. Quem ainda vai pedir pode conferir e corrigir o CNIS antes do pedido e reduzir o risco de negativa ou de um valor menor.</p>
         <p><a class="link-arrow" href="/#analise">Ver a análise do CNIS {% icon "arrow" %}</a></p>
       </div>
     </div>
