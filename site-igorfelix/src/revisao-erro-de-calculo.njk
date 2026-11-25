@@ -26,7 +26,7 @@ faq:
   - q: "E se não houver erro?"
     a: "Dizemos isso com clareza. Se a conferência mostrar que o cálculo está certo, você fica sabendo e não gasta com um pedido sem fundamento."
   - q: "Quanto custa a análise?"
-    a: "A análise inicial é feita sem compromisso. Se houver viabilidade, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+    a: "Depende de cada caso. O valor é informado no atendimento, por escrito, antes de qualquer contratação."
 ---
 {% import "layouts/macros.njk" as m %}
 {% set heroData = {
@@ -98,6 +98,8 @@ faq:
 {{ m.aval() }}
 
 {{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário, na concessão e na revisão de aposentadorias do INSS. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
+
+{{ m.cnisBand() }}
 
 {{ m.faqSection(faq, "Dúvidas sobre erro de cálculo.", "bg-band-end") }}
 

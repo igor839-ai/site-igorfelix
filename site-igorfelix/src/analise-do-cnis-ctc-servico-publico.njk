@@ -1,0 +1,114 @@
+---
+layout: layouts/base.njk
+permalink: /analise-do-cnis/ctc-servico-publico.html
+title: "Tempo de serviço público no INSS: CTC na aposentadoria"
+titleFull: "Tempo de serviço público no INSS: CTC na aposentadoria"
+description: "Trabalhou em prefeitura, estado ou outro órgão público? Veja como o tempo de serviço público entra na aposentadoria do INSS pela certidão de tempo de contribuição (CTC)."
+wa: "Olá! Vim pela página de CTC. Trabalhei em órgão público e quero levar esse tempo para a minha aposentadoria do INSS."
+area: cnis
+crumbs:
+  - name: "Análise do CNIS"
+    url: "/analise-do-cnis"
+  - name: "Servidor e CTC"
+sitemap:
+  priority: 0.8
+  changefreq: monthly
+faq:
+  - q: "O que é a CTC?"
+    a: "É a certidão de tempo de contribuição, emitida pelo órgão público para comprovar o tempo e as contribuições feitas ao regime próprio de previdência. Com ela, esse tempo pode ser usado na aposentadoria do INSS."
+  - q: "Quem trabalhou em prefeitura sempre precisa de CTC?"
+    a: "Só quando a prefeitura tinha regime próprio de previdência no período. Se não tinha, as contribuições foram para o INSS e o tempo deve aparecer no CNIS."
+  - q: "Posso usar o mesmo período duas vezes?"
+    a: "Um mesmo período não pode ser contado duas vezes, e o tempo já usado em uma aposentadoria do regime próprio não pode ser usado de novo no INSS."
+  - q: "Vocês cuidam da aposentadoria pelo regime próprio do servidor?"
+    a: "O escritório atua na aposentadoria do INSS. Esta página trata de quem vai levar o tempo de serviço público para a aposentadoria do INSS."
+  - q: "Quanto custa?"
+    a: "Depende de cada caso. O valor é informado no atendimento, por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "Servidor e CTC · Análise do CNIS",
+  h1: "Trabalhou em órgão público? <em>Esse tempo pode contar na aposentadoria do INSS.</em>",
+  lead: "O tempo em prefeitura, estado ou outro órgão com regime próprio de previdência não aparece no CNIS. Ele entra na aposentadoria do INSS pela certidão de tempo de contribuição (CTC), emitida pelo órgão.",
+  cta: "Conferir o meu tempo público",
+  cta2: { label: "Fazer a checagem", href: "/analise-do-cnis#checagem" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  kicker: "Extrato previdenciário", title: "CNIS",
+  who: "Relações previdenciárias",
+  rows: [
+    { k: "Comércio, 1985 a 1992", v: "OK", s: "ok" },
+    { k: "Prefeitura (regime próprio), 1993 a 2003", v: "NÃO CONSTA", s: "no" },
+    { k: "Certidão de tempo de contribuição", v: "NÃO APRESENTADA", s: "warn" },
+    { k: "Indústria, 2004 a 2026", v: "OK", s: "ok" }
+  ],
+  caption: "Exemplo ilustrativo. O tempo público entra pela CTC."
+}) }}
+{% endcall %}
+
+<section class="section bg-white" id="problema">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">O problema</span>
+      <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">Sem a certidão, os anos de serviço público ficam fora da conta.</h2>
+      <div class="prose-block">
+        <p>Quando o órgão tem regime próprio de previdência, as contribuições vão para esse regime e o período não aparece no CNIS. Para usar esse tempo na aposentadoria do INSS, é preciso a certidão de tempo de contribuição, emitida pelo órgão onde você trabalhou.</p>
+        <p>A certidão precisa estar completa e correta, com os períodos e as remunerações. Um mesmo período não pode ser contado duas vezes, e o tempo já usado em uma aposentadoria do regime próprio não volta a contar no INSS.</p>
+      </div>
+    </div>
+    <div class="panel navy reveal d1">
+      <h3>Como a CTC muda a aposentadoria</h3>
+      <ul>
+        <li>{% icon "check" %}Sem a CTC, os anos de serviço público ficam fora do tempo de contribuição</li>
+        <li>{% icon "check" %}Períodos simultâneos no órgão e em empresa privada não somam duas vezes</li>
+        <li>{% icon "check" %}Remunerações que faltam na certidão podem mudar o valor da aposentadoria</li>
+        <li>{% icon "check" %}Tempo já usado em aposentadoria do regime próprio não volta a contar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-band" id="sinais">
+  <div class="container">
+    {{ m.head("Sinais de que é o seu caso", "Quando vale conferir o tempo de serviço público.") }}
+    {{ m.checks([
+      { t: "Trabalhou em prefeitura, estado ou órgão federal", d: "Em cargo vinculado a regime próprio de previdência." },
+      { t: "O período não aparece no CNIS", d: "Sinal de que as contribuições foram para o regime próprio e o tempo depende da certidão." },
+      { t: "Já tem a CTC, mas não conferiu", d: "A certidão pode ter períodos, cargos ou remunerações faltando." },
+      { t: "Trabalhou ao mesmo tempo no órgão e em empresa", d: "Os períodos simultâneos têm regras próprias e não somam duas vezes." },
+      { t: "Pediu exoneração ou mudou de emprego", d: "O tempo público pode ser levado para o INSS, desde que não tenha sido usado em outra aposentadoria." },
+      { t: "O simulador mostra menos tempo", d: "O Meu INSS não conta o tempo do regime próprio enquanto a certidão não é averbada." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-white" id="o-que-fazemos">
+  <div class="container">
+    {{ m.head("O que fazemos", "Como o escritório trata o tempo de serviço público.") }}
+    {{ m.steps([
+      { icon: "search", t: "Identificamos o tempo público", d: "Conferimos o CNIS, as carteiras e os atos de nomeação e de exoneração." },
+      { icon: "docCheck", t: "Conferimos a CTC", d: "Verificamos períodos, cargos, remunerações e se há tempo simultâneo." },
+      { icon: "calc", t: "Calculamos o impacto", d: "Mostramos quanto o tempo público muda a data e o valor da aposentadoria do INSS." },
+      { icon: "building", t: "Pedimos a certidão ou a correção", d: "Tratamos com o órgão a emissão ou a correção da CTC e incluímos o tempo no pedido ao INSS." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-band" id="documentos">
+  <div class="container">
+    {{ m.head("O que enviar", "Os documentos do tempo de serviço público.", "Comece pelo CNIS completo. O restante, envie o que tiver.") }}
+    {{ m.docs([
+      { icon: "list", t: "CNIS completo", d: "O extrato com vínculos e remunerações. No Meu INSS, em Extrato de Contribuição (CNIS)." },
+      { icon: "building", t: "CTC", d: "A certidão de tempo de contribuição emitida pelo órgão.", opt: "Se houver" },
+      { icon: "doc", t: "Nomeação e exoneração", d: "Portarias, termos de posse e de exoneração ou declaração do órgão.", opt: "Se houver" },
+      { icon: "briefcase", t: "Carteiras de trabalho", d: "Fotos de todas as páginas, para os períodos fora do serviço público." }
+    ]) }}
+  </div>
+</section>
+
+{{ m.checkCta(wa) }}
+
+{{ m.faqSection(faq, "Dúvidas sobre o tempo de serviço público.", "bg-band-end") }}
+
+{{ m.cta("Servidor e CTC", "Trabalhou em órgão público? <em>Esse tempo pode fazer falta na sua conta.</em>", "Envie o CNIS e, se tiver, a CTC. Mostramos quanto o tempo público muda a data e o valor da aposentadoria.", wa, "Enviar o CNIS pelo WhatsApp") }}

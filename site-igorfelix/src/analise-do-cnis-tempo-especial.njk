@@ -1,0 +1,116 @@
+---
+layout: layouts/base.njk
+permalink: /analise-do-cnis/tempo-especial.html
+title: "Tempo especial no CNIS: PPP, insalubridade e aposentadoria especial"
+titleFull: "Tempo especial no CNIS: PPP, insalubridade e aposentadoria especial"
+description: "Trabalhou em hospital, indústria, com ruído, produtos químicos ou eletricidade? Veja como o tempo especial que falta no CNIS muda a data e o valor da aposentadoria."
+wa: "Olá! Vim pela página de tempo especial. Trabalhei exposto a agente nocivo e quero conferir o meu CNIS antes de me aposentar."
+area: cnis
+crumbs:
+  - name: "Análise do CNIS"
+    url: "/analise-do-cnis"
+  - name: "Tempo especial"
+sitemap:
+  priority: 0.85
+  changefreq: monthly
+faq:
+  - q: "O que é tempo especial?"
+    a: "É o período trabalhado com exposição a agentes nocivos à saúde, como ruído, calor, produtos químicos e agentes biológicos, ou a riscos como a eletricidade. A lei permite contar esse tempo de forma diferenciada."
+  - q: "O tempo especial ainda pode ser convertido em comum?"
+    a: "O tempo especial trabalhado até 13/11/2019 pode ser convertido. Nas atividades de 25 anos, cada ano especial vale 1,4 ano para o homem e 1,2 ano para a mulher. O trabalho especial posterior a essa data conta para a aposentadoria especial, sem conversão."
+  - q: "Quais são as regras da aposentadoria especial?"
+    a: "Na maioria das atividades, são 25 anos de trabalho especial. Quem completou os 25 anos até 13/11/2019 tem direito adquirido às regras anteriores. Depois dessa data, a regra de transição exige também 86 pontos, somando a idade e o tempo de contribuição."
+  - q: "A empresa não me deu o PPP. O que acontece?"
+    a: "Sem o PPP, o INSS conta o período como tempo comum. O PPP é obrigação da empresa e pode ser pedido mesmo depois do fim do contrato."
+  - q: "Quanto custa?"
+    a: "Depende de cada caso. O valor é informado no atendimento, por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "Tempo especial · Análise do CNIS",
+  h1: "Tempo especial fora do CNIS <em>atrasa e diminui a aposentadoria.</em>",
+  lead: "Quem trabalhou exposto a ruído, calor, produtos químicos, agentes biológicos ou eletricidade pode contar esse tempo de forma diferenciada. Sem o PPP certo, o período entra no CNIS como tempo comum.",
+  cta: "Conferir o meu tempo especial",
+  cta2: { label: "Fazer a checagem", href: "/analise-do-cnis#checagem" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  kicker: "Extrato previdenciário", title: "CNIS",
+  who: "Exemplo: homem, 58 anos<br>32 anos de contribuição",
+  rows: [
+    { k: "Metalúrgica, 1988 a 1997, ruído", v: "CONTADO COMO COMUM", s: "no" },
+    { k: "Hospital, 1998 a 2010, agentes biológicos", v: "PPP INCOMPLETO", s: "warn" },
+    { k: "Conversão do tempo até 13/11/2019", v: "NÃO APLICADA", s: "no" }
+  ],
+  foot: "Com a conversão, cada 10 anos de tempo especial de um homem passam a contar como <b>14 anos</b>.",
+  caption: "Exemplo ilustrativo. O resultado depende do PPP e dos demais documentos."
+}) }}
+{% endcall %}
+
+<section class="section bg-white" id="problema">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">O problema</span>
+      <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">O INSS só reconhece o tempo especial com prova da exposição.</h2>
+      <div class="prose-block">
+        <p>Até 28/04/1995, algumas profissões eram enquadradas pela própria atividade, como a de motorista de caminhão ou de ônibus e a de vigilante. Depois dessa data, a prova é o PPP, preenchido pela empresa com base no laudo técnico (LTCAT).</p>
+        <p>Quando o PPP falta, está incompleto ou traz informação errada, o período entra no CNIS como tempo comum. A diferença some da conta, e o simulador do Meu INSS não avisa.</p>
+      </div>
+    </div>
+    <div class="panel navy reveal d1">
+      <h3>Como o tempo especial muda a aposentadoria</h3>
+      <ul>
+        <li>{% icon "check" %}Nas atividades de 25 anos, cada ano especial trabalhado até 13/11/2019 vale 1,4 ano para o homem e 1,2 ano para a mulher</li>
+        <li>{% icon "check" %}Com 25 anos de atividade especial, pode haver direito à aposentadoria especial, com regras próprias</li>
+        <li>{% icon "check" %}Mais tempo de contribuição antecipa a data do direito e aumenta o percentual do benefício</li>
+        <li>{% icon "check" %}Sem o tempo especial, a pessoa pode precisar trabalhar anos a mais pela regra comum</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-band" id="sinais">
+  <div class="container">
+    {{ m.head("Sinais de que é o seu caso", "Quando vale conferir o tempo especial no CNIS.") }}
+    {{ m.checks([
+      { t: "Trabalhou em hospital, clínica ou laboratório", d: "Contato com agentes biológicos, como pacientes com doenças infectocontagiosas e materiais contaminados." },
+      { t: "Trabalhou em indústria com ruído alto", d: "Metalúrgicas, tecelagens, gráficas e fábricas em geral, com ruído acima do limite da época." },
+      { t: "Lidou com produtos químicos", d: "Solventes, óleos minerais, tintas, combustíveis e outros agentes químicos." },
+      { t: "Trabalhou com eletricidade", d: "Instalações e redes elétricas com tensão acima de 250 volts." },
+      { t: "Foi motorista ou vigilante até 1995", d: "Até 28/04/1995, essas atividades eram enquadradas como especiais pela própria profissão." },
+      { t: "O PPP não foi entregue ou tem erros", d: "A empresa não forneceu o PPP, ou ele não informa o agente nocivo, a intensidade ou o responsável técnico." },
+      { t: "A empresa fechou", d: "Sem a empresa, a prova da exposição precisa ser buscada em outros documentos." },
+      { t: "O simulador não mostra a conversão", d: "O Meu INSS conta o período como comum quando o CNIS não tem o registro do tempo especial." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-white" id="o-que-fazemos">
+  <div class="container">
+    {{ m.head("O que fazemos", "Como o escritório trata o tempo especial.") }}
+    {{ m.steps([
+      { icon: "search", t: "Lemos o CNIS e os documentos", d: "Identificamos os períodos com exposição a agente nocivo e os que estão sem PPP ou com PPP errado." },
+      { icon: "calc", t: "Calculamos o impacto", d: "Mostramos quanto o tempo especial muda a data do direito e o valor da aposentadoria." },
+      { icon: "layers", t: "Reunimos as provas", d: "Conferimos o PPP e o laudo e buscamos as provas que faltam para cada período." },
+      { icon: "scale", t: "Pedimos o reconhecimento", d: "No INSS, junto com o pedido da aposentadoria, ou na Justiça Federal, quando o INSS não aceita a prova." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-band" id="documentos">
+  <div class="container">
+    {{ m.head("O que enviar", "Os documentos do tempo especial.", "Comece pelo CNIS completo. O restante, envie o que tiver.") }}
+    {{ m.docs([
+      { icon: "list", t: "CNIS completo", d: "O extrato com vínculos e remunerações. No Meu INSS, em Extrato de Contribuição (CNIS)." },
+      { icon: "briefcase", t: "Carteiras de trabalho", d: "Fotos de todas as páginas, com a função exercida em cada empresa." },
+      { icon: "hat", t: "PPP", d: "O Perfil Profissiográfico Previdenciário de cada empresa onde houve exposição.", opt: "Se houver" },
+      { icon: "doc", t: "Laudos da empresa", d: "LTCAT ou outros laudos técnicos do ambiente de trabalho.", opt: "Se houver" }
+    ]) }}
+  </div>
+</section>
+
+{{ m.checkCta(wa) }}
+
+{{ m.faqSection(faq, "Dúvidas sobre tempo especial.", "bg-band-end") }}
+
+{{ m.cta("Tempo especial", "Trabalhou exposto a agente nocivo? <em>Esse tempo precisa estar no seu CNIS.</em>", "Envie o CNIS e, se tiver, o PPP. Mostramos quanto o tempo especial muda a data e o valor da aposentadoria.", wa, "Enviar o CNIS e o PPP pelo WhatsApp") }}

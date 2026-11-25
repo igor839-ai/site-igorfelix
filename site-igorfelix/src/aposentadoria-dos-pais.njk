@@ -1,0 +1,111 @@
+---
+layout: layouts/base.njk
+permalink: /aposentadoria-dos-pais.html
+title: "Aposentadoria dos pais: como ajudar o pai ou a mãe a se aposentar"
+titleFull: "Aposentadoria dos pais: como ajudar o pai ou a mãe a se aposentar"
+description: "Está ajudando o pai, a mãe ou o cônjuge a se aposentar? Veja o que pedir, como acessar o Meu INSS com autorização e como o escritório atende a família."
+wa: "Olá! Vim pela página para a família e quero ajudar meu pai, minha mãe ou meu cônjuge a se aposentar."
+area: cnis
+crumbs:
+  - name: "Análise do CNIS"
+    url: "/analise-do-cnis"
+  - name: "Para a família"
+sitemap:
+  priority: 0.8
+  changefreq: monthly
+faq:
+  - q: "Posso cuidar da aposentadoria do meu pai ou da minha mãe?"
+    a: "Pode conduzir a conversa, reunir os documentos e acompanhar o caso. A pessoa que vai se aposentar precisa autorizar o atendimento e assinar a procuração."
+  - q: "Meu pai não se dá bem com o celular. Como ele assina?"
+    a: "A assinatura é feita pelo celular, com a ajuda de quem estiver com ele. Se preferir, ela pode ser feita no escritório, em Pinheiros, com horário marcado."
+  - q: "Minha mãe não tem conta no gov.br. Dá para seguir?"
+    a: "Dá. Orientamos como criar ou recuperar o acesso e indicamos as alternativas quando a conta não funciona."
+  - q: "Moro em outra cidade. Vocês atendem?"
+    a: "Atendemos on-line, com os documentos enviados pelo WhatsApp e o acompanhamento à distância."
+  - q: "Quanto custa?"
+    a: "Depende de cada caso. O valor é informado no atendimento, por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "Para a família · Análise do CNIS",
+  h1: "Está ajudando o seu pai ou a sua mãe <em>a se aposentar?</em>",
+  lead: "Muitas vezes quem nos procura é um filho, uma filha ou o cônjuge. Você conduz a conversa e reúne os documentos. A pessoa que vai se aposentar autoriza o atendimento e assina a procuração, o que pode ser feito pelo celular.",
+  cta: "Quero ajudar a minha família",
+  cta2: { label: "Fazer a checagem por ela", href: "/analise-do-cnis#checagem" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  head: "Igor Felix Advogados Associados",
+  kicker: "Primeiro atendimento", title: "Família",
+  who: "Para quem ajuda o pai, a mãe ou o cônjuge",
+  rows: [
+    { k: "Autorização de quem vai se aposentar", v: "PRIMEIRO PASSO", s: "ok" },
+    { k: "CNIS completo", v: "MEU INSS", s: "info" },
+    { k: "Carteiras de trabalho", v: "FOTOS", s: "info" },
+    { k: "Procuração", v: "PELO CELULAR", s: "ok" }
+  ],
+  caption: "O que costuma ser pedido no primeiro atendimento."
+}) }}
+{% endcall %}
+
+<section class="section bg-white" id="o-que-pedir">
+  <div class="container split top">
+    <div class="reveal">
+      <span class="eyebrow">O que pedir</span>
+      <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">Comece pela conversa com quem vai se aposentar.</h2>
+      <div class="prose-block">
+        <p>Explique que vai procurar um advogado e peça autorização para usar os dados e os documentos dela. Combine também quem vai falar com o escritório no dia a dia.</p>
+        <p>Com a autorização, junte os documentos de trabalho da vida inteira. Carteiras antigas, carnês e papéis guardados costumam provar períodos que não aparecem no CNIS.</p>
+      </div>
+    </div>
+    <div class="panel reveal d1">
+      <h3>O que separar</h3>
+      <ul>
+        <li>{% icon "check" %}CNIS completo, que sai no Meu INSS</li>
+        <li>{% icon "check" %}Fotos de todas as páginas das carteiras de trabalho</li>
+        <li>{% icon "check" %}Carnês ou guias de contribuição, se houver</li>
+        <li>{% icon "check" %}PPP de trabalho insalubre ou perigoso, se houver</li>
+        <li>{% icon "check" %}RG e CPF de quem vai se aposentar</li>
+        <li>{% icon "check" %}Carta do INSS, se já houve pedido</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-band" id="meu-inss">
+  <div class="container">
+    <div class="notice reveal">
+      <div class="n-ic">{% icon "phone" %}</div>
+      <div>
+        <h3>Meu INSS com autorização</h3>
+        <p>O CNIS e os documentos ficam no Meu INSS, acessado com a conta gov.br da própria pessoa. Com a autorização dela, vocês podem acessar juntos, pelo celular dela.</p>
+        <p>Se ela não tem a conta ou não consegue entrar, orientamos as alternativas pelo WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-white" id="como-atendemos">
+  <div class="container">
+    {{ m.head("Como atendemos a família", "Você conversa com a nossa equipe. Quem vai se aposentar participa quando precisa decidir.") }}
+    {{ m.steps([
+      { icon: "chat", t: "Você chama no WhatsApp", d: "Conte a idade, o tempo de trabalho e o que já foi feito no INSS." },
+      { icon: "search", t: "Fazemos a checagem", d: "Com as respostas, indicamos se o CNIS tem sinais de risco e quais documentos faltam." },
+      { icon: "docCheck", t: "A pessoa autoriza e assina", d: "A procuração é assinada pelo celular ou, se preferir, no escritório." },
+      { icon: "users", t: "Vocês acompanham juntos", d: "As atualizações chegam pelo WhatsApp, e a pessoa participa das decisões." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-band" id="sinais">
+  <div class="container">
+    {{ m.head("Sinais de risco", "O que observar na vida profissional dela.", "Se um destes aconteceu, vale conferir o CNIS antes de pedir a aposentadoria.") }}
+    {{ m.sinais(sinais, true) }}
+  </div>
+</section>
+
+{{ m.checkCta(wa, "Faça a checagem do CNIS pelo seu pai ou pela sua mãe.", "São seis perguntas rápidas. Você responde por ela e envia as respostas pelo WhatsApp no fim.") }}
+
+{{ m.faqSection(faq, "Dúvidas de quem ajuda um familiar a se aposentar.", "bg-band-end") }}
+
+{{ m.cta("Para a família", "Está ajudando um familiar a se aposentar? <em>Comece pelo CNIS.</em>", "Pelo WhatsApp, você fala com a nossa equipe e envia os documentos quando puder.", wa, "Quero ajudar a minha família") }}

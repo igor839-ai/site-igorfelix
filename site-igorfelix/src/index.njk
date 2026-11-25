@@ -1,89 +1,74 @@
 ---
 layout: layouts/base.njk
 permalink: /index.html
-title: "Advogado de aposentadoria do INSS em São Paulo"
-titleFull: "Advogado de Aposentadoria do INSS em SP | Igor Felix Advogados"
-description: "Saiba se já pode se aposentar, quanto vai receber e o que fazer se o INSS negou o pedido. Escritório em Pinheiros (SP), com atendimento on-line. Nota 4,9."
-ogTitle: "Igor Felix Advogados | Aposentadoria do INSS"
-ogDescription: "Quando você pode se aposentar, quanto vai receber e o que fazer se o INSS negou o pedido. Concessão e revisão de aposentadoria, em Pinheiros (SP) e on-line."
-wa: "Olá! Vim pelo site e quero saber se já posso me aposentar."
+title: "Análise do CNIS e aposentadoria do INSS em São Paulo"
+titleFull: "Análise do CNIS e Aposentadoria do INSS em SP | Igor Felix Advogados"
+description: "Seu CNIS pode estar diminuindo a sua aposentadoria. Descubra o que está errado ou faltando, quanto isso muda o benefício e corrija antes de pedir ao INSS."
+ogTitle: "Seu CNIS pode estar diminuindo a sua aposentadoria"
+ogDescription: "Descubra o que está errado ou faltando no seu CNIS, quanto isso muda o benefício e corrija antes de pedir ao INSS. Pinheiros (SP) e on-line."
+wa: "Olá! Vim pelo site e quero conferir o meu CNIS antes de pedir a aposentadoria."
 legalService: true
 sitemap:
   priority: 1.0
   changefreq: monthly
 faq:
-  - q: "Como sei se já posso me aposentar?"
-    a: "Somando a sua idade ao tempo de contribuição conferido no CNIS e comparando o resultado com cada regra do INSS. Quem já contribuía antes da Reforma da Previdência (13/11/2019) pode usar várias regras de transição, e cada uma tem exigências e valores diferentes. Na análise, mostramos em quais você se encaixa e a partir de quando."
+  - q: "O que é o CNIS?"
+    a: "É o Cadastro Nacional de Informações Sociais, o extrato do INSS com os seus vínculos de trabalho, salários e contribuições. O INSS usa esse extrato para contar o tempo e calcular a aposentadoria."
   - q: "O simulador do Meu INSS não basta?"
-    a: "Ele ajuda, mas calcula só com o que está no CNIS. Vínculos que não aparecem, salários abaixo do mínimo e tempo especial ficam de fora ou entram errado. Por isso a data e o valor do simulador podem não ser os do seu caso."
+    a: "O simulador conta só o que está certo no CNIS. Vínculos com pendência, contribuições abaixo do mínimo, tempo especial e deficiência ficam de fora ou entram errado, e a data e o valor mudam."
+  - q: "Por que corrigir o CNIS antes de pedir a aposentadoria?"
+    a: "O INSS decide o pedido com o CNIS que estiver no sistema. Pedido com CNIS errado pode sair negado ou com valor menor, e a correção depois do pedido costuma ser mais lenta."
   - q: "O INSS negou a minha aposentadoria. O que faço?"
-    a: "Leia o motivo na carta de indeferimento e fique atento ao prazo. Dá para recorrer em até 30 dias, fazer um novo pedido com mais provas ou entrar com ação na Justiça Federal. A melhor opção depende do motivo da negativa, e é por ele que a análise começa."
-  - q: "Quais documentos preciso para a análise?"
-    a: "Para começar, o CNIS (extrato previdenciário), que sai no aplicativo ou no site Meu INSS. Se o pedido foi negado, a carta de indeferimento. Carteiras de trabalho, carnês, PPP e laudos ajudam e podem ser enviados depois."
+    a: "Leia o motivo na carta de indeferimento e fique atento ao prazo. Dá para recorrer em até 30 dias, fazer um novo pedido com mais provas ou entrar com ação na Justiça Federal. O caminho depende do motivo da negativa. Veja a página sobre <a href=\"/aposentadoria-negada\">aposentadoria negada</a>."
+  - q: "Quais documentos preciso enviar?"
+    a: "O CNIS completo, com as remunerações, e as fotos de todas as páginas das carteiras de trabalho. Se houver, envie também carnês ou guias, PPP, certidão de tempo de contribuição (CTC) e a carta de indeferimento ou de exigência."
+  - q: "Não tenho acesso ao Meu INSS. E agora?"
+    a: "Orientamos o acesso passo a passo, pelo WhatsApp, e indicamos as alternativas quando a conta gov.br não funciona."
   - q: "Vocês também fazem revisão de aposentadoria?"
     a: "Sim. Para quem já é aposentado, conferimos a carta de concessão e o CNIS em busca de tempo especial, salários de ação trabalhista, atividades concomitantes, erro de cálculo ou deficiência que ficaram fora do cálculo. A revisão precisa ser pedida em até 10 anos."
-  - q: "Quanto custa a análise?"
-    a: "A análise inicial é feita sem compromisso. Se houver um caminho viável, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+  - q: "Quanto custa?"
+    a: "Depende de cada caso. O valor é informado no atendimento, por escrito, antes de qualquer contratação."
   - q: "Preciso ir ao escritório?"
     a: "Não. Dá para fazer tudo on-line, com os documentos enviados pelo WhatsApp e o acompanhamento à distância. Se preferir, atendemos no escritório em Pinheiros, São Paulo, com horário marcado."
 ---
 {% import "layouts/macros.njk" as m %}
 {% set heroData = {
   style: "hero-photo", home: true, trust: true,
-  badge: "Advocacia previdenciária · Pinheiros (SP) e on-line",
-  h1: "Quer saber se já pode se aposentar e <em>quanto vai receber?</em>",
-  lead: "Conferimos o seu CNIS, calculamos as regras do INSS e mostramos a data em que você pode pedir e o valor estimado em cada regra. Se o INSS negou o pedido, analisamos o motivo e o que pode ser feito.",
-  cta: "Quero saber se já posso",
-  cta2: { label: "Fazer o teste de 1 minuto", href: "/aposentadoria/ja-posso-me-aposentar#teste" }
+  badge: "Análise do CNIS · Pinheiros (SP) e on-line",
+  h1: "Seu CNIS pode estar <em>diminuindo a sua aposentadoria.</em>",
+  lead: "Descubra o que está errado ou faltando no seu CNIS, quanto isso muda o seu benefício e corrija antes de pedir ao INSS.",
+  primary: { label: "Fazer a checagem do meu CNIS", href: "/analise-do-cnis#checagem" },
+  cta: "Falar no WhatsApp"
 } %}
 {% call m.hero(heroData, wa) %}
-<div class="choices">
-  <a class="choice main" href="/aposentadoria/ja-posso-me-aposentar">
-    <span class="c-ic">{% icon "calendar" %}</span>
-    <div><h2>Quer saber se já pode se aposentar?</h2><p>Idade, tempo de contribuição e as regras de transição explicadas de forma simples.</p><span class="link-arrow">Ver quando e quanto {% icon "arrow" %}</span></div>
-  </a>
-  <a class="choice" href="/aposentadoria/negada-pelo-inss">
-    <span class="c-ic">{% icon "docX" %}</span>
-    <div><h2>O INSS negou a sua aposentadoria?</h2><p>Recurso em 30 dias, novo pedido ou ação na Justiça Federal. Comece pela carta de indeferimento.</p><span class="link-arrow">Ver o que fazer {% icon "arrow" %}</span></div>
-  </a>
-  <a class="choice" href="/revisao/aposentadoria">
-    <span class="c-ic">{% icon "calc" %}</span>
-    <div><h2>Já é aposentado?</h2><p>Confira se o valor foi calculado certo. A revisão tem prazo de 10 anos.</p><span class="link-arrow">Ver a revisão {% icon "arrow" %}</span></div>
-  </a>
-</div>
+{{ m.ddoc({
+  kicker: "Extrato previdenciário", title: "CNIS",
+  who: "Relações previdenciárias",
+  rows: [
+    { k: "Metalúrgica, 1986 a 1990", v: "OK", s: "ok" },
+    { k: "Transportadora (fechou), 1991 a 1995", v: "NÃO CONSTA", s: "no" },
+    { k: "Hospital, 1996 a 2012", v: "SEM TEMPO ESPECIAL", s: "warn" },
+    { k: "Contribuinte individual, 2015 a 2019", v: "ABAIXO DO MÍNIMO", s: "warn" },
+    { k: "MEI, 2020 a 2026", v: "SEM COMPLEMENTO", s: "warn" }
+  ],
+  caption: "Exemplo ilustrativo dos problemas de CNIS mais comuns."
+}) }}
 {% endcall %}
 
-<section class="section bg-band" id="aposentadoria">
+<section class="section bg-band" id="sinais">
   <div class="container">
-    {{ m.head("Aposentadoria do INSS", "Do primeiro cálculo à aposentadoria concedida.", "Escolha o assunto mais próximo do seu caso. Em todos, o ponto de partida é o CNIS, o extrato do INSS com os seus vínculos e contribuições.") }}
-    <div class="cards four">
-      {%- for it in nav.aposentadoria.items %}
-      <a class="card reveal{% if loop.index0 % 4 == 1 %} d1{% elif loop.index0 % 4 == 2 %} d2{% elif loop.index0 % 4 == 3 %} d3{% endif %}{% if loop.first %} feat{% endif %}" href="{{ it.url }}">
-        <div class="c-ic">{% icon it.icon %}</div>
-        <h3>{{ it.label }}</h3>
-        <p>{{ it.text }}</p>
-        <span class="link-arrow">Ver a página {% icon "arrow" %}</span>
-      </a>
-      {%- endfor %}
-      <a class="card reveal d3" href="{{ wa | waLink }}" target="_blank" rel="noopener">
-        <div class="c-ic">{% waIcon %}</div>
-        <h3>Não sabe por onde começar?</h3>
-        <p>Mande a sua idade e o tempo de contribuição pelo WhatsApp. A nossa equipe indica o próximo passo.</p>
-        <span class="link-arrow">Falar no WhatsApp {% icon "arrow" %}</span>
-      </a>
+    {{ m.head("Sinais de risco", "Os sinais de que o seu CNIS pode travar ou diminuir a aposentadoria.", "Se um destes aconteceu na sua vida profissional, vale conferir o CNIS antes de pedir a aposentadoria.") }}
+    {{ m.sinais(sinais, true) }}
+    <div class="sinais-foot reveal">
+      <a class="btn btn-gold" href="/analise-do-cnis#checagem">{% icon "search" %}Fazer a checagem do meu CNIS</a>
     </div>
   </div>
 </section>
 
 <section class="section bg-white" id="como-funciona">
   <div class="container">
-    {{ m.head("Como funciona", "Da primeira mensagem à decisão, sem burocracia.", "Você não precisa entender de lei. A gente cuida de cada etapa e explica o seu caso em linguagem simples.") }}
-    {{ m.steps([
-      { icon: "chat", t: "Você chama no WhatsApp", d: "Conte a sua idade, o tempo de contribuição que acha que tem e se já fez algum pedido no INSS." },
-      { icon: "list", t: "Envia o CNIS", d: "O extrato sai no aplicativo Meu INSS. Se o pedido foi negado, envie também a carta de indeferimento." },
-      { icon: "calc", t: "Calculamos as regras", d: "Conferimos vínculos e salários, apontamos o que falta no CNIS e simulamos as regras que valem para você." },
-      { icon: "route", t: "Você decide com clareza", d: "Mostramos quando pode pedir, quanto deve receber e qual caminho seguir, seja o pedido no INSS, o recurso ou a ação judicial." }
-    ]) }}
+    {{ m.head("Como funciona", "Da checagem ao pedido da aposentadoria, em cinco etapas.", "Primeiro descobrimos o que está errado. Depois corrigimos o CNIS e só então fazemos o pedido.") }}
+    {{ m.jornada() }}
   </div>
 </section>
 
@@ -91,12 +76,25 @@ faq:
   <div class="band-bg"></div>
   <div class="container">
     <span class="eyebrow reveal">O escritório</span>
-    <h2 class="reveal">Direito Previdenciário desde 2013, <em>com o cálculo feito antes do pedido.</em></h2>
+    <h2 class="reveal">Direito Previdenciário desde 2013, <em>com o CNIS conferido antes do pedido.</em></h2>
     <div class="dif-grid">
       <div class="dcard reveal"><div class="c-ic">{% icon "star" %}</div><h3>Dedicação exclusiva</h3><p>Atuação só em Direito Previdenciário desde 2013, com pós-graduação na área.</p></div>
-      <div class="dcard reveal d1"><div class="c-ic">{% icon "calc" %}</div><h3>Todas as regras comparadas</h3><p>Antes de pedir, comparamos as regras para você não se aposentar pela que paga menos.</p></div>
+      <div class="dcard reveal d1"><div class="c-ic">{% icon "list" %}</div><h3>CNIS período por período</h3><p>Cada vínculo e cada contribuição conferidos com as carteiras, os carnês e o PPP.</p></div>
       <div class="dcard reveal d2"><div class="c-ic">{% icon "pin" %}</div><h3>Presencial ou on-line</h3><p>Escritório em Pinheiros (SP) e atendimento pelo WhatsApp, com documentos enviados pelo celular.</p></div>
       <div class="dcard reveal d3"><div class="c-ic">{% icon "chat" %}</div><h3>Linguagem clara</h3><p>O seu caso explicado sem juridiquês, com resposta rápida pelo WhatsApp.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-white slim" id="negado">
+  <div class="container">
+    <div class="notice reveal">
+      <div class="n-ic">{% icon "docX" %}</div>
+      <div>
+        <h3>Já pediu e foi negado, ou recebeu uma exigência do INSS?</h3>
+        <p>A carta do INSS informa o motivo e o prazo. O recurso contra a negativa deve ser apresentado em até 30 dias, e a exigência também tem prazo para ser cumprida.</p>
+        <p><a class="link-arrow" href="/aposentadoria-negada">Ver o que fazer agora {% icon "arrow" %}</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -125,10 +123,10 @@ faq:
 
 {{ m.aval() }}
 
-{{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário desde 2013, na concessão e na revisão de aposentadorias do INSS. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
+{{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário desde 2013, na análise do CNIS, no pedido e na revisão de aposentadorias do INSS. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
 
 {{ m.local(wa) }}
 
-{{ m.faqSection(faq, "O que mais nos perguntam sobre aposentadoria.", "bg-band-end") }}
+{{ m.faqSection(faq, "O que mais nos perguntam sobre o CNIS e a aposentadoria.", "bg-band-end") }}
 
-{{ m.cta("Comece pelo CNIS", "Mande a sua idade e o tempo de contribuição. <em>Respondemos com o próximo passo.</em>", "Pelo WhatsApp, você fala com a nossa equipe e envia o CNIS quando puder. Atendimento humano e sem compromisso.", wa) }}
+{{ m.cta("Corrija antes de pedir", "O seu CNIS está certo? <em>Confira antes de pedir a aposentadoria.</em>", "Pelo WhatsApp, você fala com a nossa equipe e envia o CNIS quando puder.", wa) }}

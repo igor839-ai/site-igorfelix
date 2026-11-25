@@ -1,0 +1,114 @@
+---
+layout: layouts/base.njk
+permalink: /analise-do-cnis/mei-facultativo-autonomo.html
+title: "MEI, facultativo e autônomo: as contribuições contam para a aposentadoria?"
+titleFull: "MEI, facultativo e autônomo: as contribuições contam para a aposentadoria?"
+description: "Contribuiu como MEI, facultativo ou autônomo? Contribuição abaixo do mínimo, plano simplificado e guias em atraso podem ficar fora do tempo de contribuição. Veja o impacto."
+wa: "Olá! Vim pela página de MEI e autônomo. Contribuí por conta própria e quero saber se essas contribuições contam na minha aposentadoria."
+area: cnis
+crumbs:
+  - name: "Análise do CNIS"
+    url: "/analise-do-cnis"
+  - name: "MEI, facultativo e autônomo"
+sitemap:
+  priority: 0.85
+  changefreq: monthly
+faq:
+  - q: "Os meses como MEI contam para a aposentadoria?"
+    a: "Contam para a aposentadoria por idade, calculados sobre o salário mínimo. Para as regras por tempo de contribuição, é preciso complementar a contribuição."
+  - q: "Vale a pena complementar as contribuições?"
+    a: "Depende de quanto tempo falta, da idade e do valor dos outros salários. O diagnóstico compara o custo da complementação com o ganho na data e no valor da aposentadoria."
+  - q: "O que acontece com o mês pago abaixo do mínimo?"
+    a: "Desde 13/11/2019, o mês com contribuição abaixo do mínimo não conta como tempo de contribuição até ser complementado ou agrupado com outro mês."
+  - q: "Paguei guias atrasadas. Elas valem?"
+    a: "Podem valer para o tempo de contribuição e, em várias situações, não contar para a carência. O efeito depende das datas e da categoria em que você contribuiu."
+  - q: "Quanto custa?"
+    a: "Depende de cada caso. O valor é informado no atendimento, por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "MEI, facultativo e autônomo · Análise do CNIS",
+  h1: "Contribuiu por conta própria? <em>Nem todo mês conta para o tempo de contribuição.</em>",
+  lead: "Quem paga a própria contribuição pode ter meses que só valem para a aposentadoria por idade, meses abaixo do mínimo e guias em atraso que não contam para tudo. O simulador do Meu INSS não avisa o que ficou de fora.",
+  cta: "Conferir as minhas contribuições",
+  cta2: { label: "Fazer a checagem", href: "/analise-do-cnis#checagem" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  kicker: "Extrato previdenciário", title: "CNIS",
+  who: "Contribuições por conta própria",
+  rows: [
+    { k: "Facultativo baixa renda (5%), 2004 a 2007", v: "NÃO VALIDADO", s: "no" },
+    { k: "Contribuinte individual (20%), 2008 a 2014", v: "CONTA", s: "ok" },
+    { k: "Plano simplificado (11%), 2015 a 2019", v: "SÓ PARA IDADE", s: "warn" },
+    { k: "MEI (5%), 2020 a 2026", v: "SÓ PARA IDADE", s: "warn" }
+  ],
+  caption: "Exemplo ilustrativo. O efeito de cada período depende do código e do valor pago."
+}) }}
+{% endcall %}
+
+<section class="section bg-white" id="problema">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">O problema</span>
+      <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">Cada forma de contribuir tem um efeito diferente na aposentadoria.</h2>
+      <div class="prose-block">
+        <p>A contribuição de 20% como contribuinte individual ou facultativo conta para todas as regras. O plano simplificado (11%) e o MEI (5%) contam para a aposentadoria por idade e ficam fora das regras por tempo de contribuição sem a complementação.</p>
+        <p>O facultativo de baixa renda (5%) depende da validação do cadastro no CadÚnico. Desde a Reforma da Previdência, o mês com contribuição abaixo do mínimo também fica fora do tempo até ser complementado ou agrupado. Guias pagas em atraso podem não contar para a carência.</p>
+      </div>
+    </div>
+    <div class="panel navy reveal d1">
+      <h3>Como isso muda a aposentadoria</h3>
+      <ul>
+        <li>{% icon "check" %}Meses fora das regras por tempo de contribuição atrasam a data do direito</li>
+        <li>{% icon "check" %}Contribuições sobre o salário mínimo puxam a média para baixo</li>
+        <li>{% icon "check" %}Meses abaixo do mínimo depois de 13/11/2019 não contam como tempo</li>
+        <li>{% icon "check" %}Guias em atraso podem não contar para a carência</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-band" id="sinais">
+  <div class="container">
+    {{ m.head("Sinais de que é o seu caso", "Quando vale conferir as contribuições feitas por conta própria.") }}
+    {{ m.checks([
+      { t: "Foi ou é MEI", d: "Os meses como MEI só contam para as regras por tempo de contribuição com a complementação." },
+      { t: "Pagou o plano simplificado (11%)", d: "Esses meses também dependem de complementação para as regras por tempo de contribuição." },
+      { t: "Contribuiu como facultativo de baixa renda (5%)", d: "Sem a validação no CadÚnico, as contribuições podem não ser aceitas." },
+      { t: "Recebeu menos que o salário mínimo em algum mês", d: "Trabalho de meio período, intermitente ou com renda variável depois de 13/11/2019." },
+      { t: "Pagou guias em atraso", d: "Guias pagas fora do prazo podem não contar para a carência." },
+      { t: "Pagou com código ou número errado", d: "Guias com código errado ou no número de inscrição de outra pessoa podem não aparecer no CNIS." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-white" id="o-que-fazemos">
+  <div class="container">
+    {{ m.head("O que fazemos", "Como o escritório trata as contribuições por conta própria.") }}
+    {{ m.steps([
+      { icon: "search", t: "Lemos cada competência", d: "Conferimos mês a mês o código, o valor e a data de pagamento das contribuições." },
+      { icon: "list", t: "Separamos o que conta", d: "Mostramos os meses que contam para o tempo, os que só valem para a idade e os pendentes." },
+      { icon: "calc", t: "Calculamos o impacto", d: "Comparamos o efeito da complementação na data e no valor da aposentadoria, para você decidir se vale a pena." },
+      { icon: "refresh", t: "Fazemos o acerto", d: "Cuidamos da complementação, do agrupamento e da correção dos recolhimentos no INSS." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-band" id="documentos">
+  <div class="container">
+    {{ m.head("O que enviar", "Os documentos das contribuições por conta própria.", "Comece pelo CNIS completo. O restante, envie o que tiver.") }}
+    {{ m.docs([
+      { icon: "list", t: "CNIS completo", d: "O extrato com vínculos e remunerações. No Meu INSS, em Extrato de Contribuição (CNIS)." },
+      { icon: "wallet", t: "Carnês e guias", d: "As guias pagas (GPS ou DAS do MEI), principalmente as que não aparecem no CNIS.", opt: "Se houver" },
+      { icon: "users", t: "Comprovante do CadÚnico", d: "Se contribuiu como facultativo de baixa renda.", opt: "Se houver" },
+      { icon: "briefcase", t: "Carteiras de trabalho", d: "Fotos de todas as páginas, para os períodos como empregado." }
+    ]) }}
+  </div>
+</section>
+
+{{ m.checkCta(wa) }}
+
+{{ m.faqSection(faq, "Dúvidas sobre MEI, facultativo e autônomo.", "bg-band-end") }}
+
+{{ m.cta("MEI, facultativo e autônomo", "Contribuiu por conta própria? <em>Veja quais meses contam para a aposentadoria.</em>", "Envie o CNIS e as guias que tiver. Mostramos o que conta para o tempo, o que só vale para a idade e o que está pendente.", wa, "Enviar o CNIS pelo WhatsApp") }}

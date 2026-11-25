@@ -18,7 +18,7 @@ faq:
   - q: "Quem pode pedir a revisão?"
     a: "Quem se aposentou com tempo especial não convertido, com salários de ação trabalhista fora do cálculo, com atividades concomitantes somadas de forma errada, com deficiência não reconhecida pela LC 142 ou com algum erro na carta de concessão. A análise do seu caso diz qual revisão se aplica."
   - q: "Como sei se a minha aposentadoria está errada?"
-    a: "Nem sempre dá para saber pelo valor. É preciso comparar a carta de concessão e o CNIS com a sua história de trabalho. Essa conferência é o que fazemos na análise inicial, sem compromisso."
+    a: "Nem sempre dá para saber pelo valor. É preciso comparar a carta de concessão e o CNIS com a sua história de trabalho. Fazemos essa conferência na análise inicial."
   - q: "Existe prazo para pedir a revisão?"
     a: "Sim. Em regra, são 10 anos contados do mês seguinte ao primeiro pagamento da aposentadoria. Depois disso, o direito de revisar se perde (decadência). Se o pedido for feito a tempo, as diferenças são pagas dos últimos 5 anos (prescrição)."
   - q: "A revisão pode diminuir a minha aposentadoria?"
@@ -26,7 +26,7 @@ faq:
   - q: "Vocês fazem a revisão da vida toda?"
     a: "Não. O escritório atua nas revisões por tempo especial, atividades concomitantes, ação trabalhista, erro de cálculo e pessoa com deficiência."
   - q: "Quanto custa a análise?"
-    a: "A análise inicial é feita sem compromisso. Se houver viabilidade, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+    a: "Depende de cada caso. O valor é informado no atendimento, por escrito, antes de qualquer contratação."
 ---
 {% import "layouts/macros.njk" as m %}
 {% set heroData = {
@@ -97,7 +97,7 @@ faq:
   <div class="container">
     {{ m.head("Como funciona", "Da sua dúvida à revisão, em passos simples.", "Você não precisa entender de lei. A gente cuida de cada etapa.") }}
     {{ m.steps([
-      { icon: "chat", t: "Você fala com a gente", d: "Conta a sua situação pelo WhatsApp, sem compromisso." },
+      { icon: "chat", t: "Você fala com a gente", d: "Conta a sua situação pelo WhatsApp." },
       { icon: "list", t: "Conferimos os documentos", d: "Carta de concessão e CNIS, que saem no aplicativo Meu INSS." },
       { icon: "search", t: "Identificamos a revisão", d: "Qual revisão se aplica ao seu caso e se ela compensa." },
       { icon: "doc", t: "Proposta por escrito", d: "Honorários claros, antes de qualquer contratação." },
@@ -121,6 +121,8 @@ faq:
 
 {{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário desde 2013, na concessão e na revisão de aposentadorias do INSS. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
 
+{{ m.cnisBand() }}
+
 {{ m.faqSection(faq, "O que mais nos perguntam sobre revisão.", "bg-band-end") }}
 
-{{ m.cta("Comece agora", "A sua aposentadoria pode estar menor. <em>Vale conferir.</em>", "Envie a carta de concessão e o CNIS pelo WhatsApp. A nossa equipe analisa e responde com orientação clara, sem compromisso.", wa) }}
+{{ m.cta("Comece agora", "A sua aposentadoria pode estar menor. <em>Vale conferir.</em>", "Envie a carta de concessão e o CNIS pelo WhatsApp. A nossa equipe analisa e responde com orientação clara.", wa) }}
