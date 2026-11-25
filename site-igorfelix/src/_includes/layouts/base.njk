@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%- set canonicalUrl = site.url + (page.url | prettyUrl) %}
+{%- set fullTitle = titleFull or (title + " | Igor Felix Advogados") %}
+{%- set ogImg = site.url + "/" + (ogimage or "og-image.jpg") %}
+{%- set waMsg = wa or "Olá! Vim pelo site e gostaria de falar com o escritório." %}
+<title>{{ fullTitle }}</title>
+<meta name="description" content="{{ description }}">
+<meta name="robots" content="{% if noindex %}noindex, follow{% else %}index, follow, max-image-preview:large{% endif %}">
+<meta name="author" content="Igor Felix Advogados Associados">
+{%- if not noindex %}
+<link rel="canonical" href="{{ canonicalUrl }}">
+{%- endif %}
+<meta name="theme-color" content="#0B1E36">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20261125">
+{%- if preload %}
+<link rel="preload" as="image" href="{{ preload }}" fetchpriority="high">
+{%- endif %}
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Igor Felix Advogados Associados">
+<meta property="og:url" content="{{ canonicalUrl }}">
+<meta property="og:title" content="{{ ogTitle or title }}">
+<meta property="og:description" content="{{ ogDescription or description }}">
+<meta property="og:image" content="{{ ogImg }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ ogTitle or title }}">
+<meta name="twitter:description" content="{{ ogDescription or description }}">
+<meta name="twitter:image" content="{{ ogImg }}">
+{%- if legalService %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Igor Felix Advogados Associados",
+  "description": "Escritório de advocacia previdenciária em Pinheiros, São Paulo. Atua na concessão de aposentadoria do INSS (por tempo de contribuição, por idade, especial e da pessoa com deficiência), em aposentadorias negadas, na correção do CNIS, no planejamento previdenciário e na revisão de aposentadoria.",
+  "url": "{{ site.url }}/",
+  "telephone": "+55-11-97169-4420",
+  "priceRange": "$$",
+  "image": "{{ site.url }}/og-image.jpg",
+  "logo": "{{ site.url }}/assets/logo-topo.png",
+  "address": {"@type": "PostalAddress", "streetAddress": "R. Pais Leme, 136, Sala 502, Pinheiros", "addressLocality": "São Paulo", "addressRegion": "SP", "postalCode": "05424-010", "addressCountry": "BR"},
+  "geo": {"@type": "GeoCoordinates", "latitude": "-23.5758", "longitude": "-46.6893"},
+  "areaServed": [{"@type": "City", "name": "São Paulo"}, {"@type": "Country", "name": "Brasil"}],
+  "sameAs": ["https://share.google/QZzs6IJ2nYgGqhxJM", "https://www.instagram.com/igorfelixadvprev/"],
+  "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00"},
+  "founder": {"@type": "Person", "name": "Igor Felix", "jobTitle": "Advogado previdenciário", "identifier": "OAB/SP 321.638"},
+  "knowsAbout": ["Aposentadoria do INSS", "Regras de transição da aposentadoria", "Aposentadoria negada pelo INSS", "Correção do CNIS", "Aposentadoria por idade", "Aposentadoria especial", "Aposentadoria da pessoa com deficiência", "Planejamento previdenciário", "Revisão de aposentadoria", "Direito Previdenciário"]
+}
+</script>
+{%- endif %}
+{%- if crumbs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Início", "item": "{{ site.url }}/"}
+    {%- for c in crumbs %},
+    {"@type": "ListItem", "position": {{ loop.index + 1 }}, "name": {{ c.name | dump | safe }}, "item": "{{ site.url }}{{ c.url or (page.url | prettyUrl) }}"}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}
+{%- if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for f in faq %}
+    {"@type": "Question", "name": {{ f.q | dump | safe }}, "acceptedAnswer": {"@type": "Answer", "text": {{ f.a | striptags | dump | safe }}}}{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}
+</head>
+<body class="{{ bodyClass }}">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div id="pbar"></div>
+
+{% include "layouts/header.njk" %}
+
+<main id="conteudo">
+{{ content | safe }}
+</main>
+
+{% include "layouts/footer.njk" %}
+<script src="/assets/site.js?v=20261125" defer></script>
+</body>
+</html>

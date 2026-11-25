@@ -1,0 +1,44 @@
+{# Rodapé comum e botão flutuante. Usa: waMsg, nav #}
+<footer class="site-footer" id="contato">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/logo-rodape.png" alt="Igor Felix Advogados Associados" width="210" height="119" loading="lazy">
+        <p>Advocacia previdenciária desde 2013. Concessão e revisão de aposentadoria do INSS, com atendimento em Pinheiros (SP) e on-line.</p>
+        <a class="btn btn-gold btn-sm" href="{{ waMsg | waLink }}" target="_blank" rel="noopener">{% waIcon %}(11) 97169-4420</a>
+      </div>
+      <div>
+        <h4><a href="{{ nav.aposentadoria.url }}">Aposentadoria</a></h4>
+        <ul>
+          {%- for it in nav.aposentadoria.items %}
+          <li><a href="{{ it.url }}">{{ it.label }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h4><a href="{{ nav.revisao.url }}">Revisão de aposentadoria</a></h4>
+        <ul>
+          {%- for it in nav.revisao.items %}
+          <li><a href="{{ it.url }}">{{ it.label }}</a></li>
+          {%- endfor %}
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul class="footer-contact">
+          <li>{% icon "chat" %}<a href="{{ waMsg | waLink }}" target="_blank" rel="noopener">(11) 97169-4420 (WhatsApp)</a></li>
+          <li>{% icon "pin" %}<span>R. Pais Leme, 136, Sala 502 (Neo Offices Faria Lima), Pinheiros, São Paulo (SP), CEP 05424-010</span></li>
+          <li>{% icon "clock" %}<span>Segunda a sexta, das 9h às 18h</span></li>
+          <li>{% icon "globe" %}<span>Atendimento presencial ou on-line</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Igor Felix Advogados Associados. Dr. Igor Felix, OAB/SP 321.638.</span>
+      <span>Conteúdo informativo, em conformidade com o Código de Ética da OAB. Cada caso depende de análise individual.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="{{ waMsg | waLink }}" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">{% waIcon %}</a>

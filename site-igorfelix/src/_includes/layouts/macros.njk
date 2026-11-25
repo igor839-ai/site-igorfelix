@@ -1,0 +1,251 @@
+{# Componentes reutilizados nas páginas. Uso: {% import "layouts/macros.njk" as m %} #}
+
+{% macro hero(d, wa, crumbs) %}
+<section class="hero {{ d.style or 'hero-grid-bg' }}{% if d.home %} hero-home{% endif %}" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-veil"></div>
+  <div class="container hero-wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        {%- if crumbs %}
+        <nav class="crumbs" aria-label="Você está aqui"><a href="/">Início</a>{% for c in crumbs %}<span class="sep">›</span>{% if c.url %}<a href="{{ c.url }}">{{ c.name }}</a>{% else %}<span class="cur" aria-current="page">{{ c.name }}</span>{% endif %}{% endfor %}</nav>
+        {%- endif %}
+        {%- if d.badge %}
+        <span class="hero-badge"><span class="dot"></span>{{ d.badge }}</span>
+        {%- endif %}
+        <h1>{{ d.h1 | safe }}</h1>
+        <p class="lead">{{ d.lead | safe }}</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="{{ wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}{{ d.cta or "Falar no WhatsApp" }}</a>
+          {%- if d.cta2 %}
+          <a class="btn btn-glass" href="{{ d.cta2.href }}">{{ d.cta2.label }}</a>
+          {%- endif %}
+        </div>
+        {%- if d.note %}
+        <p class="hero-note">{{ d.note | safe }}</p>
+        {%- endif %}
+        {%- if d.trust %}{{ trust() }}{% endif %}
+      </div>
+      <div class="hero-visual">{% if caller %}{{ caller() }}{% endif %}</div>
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro trust() %}
+<div class="hero-trust">
+  <div class="ht"><b>4,9<span class="stars">★★★★★</span></b><span>Nota no Google</span></div>
+  <div class="ht"><b>+10.000</b><span>clientes atendidos</span></div>
+  <div class="ht"><b>+2.000</b><span>processos contra o INSS</span></div>
+  <div class="ht"><b>Desde 2013</b><span>no Direito Previdenciário</span></div>
+</div>
+{% endmacro %}
+
+{% macro ddoc(c) %}
+<div class="ddoc{% if c.compact %} compact{% endif %}{% if c.stamp %} has-stamp{% endif %}" aria-hidden="true">
+  <div class="dd-head">{{ c.head or "Instituto Nacional do Seguro Social" }}</div>
+  <div class="dd-body">
+    <div class="dd-title">{{ c.kicker }} <b>{{ c.title }}</b></div>
+    <div class="dd-rule"></div>
+    {%- if c.who %}
+    <div class="dd-who">{{ c.who | safe }}</div>
+    {%- endif %}
+    <ul class="dd-rows">
+      {%- for r in c.rows %}
+      <li class="{{ r.s or 'info' }}"><span class="k">{{ r.k }}</span><span class="v">{{ r.v }}</span></li>
+      {%- endfor %}
+    </ul>
+    {%- if c.foot %}
+    <div class="dd-foot">{{ c.foot | safe }}</div>
+    {%- endif %}
+  </div>
+  {%- if c.stamp %}
+  <div class="dd-stamp {{ c.stampClass }}"><span>{{ c.stamp }}</span>{% if c.stampSub %}<small>{{ c.stampSub }}</small>{% endif %}</div>
+  {%- endif %}
+</div>
+{%- if c.caption %}
+<p class="dd-caption">{{ c.caption }}</p>
+{%- endif %}
+{% endmacro %}
+
+{% macro head(eyebrow, h2, p) %}
+<div class="section-head reveal">
+  {%- if eyebrow %}<span class="eyebrow">{{ eyebrow }}</span>{% endif %}
+  <h2>{{ h2 | safe }}</h2>
+  {%- if p %}<p>{{ p | safe }}</p>{% endif %}
+</div>
+{% endmacro %}
+
+{% macro navCards(items, cls, feat) %}
+<div class="cards {{ cls }}">
+  {%- for it in items %}
+  <a class="card reveal{% if loop.index0 % 3 == 1 %} d1{% elif loop.index0 % 3 == 2 %} d2{% endif %}{% if feat and loop.first %} feat{% endif %}" href="{{ it.url }}">
+    <div class="c-ic">{% icon it.icon %}</div>
+    <h3>{{ it.label }}</h3>
+    <p>{{ it.text }}</p>
+    <span class="link-arrow">Ver a página {% icon "arrow" %}</span>
+  </a>
+  {%- endfor %}
+</div>
+{% endmacro %}
+
+{% macro checks(items, cls) %}
+<div class="check-grid">
+  {%- for it in items %}
+  <div class="check-item reveal{% if loop.index0 % 2 == 1 %} d1{% endif %}{% if it.no %} no{% endif %}"><span class="ck">{% if it.no %}{% icon "x" %}{% else %}{% icon "check" %}{% endif %}</span><div><strong>{{ it.t }}</strong><span>{{ it.d | safe }}</span></div></div>
+  {%- endfor %}
+</div>
+{% endmacro %}
+
+{% macro steps(items) %}
+<div class="steps{% if items.length == 5 %} five{% endif %}">
+  {%- for it in items %}
+  <div class="step reveal{% if loop.index0 % 4 == 1 %} d1{% elif loop.index0 % 4 == 2 %} d2{% elif loop.index0 % 4 == 3 %} d3{% endif %}"><span class="n">{{ loop.index }}</span>{% if it.icon %}<div class="c-ic">{% icon it.icon %}</div>{% endif %}<h3>{{ it.t }}</h3><p>{{ it.d | safe }}</p></div>
+  {%- endfor %}
+</div>
+{% endmacro %}
+
+{% macro docs(items, note) %}
+<div class="docs-grid{% if items.length == 4 %} four{% endif %}">
+  {%- for it in items %}
+  <div class="doc reveal{% if loop.index0 % 3 == 1 %} d1{% elif loop.index0 % 3 == 2 %} d2{% endif %}"><div class="c-ic">{% icon it.icon or "doc" %}</div><strong>{{ it.t }}</strong><span>{{ it.d | safe }}</span>{% if it.opt %}<span class="opt">{{ it.opt }}</span>{% endif %}</div>
+  {%- endfor %}
+</div>
+{%- if note %}
+<p class="docs-note reveal">{{ note | safe }}</p>
+{%- endif %}
+{% endmacro %}
+
+{% macro faqList(faq) %}
+<div class="faq-wrap">
+  {%- for f in faq %}
+  <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false">{{ f.q }}<span class="icon">{% icon "plus" %}</span></button><div class="faq-a"><p>{{ f.a | safe }}</p></div></div>
+  {%- endfor %}
+</div>
+{% endmacro %}
+
+{% macro faqSection(faq, h2, cls) %}
+<section class="section {{ cls or 'bg-band' }}" id="duvidas">
+  <div class="container center">
+    {{ head("Dúvidas frequentes", h2) }}
+    {{ faqList(faq) }}
+  </div>
+</section>
+{% endmacro %}
+
+{% macro prazo(wa, txt) %}
+<section class="prazo-band" aria-label="Prazo para pedir a revisão">
+  <div class="container prazo">
+    <div class="p-ic">{% icon "hourglass" %}</div>
+    <div>
+      <h2>Prazo de 10 anos para pedir a revisão</h2>
+      <p>{% if txt %}{{ txt | safe }}{% else %}Em regra, a revisão precisa ser pedida em até <b>10 anos</b>, contados do mês seguinte ao primeiro pagamento da aposentadoria. Depois disso, o direito de revisar se perde (decadência). Se o pedido for feito a tempo, as diferenças são pagas dos <b>últimos 5 anos</b>.{% endif %}</p>
+    </div>
+    <a class="btn btn-gold" href="{{ wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}Conferir o meu prazo</a>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro aval(h2) %}
+<section class="section bg-white" id="avaliacoes">
+  <div class="container">
+    {{ head("Quem contratou, avaliou", h2 or "A avaliação de quem já passou por isso.") }}
+    <div class="aval-head reveal">
+      <div class="aval-score">
+        <svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        <div class="num">4,9<small>de 5</small></div>
+        <div><span class="stars-mini">★★★★★</span><small class="sub">35 avaliações no Google</small></div>
+      </div>
+      <a class="aval-link" href="https://share.google/IHmubUZ0SHacywAGC" target="_blank" rel="noopener">Ver todas as avaliações no Google</a>
+    </div>
+    <div class="aval-grid">
+      <div class="aval reveal"><div class="stars" aria-label="5 estrelas">★★★★★</div><p>"Dr. Igor é um profissional competente que sempre me inspirou confiança e tranquilidade no relacionamento advogado e cliente. Posso recomendá-lo como profissional que trabalha com seriedade, confiabilidade e dedicação."</p><div class="who"><span class="avatar">R</span><div><strong>Rosangela R.</strong><span>Avaliação pública no Google</span></div></div></div>
+      <div class="aval reveal d1"><div class="stars" aria-label="5 estrelas">★★★★★</div><p>"Dr. Igor superou todas as expectativas! Resolução das causas com maestria, empatia, disponibilidade e muita seriedade. Agradeço a todos do escritório que sempre me atenderam prontamente quando precisei tirar dúvidas."</p><div class="who"><span class="avatar">M</span><div><strong>Marilse H.</strong><span>Avaliação pública no Google</span></div></div></div>
+      <div class="aval reveal d2"><div class="stars" aria-label="5 estrelas">★★★★★</div><p>"Dr. Igor e toda a equipe são extremamente profissionais, passam muita segurança, são corretos e competentes. Só tenho gratidão pela solução que trouxeram, super recomendo."</p><div class="who"><span class="avatar">A</span><div><strong>Antonio Carlos G.</strong><span>Avaliação pública no Google</span></div></div></div>
+    </div>
+    <p class="aval-note">Avaliações espontâneas e públicas de clientes no perfil do escritório no Google, reproduzidas com abreviação de nomes por privacidade.</p>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro adv(h2, p1, cls) %}
+<section class="section {{ cls or 'bg-white' }}" id="advogado">
+  <div class="container adv-grid">
+    <div class="portrait reveal">
+      <div class="frame"><picture><source srcset="/assets/dr-igor-felix.webp" type="image/webp"><img src="/assets/dr-igor-felix.jpg" alt="Dr. Igor Felix, advogado previdenciário em São Paulo, OAB/SP 321.638" width="640" height="800" loading="lazy"></picture></div>
+    </div>
+    <div class="adv-txt reveal d1">
+      <span class="eyebrow">Quem conduz o seu caso</span>
+      <h2>{{ h2 or "Dr. Igor Felix, advogado previdenciário desde 2013." }}</h2>
+      <p>{% if p1 %}{{ p1 | safe }}{% else %}Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário desde 2013. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.{% endif %}</p>
+      <p>Desde 2013, são mais de 10.000 clientes atendidos e mais de 2.000 processos conduzidos contra o INSS, com atuação nas Varas Previdenciárias Federais e no Tribunal Regional Federal da 3ª Região.</p>
+      <div class="adv-stats">
+        <div class="as"><b data-count="10000" data-prefix="+">+10.000</b><span>clientes atendidos</span></div>
+        <div class="as"><b data-count="2000" data-prefix="+">+2.000</b><span>processos contra o INSS</span></div>
+        <div class="as"><b>4,9</b><span>no Google</span></div>
+        <div class="as"><b>2013</b><span>início da atuação</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro local(wa) %}
+<section class="section bg-white" id="onde">
+  <div class="container local-grid">
+    <div class="local-txt reveal">
+      <span class="eyebrow">Onde estamos</span>
+      <h2>Escritório em Pinheiros, com atendimento presencial ou on-line.</h2>
+      <p>Você escolhe como prefere ser atendido. Os documentos podem ser enviados pelo WhatsApp e o processo é acompanhado à distância. Se preferir conversar pessoalmente, recebemos você no escritório, com horário marcado.</p>
+      <ul class="local-info">
+        <li>{% icon "pin" %}<div><b>Endereço</b><span>R. Pais Leme, 136, Sala 502 (Neo Offices Faria Lima), Pinheiros, São Paulo (SP), CEP 05424-010</span></div></li>
+        <li>{% icon "chat" %}<div><b>WhatsApp</b><span>(11) 97169-4420</span></div></li>
+        <li>{% icon "clock" %}<div><b>Horário</b><span>Segunda a sexta, das 9h às 18h</span></div></li>
+      </ul>
+      <a class="btn btn-gold" href="{{ wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}Falar no WhatsApp</a>
+    </div>
+    <div class="map-wrap reveal d1">
+      <iframe title="Localização do escritório Igor Felix Advogados" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Rua%20Pais%20Leme%20136%20Pinheiros%20S%C3%A3o%20Paulo%20SP%2005424-010&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro quiz(d) %}
+<section class="section quiz-sec" id="teste">
+  <div class="container center">
+    {{ head(d.eyebrow or "Teste de 1 minuto", d.h2, d.p) }}
+    <div class="quiz-card reveal" id="quizCard">
+      <div class="quiz-progress" id="quizProgress"></div>
+      <div id="quizBody">
+        <div class="quiz-step" id="quizStep"></div>
+        <div class="quiz-q" id="quizQ">{{ d.first }}</div>
+        <div class="quiz-opts" id="quizOpts"></div>
+        <button class="quiz-back" id="quizBack" type="button" style="display:none">Voltar à pergunta anterior</button>
+      </div>
+      <div class="quiz-result" id="quizResult">
+        <div class="icon-big">{% icon "docCheck" %}</div>
+        <h3 id="quizResultTitle"></h3>
+        <p id="quizResultText"></p>
+        <a class="q-link" id="quizResultLink" href="#" style="display:none"></a>
+        <a class="btn btn-gold" id="quizResultBtn" href="{{ d.wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}Enviar minhas respostas pelo WhatsApp</a>
+        <br><button class="quiz-restart" id="quizRestart" type="button">Refazer o teste</button>
+      </div>
+      <p class="quiz-disclaimer">Resultado indicativo. A resposta segura depende da conferência do CNIS e dos documentos.</p>
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{% macro cta(eyebrow, h2, p, wa, btn) %}
+<section class="cta-final" id="fale-conosco">
+  <div class="cta-bg"></div>
+  <div class="container">
+    <span class="eyebrow reveal">{{ eyebrow or "Fale com a gente" }}</span>
+    <h2 class="reveal">{{ h2 | safe }}</h2>
+    <p class="reveal d1">{{ p | safe }}</p>
+    <a class="btn btn-gold reveal d2" href="{{ wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}{{ btn or "Falar no WhatsApp: (11) 97169-4420" }}</a>
+    <p class="cta-sub">Atendimento em Pinheiros (SP) e on-line, de segunda a sexta, das 9h às 18h.</p>
+  </div>
+</section>
+{% endmacro %}

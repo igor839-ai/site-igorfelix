@@ -1,0 +1,27 @@
+{# Cabeçalho comum. Usa: waMsg, area, headerSolid, nav #}
+<header id="header" class="site-header{% if headerSolid %} solid{% endif %}">
+  <div class="container nav">
+    <a href="/" class="brand" aria-label="Igor Felix Advogados Associados, página inicial">
+      <img src="/assets/logo-topo.png" alt="Igor Felix Advogados Associados" width="244" height="64">
+    </a>
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      {%- for key in ["aposentadoria", "revisao"] %}{% set grp = nav[key] %}
+      <div class="menu-group{% if area == key %} current{% endif %}">
+        <a class="menu-link" href="{{ grp.url }}">{{ grp.label }}</a>
+        <button class="menu-caret" type="button" aria-expanded="false" aria-label="Ver as páginas de {{ grp.label }}">{% icon "chev" %}</button>
+        <div class="submenu">
+          <a class="submenu-head" href="{{ grp.url }}">{% if key == "aposentadoria" %}Aposentadoria: visão geral{% else %}Revisão: visão geral{% endif %}</a>
+          {%- for it in grp.items %}
+          <a href="{{ it.url }}">{{ it.label }}</a>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- endfor %}
+      <a class="menu-link" href="/blog/">Blog</a>
+      <a class="menu-link" href="/#escritorio">O escritório</a>
+      <a class="menu-link" href="#contato">Contato</a>
+    </nav>
+    <a class="nav-cta" href="{{ waMsg | waLink }}" target="_blank" rel="noopener">{% waIcon %}<span>WhatsApp</span></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir o menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
