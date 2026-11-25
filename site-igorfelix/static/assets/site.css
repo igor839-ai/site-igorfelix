@@ -298,17 +298,18 @@ a.card:hover::before{opacity:1}
 .aval-note{margin-top:1.5rem;font-size:.78rem;color:var(--ink-soft)}
 
 /* ===== Advogado ===== */
-.adv-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2.2rem,6vw,4.6rem);align-items:center}
-.portrait{position:relative;max-width:380px}
+.adv-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.portrait{position:relative;max-width:400px}
 .portrait .frame{border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(10,31,51,.18);position:relative;z-index:1}
-.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center top}
 .portrait::before{content:"";position:absolute;inset:0;border:1.5px solid var(--gold);border-radius:20px;transform:translate(16px,16px)}
-.adv-txt h2{font-size:clamp(1.65rem,3.3vw,2.35rem);margin:.85rem 0 1.1rem}
-.adv-txt p{color:var(--ink-soft);margin-bottom:1rem;font-size:1rem}
-.adv-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:1.4rem}
-.adv-stats .as{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:.9rem .6rem;text-align:center;box-shadow:0 10px 26px rgba(10,31,51,.06)}
-.adv-stats .as b{display:block;font-family:var(--f-head);font-weight:700;font-size:1.3rem;color:var(--navy);line-height:1.2}
-.adv-stats .as span{display:block;font-size:.64rem;color:var(--ink-soft);font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-top:.2rem;line-height:1.35}
+.adv-txt h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin:.9rem 0 1.2rem}
+.adv-txt p{color:var(--ink-soft);margin-bottom:1.1rem;font-size:1rem}
+.adv-stats{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.4rem}
+.adv-stats .as{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1rem .8rem;text-align:center;box-shadow:0 10px 26px rgba(10,31,51,.06)}
+.adv-stats .as b{display:block;font-family:var(--f-head);font-weight:700;font-size:1.45rem;color:var(--navy);line-height:1.2}
+.adv-stats .as-stars{color:var(--gold);font-size:.78rem;letter-spacing:.16em}
+.adv-stats .as span{display:block;font-size:.68rem;color:var(--ink-soft);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem}
 
 /* ===== Onde estamos ===== */
 .local-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,4vw,3.4rem);align-items:center}
@@ -441,6 +442,7 @@ a.card:hover::before{opacity:1}
 }
 @media (max-width:700px){
   body{font-size:16.5px}
+  .portrait{max-width:calc(100% - 16px)}
   .hero-wrap{padding:6.4rem 0 2.6rem}
   .hero-home .hero-wrap{padding-bottom:2.6rem}
   .hero-photo .hero-bg{background:linear-gradient(180deg,rgba(8,22,39,.9),rgba(6,18,36,.92)),url(/assets/hero-sp-800.jpg) center 30%/cover no-repeat;background:linear-gradient(180deg,rgba(8,22,39,.9),rgba(6,18,36,.92)),image-set(url(/assets/hero-sp-800.webp) type("image/webp"),url(/assets/hero-sp-800.jpg) type("image/jpeg")) center 30%/cover no-repeat}
