@@ -1,20 +1,22 @@
 {
-  "aposentadoria": {
-    "label": "Aposentadoria",
-    "url": "/aposentadoria",
+  "cnis": {
+    "label": "Análise do CNIS",
+    "url": "/analise-do-cnis",
+    "head": "Como funciona a análise",
     "items": [
-      { "label": "Já posso me aposentar?", "url": "/aposentadoria/ja-posso-me-aposentar", "icon": "calendar", "text": "Conferimos o CNIS e calculamos as regras para dizer quando você pode pedir e quanto vai receber." },
-      { "label": "Aposentadoria negada pelo INSS", "url": "/aposentadoria/negada-pelo-inss", "icon": "docX", "text": "Entenda o motivo do indeferimento e quando cabe recurso, novo pedido ou ação na Justiça Federal." },
-      { "label": "CNIS com erro", "url": "/aposentadoria/cnis-com-erro", "icon": "list", "text": "Vínculo que não aparece, empresa que fechou, contribuição abaixo do mínimo ou como MEI." },
-      { "label": "Aposentadoria por idade", "url": "/aposentadoria/por-idade", "icon": "users", "text": "62 anos (mulher) ou 65 anos (homem) e 15 anos de contribuição. Com orientação para filhos e cônjuges." },
-      { "label": "Aposentadoria especial", "url": "/aposentadoria/especial", "icon": "hat", "text": "Para quem trabalhou exposto a ruído, calor, químicos ou agentes biológicos e tem o PPP." },
-      { "label": "Pessoa com deficiência", "url": "/aposentadoria/pessoa-com-deficiencia", "icon": "access", "text": "Regras da LC 142, com menos tempo de contribuição. Inclui visão monocular e perda auditiva." },
-      { "label": "Planejamento previdenciário", "url": "/aposentadoria/planejamento-previdenciario", "icon": "route", "text": "O cálculo de todas as regras, com a data e o valor estimado de cada uma, para decidir com segurança." }
+      { "label": "Tempo especial", "url": "/analise-do-cnis/tempo-especial", "icon": "hat", "text": "PPP ausente ou errado, insalubridade não reconhecida e conversão do tempo especial até 2019." },
+      { "label": "Pessoa com deficiência", "url": "/analise-do-cnis/pessoa-com-deficiencia", "icon": "access", "text": "Aposentadoria da LC 142, com tempo de contribuição reduzido conforme o grau da deficiência." },
+      { "label": "Servidor e CTC", "url": "/analise-do-cnis/ctc-servico-publico", "icon": "building", "text": "Tempo de prefeitura, estado ou órgão público levado para o INSS pela certidão de tempo de contribuição." },
+      { "label": "MEI, facultativo e autônomo", "url": "/analise-do-cnis/mei-facultativo-autonomo", "icon": "wallet", "text": "Contribuição abaixo do mínimo, plano simplificado, complementação e guias pagas em atraso." },
+      { "label": "Vínculo com pendência", "url": "/analise-do-cnis/vinculo-com-pendencia", "icon": "list", "text": "Vínculo que não aparece, sem data de saída, com indicador de pendência ou de empresa que fechou." },
+      { "label": "Negado ou com exigência", "url": "/aposentadoria-negada", "icon": "docX", "text": "Carta de indeferimento ou de exigência, prazos, recurso e ação na Justiça Federal." },
+      { "label": "Para a família", "url": "/aposentadoria-dos-pais", "icon": "users", "text": "Filhos e cônjuges que ajudam o pai, a mãe ou o cônjuge a se aposentar." }
     ]
   },
   "revisao": {
     "label": "Revisão",
     "url": "/revisao/aposentadoria",
+    "head": "Como funciona a revisão",
     "items": [
       { "label": "Tempo especial fora do cálculo", "url": "/revisao/tempo-especial", "icon": "hat", "text": "Trabalhou exposto a agente nocivo, tem PPP ou LTCAT e o INSS contou o período como comum." },
       { "label": "Atividades concomitantes", "url": "/revisao/atividades-concomitantes", "icon": "layers", "text": "Dois empregos ou duas fontes de contribuição no mesmo período, somados de forma errada." },
