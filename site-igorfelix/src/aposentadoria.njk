@@ -1,0 +1,116 @@
+---
+layout: layouts/base.njk
+permalink: /aposentadoria.html
+title: "Aposentadoria do INSS: quando pedir e quanto vai receber"
+titleFull: "Aposentadoria do INSS: quando pedir e quanto receber | Igor Felix"
+description: "Já pode se aposentar? O INSS negou o pedido? Veja as regras, os documentos e como conferimos o CNIS para dizer quando pedir e quanto vai receber."
+wa: "Olá! Vim pelo site e quero saber sobre a minha aposentadoria."
+area: aposentadoria
+crumbs:
+  - name: "Aposentadoria"
+sitemap:
+  priority: 0.9
+  changefreq: monthly
+faq:
+  - q: "Quais são as regras de aposentadoria depois da reforma?"
+    a: "Quem já contribuía antes de 13/11/2019 pode usar cinco regras de transição (pontos, idade mínima progressiva, pedágio de 50%, pedágio de 100% e aposentadoria por idade). Quem começou a contribuir depois segue a regra permanente, com 62 anos (mulher) ou 65 anos (homem). A aposentadoria especial e a da pessoa com deficiência têm regras próprias."
+  - q: "Qual regra paga mais?"
+    a: "Depende da idade, do tempo de contribuição e dos salários. Nas regras de pontos, de idade mínima e na aposentadoria por idade, o valor parte de 60% da média e sobe 2% a cada ano de contribuição acima de 15 anos (mulher) ou 20 anos (homem). No pedágio de 100%, o valor é de 100% da média. Por isso, às vezes vale esperar alguns meses para pedir."
+  - q: "Posso pedir a aposentadoria sozinho pelo Meu INSS?"
+    a: "Pode. O problema aparece quando o CNIS tem falhas ou quando a regra escolhida não é a melhor. Um pedido negado ou concedido com valor menor dá mais trabalho para corrigir depois. Conferir antes costuma ser mais simples."
+  - q: "A aposentadoria é paga desde quando?"
+    a: "Em regra, desde a data do pedido no INSS, se nesse dia o direito já estava completo. Se o pedido for negado e o direito for reconhecido depois, no recurso ou na Justiça, os valores atrasados podem ser calculados desde essa data, com correção."
+  - q: "O INSS está demorando para responder. O que fazer?"
+    a: "O tempo de análise varia conforme a agência e o tipo de pedido. Se o prazo passar sem decisão, é possível cobrar a resposta, inclusive na Justiça. Enquanto isso, vale conferir se o CNIS e os documentos do pedido estão completos."
+  - q: "Quanto custa a análise?"
+    a: "A análise inicial é feita sem compromisso. Se houver um caminho viável, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "Aposentadoria do INSS · Pinheiros (SP) e on-line",
+  h1: "Quer saber se já pode pedir? <em>Ou o INSS negou o seu pedido?</em>",
+  lead: "Escolha a sua situação. Nas duas, o primeiro passo é conferir o CNIS, o extrato do INSS com os seus vínculos e contribuições, e calcular as regras que valem para você.",
+  cta: "Falar sobre a minha aposentadoria",
+  cta2: { label: "Ver todos os assuntos", href: "#assuntos" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+<div class="choices">
+  <a class="choice main" href="/aposentadoria/ja-posso-me-aposentar">
+    <span class="c-ic">{% icon "calendar" %}</span>
+    <div><span class="choice-label">Ainda não pediu</span><h2>Quer saber se já pode pedir?</h2><p>Conferimos o tempo de contribuição e mostramos quando pode pedir e quanto vai receber.</p><span class="link-arrow">Já posso me aposentar? {% icon "arrow" %}</span></div>
+  </a>
+  <a class="choice" href="/aposentadoria/negada-pelo-inss">
+    <span class="c-ic">{% icon "docX" %}</span>
+    <div><span class="choice-label">Já pediu</span><h2>O pedido foi negado?</h2><p>Analisamos a carta de indeferimento e indicamos o caminho, com atenção ao prazo de 30 dias.</p><span class="link-arrow">Aposentadoria negada {% icon "arrow" %}</span></div>
+  </a>
+  <a class="choice" href="/aposentadoria/por-idade#familia">
+    <span class="c-ic">{% icon "users" %}</span>
+    <div><span class="choice-label">Para a família</span><h2>Está ajudando o seu pai ou a sua mãe?</h2><p>Veja como conduzir o pedido por eles, com o que precisam assinar.</p><span class="link-arrow">Orientação para filhos e cônjuges {% icon "arrow" %}</span></div>
+  </a>
+</div>
+{% endcall %}
+
+<section class="section bg-band" id="assuntos">
+  <div class="container">
+    {{ m.head("Assuntos", "Encontre a página do seu caso.", "Cada página explica as regras e os documentos daquele assunto, em linguagem simples.") }}
+    <div class="cards four">
+      {%- for it in nav.aposentadoria.items %}
+      <a class="card reveal{% if loop.index0 % 4 == 1 %} d1{% elif loop.index0 % 4 == 2 %} d2{% elif loop.index0 % 4 == 3 %} d3{% endif %}" href="{{ it.url }}">
+        <div class="c-ic">{% icon it.icon %}</div>
+        <h3>{{ it.label }}</h3>
+        <p>{{ it.text }}</p>
+        <span class="link-arrow">Ver a página {% icon "arrow" %}</span>
+      </a>
+      {%- endfor %}
+      <a class="card feat reveal d3" href="{{ wa | waLink }}" target="_blank" rel="noopener">
+        <div class="c-ic">{% waIcon %}</div>
+        <h3>Não achou o seu caso?</h3>
+        <p>Mande uma mensagem contando a sua situação. A nossa equipe indica o caminho.</p>
+        <span class="link-arrow">Falar no WhatsApp {% icon "arrow" %}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-white" id="analise">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">Como trabalhamos</span>
+      <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">Antes de qualquer pedido, o cálculo.</h2>
+      <div class="prose-block">
+        <p>Muita gente pede a aposentadoria no primeiro dia em que o simulador diz que é possível. Depois descobre que outra regra pagaria mais, ou que um vínculo não estava no CNIS e o pedido foi negado.</p>
+        <p>A análise existe para evitar esses dois problemas. Conferimos o CNIS período por período, comparamos com a carteira de trabalho e os carnês e calculamos cada regra antes de você pedir.</p>
+      </div>
+    </div>
+    <div class="panel reveal d1">
+      <h3>O que você recebe na análise</h3>
+      <ul>
+        <li>{% icon "check" %}O tempo de contribuição conferido, período por período</li>
+        <li>{% icon "check" %}Os vínculos e salários que faltam no CNIS e como incluí-los</li>
+        <li>{% icon "check" %}As regras de aposentadoria que valem para o seu caso</li>
+        <li>{% icon "check" %}A data em que você pode pedir em cada regra</li>
+        <li>{% icon "check" %}O valor estimado do benefício em cada regra</li>
+        <li>{% icon "check" %}O caminho indicado entre pedido, recurso ou ação</li>
+      </ul>
+      <a class="btn btn-gold" href="{{ wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}Pedir a análise</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-band" id="documentos">
+  <div class="container">
+    {{ m.head("Para começar", "O que enviar para a análise.", "Comece pelo CNIS. Os outros documentos podem vir depois, conforme a análise mostrar o que falta.") }}
+    {{ m.docs([
+      { icon: "list", t: "CNIS", d: "O extrato com vínculos e salários. Sai na hora no aplicativo ou no site Meu INSS." },
+      { icon: "docX", t: "Carta de indeferimento", d: "Se o INSS negou o pedido. Mostra o motivo da negativa.", opt: "Se houver" },
+      { icon: "briefcase", t: "Carteiras de trabalho", d: "Todas, inclusive as antigas. Provam vínculos que não aparecem no CNIS." },
+      { icon: "doc", t: "PPP ou laudos", d: "PPP, se trabalhou exposto a agentes nocivos. Laudos, se tem alguma deficiência.", opt: "Se for o caso" }
+    ], "<strong>Não sabe baixar o CNIS?</strong> A nossa equipe orienta pelo WhatsApp, passo a passo.") }}
+  </div>
+</section>
+
+{{ m.aval() }}
+
+{{ m.faqSection(faq, "Dúvidas sobre aposentadoria.", "bg-band-end") }}
+
+{{ m.cta("Comece agora", "Conte a sua situação. <em>A gente indica o caminho.</em>", "Envie a sua idade, o tempo de contribuição que acha que tem e, se já pediu, a carta do INSS. Atendimento humano e sem compromisso.", wa) }}

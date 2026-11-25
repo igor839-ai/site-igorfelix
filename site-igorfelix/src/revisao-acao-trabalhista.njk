@@ -1,0 +1,160 @@
+---
+layout: layouts/base.njk
+permalink: /revisao/acao-trabalhista.html
+title: "Ganhou ação trabalhista? Sua aposentadoria pode aumentar"
+titleFull: "Ganhou ação trabalhista? Sua aposentadoria pode aumentar"
+description: "Se a Justiça do Trabalho reconheceu vínculo, salários ou adicionais que o INSS não usou no cálculo, você pode ter direito à revisão e às diferenças. Prazo de 10 anos."
+ogimage: "og-image-revisao.jpg"
+wa: "Olá! Vim pelo site. Ganhei uma ação trabalhista e quero saber se cabe a revisão da minha aposentadoria."
+area: revisao
+crumbs:
+  - name: "Revisão"
+    url: "/revisao/aposentadoria"
+  - name: "Ação trabalhista"
+sitemap:
+  priority: 0.8
+  changefreq: monthly
+faq:
+  - q: "Fiz acordo na ação trabalhista em vez de ganhar a sentença. Também tenho direito?"
+    a: "Depende do conteúdo do acordo e das provas do processo. Acordos homologados que reconhecem vínculo ou verbas salariais, principalmente quando houve recolhimento das contribuições, também podem fundamentar a revisão. A análise do caso mostra se o seu acordo serve."
+  - q: "A ação trabalhista foi há muitos anos. Ainda dá tempo?"
+    a: "O prazo para pedir a revisão é, em regra, de 10 anos, contados do mês seguinte ao primeiro pagamento da aposentadoria. As diferenças são pagas dos últimos 5 anos. O que conta é a data da aposentadoria, e a análise confere isso rapidamente."
+  - q: "Vou ter que processar o meu antigo empregador de novo?"
+    a: "Não. A revisão é pedida ao INSS, ou contra o INSS na Justiça Federal. A ação trabalhista que você já ganhou entra como prova do seu direito. O antigo empregador não participa."
+  - q: "O INSS não deveria recalcular sozinho?"
+    a: "Na prática, quase nunca isso acontece. Mesmo quando a empresa recolhe as contribuições determinadas pela Justiça do Trabalho, o INSS raramente atualiza o cálculo por conta própria. Por isso a revisão precisa ser pedida."
+  - q: "Ainda não me aposentei, mas ganhei uma ação trabalhista. O que faço?"
+    a: "Inclua a ação já no pedido de aposentadoria. O vínculo e os salários reconhecidos podem aumentar o tempo e o valor desde o início. Veja a página sobre <a href=\"/aposentadoria/cnis-com-erro\">como corrigir o CNIS</a>."
+  - q: "Quanto custa a análise?"
+    a: "A análise inicial é feita sem compromisso. Se houver viabilidade, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "Revisão de aposentadoria · Ação trabalhista",
+  h1: "Você ganhou uma ação trabalhista? <em>Sua aposentadoria pode estar sendo paga a menos.</em>",
+  lead: "Se a Justiça do Trabalho reconheceu vínculo, salários ou adicionais que o INSS nunca usou no cálculo, você pode ter direito a um benefício maior e a receber as diferenças.",
+  cta: "Descobrir se tenho direito",
+  cta2: { label: "Fazer o teste de 1 minuto", href: "#teste" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  kicker: "Carta de", title: "Concessão",
+  who: "Aposentadoria por idade",
+  rows: [
+    { k: "Vínculos em carteira", v: "CONSIDERADO", s: "ok" },
+    { k: "Vínculo reconhecido na Justiça do Trabalho", v: "FORA DO CÁLCULO", s: "no" },
+    { k: "Salários e adicionais da sentença", v: "FORA DO CÁLCULO", s: "no" }
+  ],
+  stamp: "REVISÃO", stampSub: "PODE CABER", stampClass: "gold",
+  caption: "Exemplo ilustrativo. A revisão depende da análise de cada caso."
+}) }}
+{% endcall %}
+
+{{ m.prazo(wa) }}
+
+<section class="section bg-band" id="como-funciona">
+  <div class="container">
+    {{ m.head("Entenda em 1 minuto", "Como uma ação trabalhista antiga pode aumentar a sua aposentadoria hoje.", "Você não precisa processar a empresa de novo.") }}
+    {{ m.steps([
+      { icon: "briefcase", t: "Você trabalhou", d: "Mas parte do vínculo, do salário ou dos adicionais ficou fora da carteira." },
+      { icon: "scale", t: "Ganhou na Justiça", d: "Sentença ou acordo reconheceu vínculo, salários ou adicionais." },
+      { icon: "x", t: "O INSS não recalculou", d: "O que a Justiça reconheceu quase nunca entra sozinho no cálculo." },
+      { icon: "doc", t: "Pedimos a revisão", d: "No INSS ou na Justiça Federal, com a ação trabalhista como prova." },
+      { icon: "chart", t: "Benefício maior e atrasados", d: "Novo valor mensal e as diferenças dos últimos 5 anos." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-white" id="direito">
+  <div class="container">
+    {{ m.head("Você pode ter direito se", "Situações que costumam dar origem à revisão.", "Basta uma delas para valer a pena analisar o seu caso.") }}
+    {{ m.checks([
+      { t: "A Justiça reconheceu um vínculo de emprego", d: "Você trabalhou sem registro e o juiz determinou a anotação do período na carteira." },
+      { t: "Ganhou diferenças salariais", d: "Salário \"por fora\", equiparação salarial, desvio de função ou reajustes reconhecidos na ação." },
+      { t: "Recebeu insalubridade ou periculosidade", d: "Adicionais reconhecidos na Justiça que aumentaram a remuneração daquele período." },
+      { t: "Ganhou horas extras habituais", d: "Horas extras pagas com habitualidade também entram no cálculo previdenciário." },
+      { t: "Fez acordo homologado na Justiça do Trabalho", d: "Conforme o conteúdo e as provas, o acordo também pode fundamentar a revisão." },
+      { t: "A empresa recolheu as contribuições da ação", d: "As guias de recolhimento reforçam a prova e facilitam a revisão." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section casos-sec" id="casos">
+  <img class="casos-tex" src="/assets/ementa-trf3.jpg" alt="" aria-hidden="true" loading="lazy" width="680" height="1014">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Casos reais do escritório</span>
+      <h2>Essa tese já foi acolhida pela Justiça em casos que conduzimos.</h2>
+      <p>Abaixo, dois exemplos julgados pela Justiça Federal de São Paulo e confirmados pelo TRF3.</p>
+    </div>
+    <div class="casos-grid">
+      <div class="caso reveal">
+        <span class="caso-tag">Caso P.P.Z. · Aposentadoria por idade</span>
+        <h3>Quase 5 anos de trabalho reconhecidos, mas fora do cálculo do INSS.</h3>
+        <p>O segurado ganhou reclamação trabalhista que reconheceu o vínculo com uma grande construtora entre 2004 e 2009. O INSS nunca incluiu esse período no cálculo. A Justiça Federal determinou a revisão do benefício, somando ainda outros períodos ignorados.</p>
+        <div class="selos">
+          <span class="selo">{% icon "check" %}Quase 5 anos (2004 a 2009) somados ao cálculo, além de outros 5 períodos de carteira e contribuição</span>
+          <span class="selo">{% icon "check" %}Testemunhas ouvidas na Justiça Federal confirmaram o trabalho reconhecido na trabalhista</span>
+          <span class="selo">{% icon "check" %}TRF3, 7ª Turma, apelação do INSS negada por unanimidade</span>
+        </div>
+        <p class="caso-proc">Processo público nº 5004175-36.2022.4.03.6183 · Justiça Federal de São Paulo</p>
+      </div>
+      <div class="caso reveal d1">
+        <span class="caso-tag">Caso R.R. · Aposentadoria por idade</span>
+        <h3>Mais de 8 anos de vínculo e salários reconhecidos na Justiça do Trabalho.</h3>
+        <p>A segurada teve reconhecidos o vínculo e os salários de mais de oito anos, com contribuições recolhidas pela empresa. Nada disso entrou no cálculo da aposentadoria. A Justiça Federal determinou a inclusão de todo o período e dos salários no benefício.</p>
+        <div class="selos">
+          <span class="selo">{% icon "check" %}Mais de 8 anos de salários (2000 a 2008) incluídos no cálculo do benefício</span>
+          <span class="selo">{% icon "check" %}Contribuições recolhidas pela empresa, comprovadas com as guias nos autos</span>
+          <span class="selo">{% icon "check" %}TRF3, 7ª Turma, apelação do INSS negada por unanimidade</span>
+        </div>
+        <p class="caso-proc">Processo público nº 5005986-02.2020.4.03.6183 · Justiça Federal de São Paulo</p>
+      </div>
+    </div>
+    <p class="caso-disclaimer">Casos reais conduzidos pelo escritório, com decisões públicas da Justiça Federal, apresentados com iniciais em respeito à privacidade. Cada caso é único. Os resultados dependem das provas e das circunstâncias de cada situação, e resultados passados não garantem resultados futuros.</p>
+  </div>
+</section>
+
+<section class="section bg-band" id="documentos">
+  <div class="container">
+    {{ m.head("Simples de começar", "Três documentos para a análise.") }}
+    {{ m.docs([
+      { icon: "scale", t: "Ação trabalhista", d: "Sentença ou acordo, ou apenas o número do processo." },
+      { icon: "list", t: "CNIS", d: "O extrato com vínculos e salários. Sai na hora no aplicativo ou no site Meu INSS." },
+      { icon: "doc", t: "Carta de concessão", d: "O documento com o cálculo do benefício. Também sai no Meu INSS." }
+    ], "<strong>Não encontrou algum documento?</strong> Localizamos o processo trabalhista e os extratos do INSS com você.") }}
+  </div>
+</section>
+
+{{ m.quiz({
+  h2: "O seu caso pode valer uma revisão?",
+  p: "Responda 4 perguntas e envie o resultado pelo WhatsApp.",
+  first: "Você recebe aposentadoria do INSS?",
+  wa: wa
+}) }}
+<script>
+window.QUIZ = {
+  questions: [
+    { q: 'Você recebe aposentadoria do INSS?', opts: ['Sim, recebo', 'Ainda não, mas vou pedir em breve', 'Não'] },
+    { q: 'Você teve alguma ação trabalhista ganha ou com acordo?', opts: ['Sim, ganhei a ação', 'Sim, fiz acordo', 'Não tive ação trabalhista'] },
+    { q: 'A ação reconheceu vínculo de emprego, salários maiores ou adicionais (insalubridade, periculosidade, horas extras)?', opts: ['Sim', 'Acho que sim, não tenho certeza', 'Não'] },
+    { q: 'Depois da ação trabalhista, o INSS recalculou o valor do benefício?', opts: ['Não, ficou tudo igual', 'Não sei dizer', 'Sim, já recalculou'] }
+  ],
+  result: function (a) {
+    if (a[1] === 'Não tive ação trabalhista') return { title: 'Essa revisão depende de uma ação trabalhista', text: 'Existem outras revisões possíveis, como tempo especial, atividades concomitantes e erro de cálculo. Envie as respostas e conte a sua situação.', link: { href: '/revisao/aposentadoria', label: 'Ver as outras revisões' } };
+    if (a[0] === 'Ainda não, mas vou pedir em breve') return { title: 'Inclua a ação já no pedido', text: 'Como você ainda não se aposentou, o vínculo e os salários reconhecidos podem entrar já no pedido de aposentadoria. Envie as respostas e o número do processo trabalhista.', link: { href: '/aposentadoria/cnis-com-erro', label: 'Ver como corrigir o CNIS antes de pedir' } };
+    return { title: 'O seu caso merece uma análise', text: 'Pelas respostas, vale verificar se a ação trabalhista pode aumentar o seu benefício. Envie as respostas e, se tiver, a sentença ou o número do processo. A nossa equipe responde com orientação clara, sem compromisso.' };
+  },
+  summary: function (a) {
+    return 'Olá! Vim pelo site e fiz o teste da revisão por ação trabalhista. Minhas respostas: 1) Aposentadoria do INSS: ' + a[0] + '; 2) Ação trabalhista: ' + a[1] + '; 3) Reconheceu vínculo, salários ou adicionais: ' + a[2] + '; 4) INSS recalculou: ' + a[3] + '. Gostaria de uma análise do meu caso.';
+  }
+};
+</script>
+
+{{ m.aval() }}
+
+{{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário, na concessão e na revisão de aposentadorias do INSS. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
+
+{{ m.faqSection(faq, "O que todo mundo pergunta antes de começar.", "bg-band-end") }}
+
+{{ m.cta("Comece agora", "Você já venceu uma vez na Justiça. <em>Essa vitória também conta na aposentadoria.</em>", "Envie a sua situação pelo WhatsApp. A nossa equipe analisa o seu caso e responde com orientação clara, sem compromisso.", wa) }}

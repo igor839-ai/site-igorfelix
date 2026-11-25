@@ -1,0 +1,135 @@
+---
+layout: layouts/base.njk
+permalink: /aposentadoria/pessoa-com-deficiencia.html
+title: "Aposentadoria da pessoa com deficiência (LC 142): regras e direitos"
+titleFull: "Aposentadoria da Pessoa com Deficiência (LC 142) | Igor Felix"
+description: "A LC 142 permite se aposentar com menos tempo de contribuição, conforme o grau da deficiência. Veja as regras, quem tem direito e como é a perícia do INSS."
+wa: "Olá! Vim pelo site e quero saber sobre a aposentadoria da pessoa com deficiência."
+area: aposentadoria
+crumbs:
+  - name: "Aposentadoria"
+    url: "/aposentadoria"
+  - name: "Pessoa com deficiência"
+sitemap:
+  priority: 0.8
+  changefreq: monthly
+faq:
+  - q: "Visão monocular dá direito à aposentadoria da pessoa com deficiência?"
+    a: "Pode dar. Desde 2021, a lei considera a visão monocular uma deficiência visual. O grau, que define o tempo de contribuição exigido, é avaliado na perícia do INSS."
+  - q: "Perda auditiva conta como deficiência?"
+    a: "Depende do grau e do impacto no trabalho e no dia a dia. Audiometrias e laudos do otorrino ajudam a provar a perda e desde quando ela existe."
+  - q: "Preciso ter idade mínima?"
+    a: "Não, na aposentadoria por tempo de contribuição da pessoa com deficiência. Na modalidade por idade, são 60 anos (homem) ou 55 anos (mulher), com 15 anos de contribuição nessa condição."
+  - q: "A deficiência começou no meio da carreira. Tenho direito?"
+    a: "Pode ter. Os períodos com e sem deficiência são convertidos e somados, e o tempo exigido é ajustado de forma proporcional."
+  - q: "Já me aposentei pela regra comum. Posso mudar?"
+    a: "Pode ser possível pela revisão, dentro do prazo de 10 anos. Veja a página da <a href=\"/revisao/pessoa-com-deficiencia\">revisão da aposentadoria da pessoa com deficiência</a>."
+  - q: "Quanto custa a análise?"
+    a: "A análise inicial é feita sem compromisso. Se houver um caminho viável, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "LC 142 · Pinheiros (SP) e on-line",
+  h1: "Tem deficiência? <em>A aposentadoria pode sair com menos tempo de contribuição.</em>",
+  lead: "A Lei Complementar 142 reduz o tempo de contribuição conforme o grau da deficiência, leve, moderada ou grave, e não exige idade mínima. Visão monocular, perda auditiva e deficiências físicas estão entre os casos mais comuns.",
+  cta: "Quero saber se tenho direito",
+  cta2: { label: "Ver as regras", href: "#regras" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  head: "Lei Complementar 142/2013",
+  kicker: "Tempo de contribuição exigido", title: "Pessoa com deficiência",
+  rows: [
+    { k: "Deficiência grave", v: "H 25 · M 20 ANOS", s: "ok" },
+    { k: "Deficiência moderada", v: "H 29 · M 24 ANOS", s: "ok" },
+    { k: "Deficiência leve", v: "H 33 · M 28 ANOS", s: "ok" },
+    { k: "Por idade, com 15 anos de contribuição", v: "H 60 · M 55 ANOS", s: "warn" }
+  ],
+  foot: "Na aposentadoria por tempo, <b>sem idade mínima</b>. Na regra comum, são 35 anos (homem) ou 30 anos (mulher), além de idade ou pontos.",
+  caption: "H para homem e M para mulher."
+}) }}
+{% endcall %}
+
+<section class="section bg-band" id="regras">
+  <div class="container">
+    {{ m.head("As regras da LC 142", "Duas formas de se aposentar com deficiência.", "As regras da LC 142 continuaram valendo depois da Reforma da Previdência.") }}
+    <div class="rules two">
+      <div class="rule hl reveal">
+        <h3>Por tempo de contribuição</h3>
+        <p class="r-sub">Sem idade mínima. O tempo depende do grau da deficiência.</p>
+        <dl>
+          <div><dt>Grave</dt><dd>25 anos (homem) ou 20 anos (mulher)</dd></div>
+          <div><dt>Moderada</dt><dd>29 anos (homem) ou 24 anos (mulher)</dd></div>
+          <div><dt>Leve</dt><dd>33 anos (homem) ou 28 anos (mulher)</dd></div>
+        </dl>
+        <p class="r-val"><b>Valor:</b> 100% da média dos salários.</p>
+      </div>
+      <div class="rule reveal d1">
+        <h3>Por idade</h3>
+        <p class="r-sub">Para qualquer grau de deficiência.</p>
+        <dl>
+          <div><dt>Homem</dt><dd>60 anos de idade</dd></div>
+          <div><dt>Mulher</dt><dd>55 anos de idade</dd></div>
+          <div><dt>Os dois</dt><dd>15 anos de contribuição na condição de pessoa com deficiência</dd></div>
+        </dl>
+        <p class="r-val"><b>Valor:</b> 70% da média, mais 1% a cada 12 contribuições, até 100%.</p>
+      </div>
+    </div>
+    <p class="small-note reveal">Se a deficiência surgiu no meio da carreira, os períodos com e sem deficiência são convertidos e somados, e o tempo exigido fica proporcional.</p>
+  </div>
+</section>
+
+<section class="section bg-white" id="quem-tem-direito">
+  <div class="container">
+    {{ m.head("Quem pode ter direito", "As deficiências que mais aparecem nos pedidos.", "A lei alcança deficiências de longo prazo, físicas, sensoriais, intelectuais ou mentais, que criam barreiras no trabalho e na vida diária.") }}
+    {{ m.checks([
+      { t: "Visão monocular", d: "Desde 2021, a Lei 14.126 classifica a visão monocular como deficiência visual." },
+      { t: "Perda auditiva", d: "Conforme o grau, a perda auditiva caracteriza deficiência. Audiometrias antigas ajudam a provar desde quando." },
+      { t: "Deficiência física", d: "Amputações, sequelas de poliomielite, encurtamento de membros e limitações de movimento." },
+      { t: "Deficiência intelectual ou mental", d: "Também alcançadas pela LC 142, com avaliação própria na perícia." },
+      { t: "Deficiência desde o nascimento ou a infância", d: "Quem trabalhou a vida toda com a deficiência costuma ter o maior ganho com a LC 142." },
+      { t: "Contratação pela cota de PcD", d: "Quem foi contratado como pessoa com deficiência já tem um registro forte da condição." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-band" id="avaliacao">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">A avaliação do INSS</span>
+      <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">O grau é definido por perícia médica e avaliação social.</h2>
+      <div class="prose-block">
+        <p>O INSS avalia a deficiência e as barreiras que ela cria no trabalho e na vida diária. O resultado define o grau, leve, moderado ou grave, e desde quando a deficiência existe.</p>
+        <p>Chegar à perícia com laudos, exames e documentos antigos faz diferença, porque eles mostram a deficiência ao longo do tempo de contribuição.</p>
+      </div>
+      <a class="link-arrow" href="/revisao/pessoa-com-deficiencia">Já se aposentou pela regra comum? Veja a revisão {% icon "arrow" %}</a>
+    </div>
+    <div class="panel reveal d1">
+      <h3>Documentos que ajudam</h3>
+      <ul>
+        <li>{% icon "check" %}Laudos médicos com o diagnóstico e a descrição das limitações</li>
+        <li>{% icon "check" %}Exames, como audiometria, campimetria e raio-x</li>
+        <li>{% icon "check" %}Prontuários, receitas e atestados antigos</li>
+        <li>{% icon "check" %}Registros do trabalho, como a contratação pela cota de PcD</li>
+      </ul>
+      <a class="btn btn-gold" href="{{ wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}Falar sobre o meu caso</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-white" id="documentos">
+  <div class="container">
+    {{ m.head("Para a análise", "O que enviar para começar.", "Comece pelo CNIS e pelos laudos que tiver. O restante, orientamos como reunir.") }}
+    {{ m.docs([
+      { icon: "doc", t: "Laudos e exames", d: "Os documentos médicos que mostram a deficiência e desde quando ela existe." },
+      { icon: "list", t: "CNIS", d: "O extrato com vínculos e salários. Sai na hora no aplicativo ou no site Meu INSS." },
+      { icon: "briefcase", t: "Carteiras de trabalho", d: "Mostram as funções e as datas de cada vínculo." }
+    ]) }}
+  </div>
+</section>
+
+{{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário, na concessão e na revisão de aposentadorias do INSS, incluindo a aposentadoria da pessoa com deficiência. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
+
+{{ m.faqSection(faq, "Dúvidas sobre a aposentadoria da pessoa com deficiência.", "bg-band-end") }}
+
+{{ m.cta("Comece agora", "Tem deficiência e quer se aposentar? <em>Veja quanto tempo falta pela LC 142.</em>", "Envie o CNIS e os laudos que tiver. Calculamos o tempo pela LC 142 e comparamos com a regra comum.", wa) }}

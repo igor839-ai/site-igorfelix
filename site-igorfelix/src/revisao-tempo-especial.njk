@@ -1,0 +1,136 @@
+---
+layout: layouts/base.njk
+permalink: /revisao/tempo-especial.html
+title: "Revisão por atividade especial: PPP que ficou de fora"
+titleFull: "Revisão por Atividade Especial: PPP que ficou de fora"
+description: "Trabalhou exposto a agentes nocivos e o tempo especial não entrou no cálculo? A aposentadoria pode ser revisada, com aumento e atrasados. Prazo de 10 anos."
+ogimage: "og-revisao.jpg"
+wa: "Olá! Vim pelo site. Trabalhei exposto a agente nocivo e quero saber se cabe a revisão da minha aposentadoria pelo tempo especial."
+area: revisao
+crumbs:
+  - name: "Revisão"
+    url: "/revisao/aposentadoria"
+  - name: "Tempo especial"
+sitemap:
+  priority: 0.8
+  changefreq: monthly
+faq:
+  - q: "O que é atividade especial e como ela pode aumentar a aposentadoria?"
+    a: "É o tempo em que você trabalhou exposto a agentes nocivos à saúde, como ruído, calor, agentes químicos ou biológicos, ou em atividade perigosa. Convertido, esse tempo vale mais e pode aumentar o valor do benefício. Quando o INSS não o considerou, cabe revisão."
+  - q: "O que são o PPP e o LTCAT?"
+    a: "São os documentos, emitidos pela empresa, que comprovam a exposição ao agente nocivo. São a principal prova da atividade especial. Se você não tem, orientamos como pedir à empresa. Se ela fechou, há outros caminhos de prova."
+  - q: "Já sou aposentado. Ainda posso pedir a conversão do tempo especial?"
+    a: "Pode. Mesmo depois de aposentado, é possível pedir a revisão para que o tempo especial seja reconhecido e o benefício recalculado, com o pagamento das diferenças, dentro do prazo de 10 anos."
+  - q: "Me aposentei há muitos anos. Ainda dá tempo?"
+    a: "O prazo para pedir a revisão é, em regra, de 10 anos, contados do mês seguinte ao primeiro pagamento da aposentadoria. As diferenças são pagas dos últimos 5 anos. Se a sua aposentadoria tem menos de 10 anos, ainda dá tempo."
+  - q: "O INSS contou o meu tempo como comum. Dá para reverter?"
+    a: "Sim. Com a prova da exposição (PPP ou LTCAT), é possível pedir o reconhecimento como especial e a revisão do cálculo, no INSS ou na Justiça Federal."
+  - q: "Quanto custa a análise?"
+    a: "A análise inicial é feita sem compromisso. Se houver viabilidade, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "Revisão de aposentadoria · Tempo especial",
+  h1: "Trabalhou exposto a agente nocivo? <em>Sua aposentadoria pode estar sendo paga a menos.</em>",
+  lead: "Se você teve atividade especial comprovada por PPP ou LTCAT (ruído, calor, agentes químicos, insalubridade ou periculosidade) e o INSS não converteu esse tempo, o benefício pode ser recalculado, com aumento e atrasados.",
+  cta: "Descobrir se tenho direito",
+  cta2: { label: "Fazer o teste de 1 minuto", href: "#teste" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  kicker: "Carta de", title: "Concessão",
+  who: "Aposentadoria por tempo de contribuição",
+  rows: [
+    { k: "Vínculos em carteira", v: "CONSIDERADO", s: "ok" },
+    { k: "Período com PPP, 1998 a 2019", v: "CONTADO COMO COMUM", s: "no" },
+    { k: "Conversão do tempo especial", v: "NÃO APLICADA", s: "no" }
+  ],
+  stamp: "REVISÃO", stampSub: "PODE CABER", stampClass: "gold",
+  caption: "Exemplo ilustrativo. A revisão depende da análise de cada caso."
+}) }}
+{% endcall %}
+
+{{ m.prazo(wa) }}
+
+<section class="section bg-band" id="como-funciona">
+  <div class="container">
+    {{ m.head("Entenda em 1 minuto", "Como o tempo especial que ficou de fora pode aumentar a sua aposentadoria.", "Na maioria das vezes, a prova já existe no seu PPP ou no LTCAT.") }}
+    {{ m.steps([
+      { icon: "hat", t: "Você trabalhou exposto", d: "A ruído, calor, agentes químicos, insalubridade ou periculosidade." },
+      { icon: "doc", t: "A prova existe", d: "O PPP ou o LTCAT do período comprova a exposição." },
+      { icon: "x", t: "O INSS não converteu", d: "Contou como tempo comum ou ignorou o período especial." },
+      { icon: "scale", t: "Pedimos a revisão", d: "No INSS ou na Justiça Federal, para reconhecer o tempo especial." },
+      { icon: "chart", t: "Benefício maior e atrasados", d: "Novo valor mensal e as diferenças dos últimos 5 anos." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-white" id="direito">
+  <div class="container">
+    {{ m.head("Você pode ter direito se", "Situações que costumam dar origem à revisão.", "Basta uma delas para valer a pena analisar o seu caso.") }}
+    {{ m.checks([
+      { t: "Trabalhou exposto a ruído acima do limite", d: "Ruído acima do limite legal da época, medido no seu ambiente de trabalho." },
+      { t: "Teve contato com agentes químicos ou biológicos", d: "Produtos químicos, hidrocarbonetos, agentes biológicos ou insalubridade habitual." },
+      { t: "Tem PPP ou LTCAT que ficou de fora", d: "O documento que comprova a exposição não foi apresentado, aceito ou considerado pelo INSS." },
+      { t: "Trabalhou em atividade de risco", d: "Enfermagem, metalurgia, eletricidade acima de 250 volts, combustíveis e atividades semelhantes." },
+      { t: "O INSS enquadrou como tempo comum", d: "Um período especial foi contado como comum, e o valor do benefício ficou menor." },
+      { t: "Aposentou pela regra comum tendo tempo especial", d: "Com o tempo especial convertido, a aposentadoria poderia ter valor maior." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-band" id="ganhos">
+  <div class="container">
+    {{ m.head("O que está em jogo", "A revisão pode trazer dois ganhos.") }}
+    <div class="cards two">
+      <div class="card reveal"><div class="c-ic">{% icon "chart" %}</div><h3>Aumento no valor mensal</h3><p>Com o tempo especial convertido e dentro do cálculo, o benefício é recalculado e pode aumentar de forma permanente.</p></div>
+      <div class="card reveal d1"><div class="c-ic">{% icon "wallet" %}</div><h3>Diferenças dos últimos 5 anos</h3><p>Além do aumento, você pode receber a diferença entre o que foi pago e o que deveria ter sido pago, com correção.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-white" id="documentos">
+  <div class="container">
+    {{ m.head("Simples de começar", "Três documentos para a análise.") }}
+    {{ m.docs([
+      { icon: "hat", t: "PPP ou LTCAT", d: "Os documentos da empresa que comprovam a exposição. Se não tiver, orientamos como pedir." },
+      { icon: "list", t: "CNIS", d: "O extrato com vínculos e salários. Sai na hora no aplicativo ou no site Meu INSS." },
+      { icon: "doc", t: "Carta de concessão", d: "O documento com o cálculo do benefício. Também sai no Meu INSS." }
+    ], "<strong>Não tem o PPP?</strong> Orientamos como pedir à empresa e buscamos os extratos do INSS com você.") }}
+  </div>
+</section>
+
+{{ m.quiz({
+  h2: "O seu caso pode valer uma revisão?",
+  p: "Responda 5 perguntas e envie o resultado pelo WhatsApp.",
+  first: "Você já é aposentado ou está prestes a se aposentar?",
+  wa: wa
+}) }}
+<script>
+window.QUIZ = {
+  questions: [
+    { q: 'Você já é aposentado ou está prestes a se aposentar?', opts: ['Sim, já sou aposentado', 'Ainda não, mas vou pedir em breve', 'Não'] },
+    { q: 'Você trabalhou exposto a agente nocivo (ruído, calor, agentes químicos, insalubridade ou periculosidade)?', opts: ['Sim', 'Acho que sim, não tenho certeza', 'Não'] },
+    { q: 'Você tem ou consegue o PPP ou o LTCAT desse período?', opts: ['Tenho o documento', 'Consigo pedir à empresa', 'Não tenho e não sei como conseguir'] },
+    { q: 'O INSS considerou esse tempo como especial no cálculo?', opts: ['Não considerou', 'Não sei dizer', 'Sim, considerou'] },
+    { q: 'Há quanto tempo você se aposentou?', opts: ['Menos de 10 anos', 'Mais de 10 anos', 'Ainda não me aposentei'] }
+  ],
+  result: function (a) {
+    if (a[1] === 'Não') return { title: 'Essa revisão depende de exposição a agente nocivo', text: 'Existem outras revisões possíveis, como erro de cálculo, ação trabalhista e atividades concomitantes. Envie as respostas e conte a sua situação.', link: { href: '/revisao/aposentadoria', label: 'Ver as outras revisões' } };
+    if (a[4] === 'Mais de 10 anos') return { title: 'Vale conferir o prazo', text: 'Com mais de 10 anos de aposentadoria, o prazo de revisão pode ter terminado. A contagem começa no mês seguinte ao primeiro pagamento. Envie as respostas e a carta de concessão para conferirmos.' };
+    if (a[4] === 'Ainda não me aposentei') return { title: 'Antes de pedir, inclua o tempo especial', text: 'Como você ainda não se aposentou, o tempo especial pode entrar já no pedido. Envie as respostas e o PPP para calcularmos a regra mais vantajosa.', link: { href: '/aposentadoria/especial', label: 'Ver a página da aposentadoria especial' } };
+    return { title: 'O seu caso merece uma análise', text: 'Pelas respostas, vale verificar se o tempo especial pode aumentar o seu benefício. Envie as respostas e a carta de concessão. A nossa equipe responde com orientação clara, sem compromisso.' };
+  },
+  summary: function (a) {
+    return 'Olá! Vim pelo site e fiz o teste da revisão por tempo especial. Minhas respostas: 1) Benefício do INSS: ' + a[0] + '; 2) Exposição a agente nocivo: ' + a[1] + '; 3) PPP/LTCAT: ' + a[2] + '; 4) INSS considerou como especial: ' + a[3] + '; 5) Tempo desde a aposentadoria: ' + a[4] + '. Gostaria de uma análise do meu caso.';
+  }
+};
+</script>
+
+{{ m.aval() }}
+
+{{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário, na concessão e na revisão de aposentadorias do INSS. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
+
+{{ m.faqSection(faq, "O que todo mundo pergunta antes de começar.", "bg-band-end") }}
+
+{{ m.cta("Comece agora", "Você trabalhou exposto ao risco. <em>Esse tempo precisa estar na sua aposentadoria.</em>", "Envie a sua situação pelo WhatsApp. A nossa equipe analisa o seu caso e responde com orientação clara, sem compromisso.", wa) }}

@@ -1,0 +1,104 @@
+---
+layout: layouts/base.njk
+permalink: /revisao/erro-de-calculo.html
+title: "Erro no cálculo da aposentadoria? Confira a carta de concessão"
+titleFull: "Erro no cálculo da aposentadoria? Confira a carta de concessão"
+description: "Salário faltando, tempo não contado ou regra errada. Conferimos a carta de concessão e o CNIS para ver se a sua aposentadoria pode aumentar. Prazo de 10 anos."
+ogimage: "og-revisao.jpg"
+wa: "Olá! Vim pelo site e quero conferir se a minha aposentadoria foi calculada certo."
+area: revisao
+crumbs:
+  - name: "Revisão"
+    url: "/revisao/aposentadoria"
+  - name: "Erro de cálculo"
+sitemap:
+  priority: 0.8
+  changefreq: monthly
+faq:
+  - q: "O que é a carta de concessão?"
+    a: "É o documento em que o INSS informa a concessão do benefício e mostra o cálculo do valor, com os salários usados, o tempo de contribuição e a regra aplicada. Também é chamada de memória de cálculo."
+  - q: "Como consigo a carta de concessão?"
+    a: "No aplicativo ou no site Meu INSS, com a senha do gov.br, no serviço Carta de Concessão. Se tiver dificuldade, a nossa equipe orienta pelo WhatsApp."
+  - q: "Quais erros de cálculo são mais comuns?"
+    a: "Salários que não aparecem no CNIS e entram como salário mínimo, períodos de trabalho que não foram contados, tempo especial contado como comum e a aplicação de uma regra que paga menos do que outra possível."
+  - q: "Existe prazo para corrigir o erro?"
+    a: "Sim. Em regra, 10 anos contados do mês seguinte ao primeiro pagamento da aposentadoria. As diferenças são pagas dos últimos 5 anos."
+  - q: "E se não houver erro?"
+    a: "Dizemos isso com clareza. Se a conferência mostrar que o cálculo está certo, você fica sabendo e não gasta com um pedido sem fundamento."
+  - q: "Quanto custa a análise?"
+    a: "A análise inicial é feita sem compromisso. Se houver viabilidade, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "Revisão de aposentadoria · Erro de cálculo",
+  h1: "Acha que o INSS errou no cálculo da sua aposentadoria? <em>A carta de concessão mostra.</em>",
+  lead: "A carta de concessão traz cada salário usado, o tempo contado e a regra aplicada. Comparamos esses dados com o CNIS e com a sua história de trabalho para encontrar o que ficou de fora ou foi calculado errado.",
+  cta: "Conferir a minha carta",
+  cta2: { label: "O que conferimos", href: "#conferencia" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  kicker: "Memória de", title: "Cálculo",
+  who: "Aposentadoria por tempo de contribuição",
+  rows: [
+    { k: "Salários de 1996 a 1998", v: "SALÁRIO MÍNIMO", s: "no" },
+    { k: "Holerites do mesmo período", v: "R$ 3.200 A R$ 3.600", s: "warn" },
+    { k: "Tempo de contribuição contado", v: "33 ANOS", s: "warn" },
+    { k: "Tempo na carteira e no CNIS", v: "35 ANOS", s: "ok" }
+  ],
+  stamp: "REVISÃO", stampSub: "PODE CABER", stampClass: "gold",
+  caption: "Exemplo ilustrativo. A revisão depende da análise de cada caso."
+}) }}
+{% endcall %}
+
+{{ m.prazo(wa) }}
+
+<section class="section bg-band" id="conferencia">
+  <div class="container">
+    {{ m.head("O que conferimos", "Os pontos da carta de concessão que mais escondem erros.", "Cada item é comparado com o CNIS, as carteiras de trabalho e os seus documentos.") }}
+    {{ m.checks([
+      { t: "Salários usados na média", d: "Meses sem salário, ou lançados como salário mínimo, baixam a média do benefício." },
+      { t: "Tempo de contribuição contado", d: "Períodos de carteira, contribuições ou tempo especial que ficaram de fora." },
+      { t: "Regra aplicada", d: "Se havia uma regra de transição ou um direito anterior que pagaria mais." },
+      { t: "Fator previdenciário", d: "Idade e tempo usados no fator, nas regras em que ele se aplica." },
+      { t: "Salários de ação trabalhista", d: "Vínculos e salários reconhecidos na Justiça do Trabalho e não usados no cálculo." },
+      { t: "Dois empregos ao mesmo tempo", d: "Remunerações concomitantes que entraram só em parte." }
+    ]) }}
+    <div class="cards-foot reveal">
+      <a class="link-arrow" href="/revisao/acao-trabalhista">Revisão por ação trabalhista {% icon "arrow" %}</a>
+      <a class="link-arrow" href="/revisao/atividades-concomitantes">Revisão por atividades concomitantes {% icon "arrow" %}</a>
+      <a class="link-arrow" href="/revisao/tempo-especial">Revisão por tempo especial {% icon "arrow" %}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-white" id="como-pegar">
+  <div class="container">
+    {{ m.head("Como pegar a carta", "Baixe a carta de concessão em poucos minutos.") }}
+    {{ m.steps([
+      { icon: "phone", t: "Entre no Meu INSS", d: "Pelo aplicativo ou pelo site, com a senha do gov.br." },
+      { icon: "search", t: "Procure a carta", d: "Busque por Carta de Concessão e escolha o seu benefício." },
+      { icon: "doc", t: "Baixe o PDF", d: "Salve o arquivo no celular ou no computador." },
+      { icon: "chat", t: "Envie pelo WhatsApp", d: "Junto com o CNIS, que sai no mesmo aplicativo." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-band" id="documentos">
+  <div class="container">
+    {{ m.head("Para a análise", "Os documentos da conferência.") }}
+    {{ m.docs([
+      { icon: "doc", t: "Carta de concessão", d: "O documento com o cálculo do benefício, também chamado de memória de cálculo." },
+      { icon: "list", t: "CNIS", d: "O extrato com todos os vínculos e salários." },
+      { icon: "briefcase", t: "Carteiras e holerites", d: "Mostram os salários reais e os períodos que podem faltar.", opt: "Se tiver" }
+    ], "<strong>Não conseguiu baixar a carta?</strong> A nossa equipe orienta pelo WhatsApp.") }}
+  </div>
+</section>
+
+{{ m.aval() }}
+
+{{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário, na concessão e na revisão de aposentadorias do INSS. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
+
+{{ m.faqSection(faq, "Dúvidas sobre erro de cálculo.", "bg-band-end") }}
+
+{{ m.cta("Comece agora", "Mande a carta de concessão e o CNIS. <em>Conferimos o cálculo.</em>", "Se houver erro, mostramos onde e quanto ele pode representar. Se não houver, dizemos isso com clareza.", wa, "Mandar a carta pelo WhatsApp") }}

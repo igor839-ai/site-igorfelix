@@ -1,0 +1,138 @@
+---
+layout: layouts/base.njk
+permalink: /aposentadoria/especial.html
+title: "Aposentadoria especial do INSS: regras de 2026 e o PPP"
+titleFull: "Aposentadoria especial do INSS: regras de 2026 e o PPP"
+description: "Trabalhou exposto a ruído, calor, químicos ou agentes biológicos? Veja as regras da aposentadoria especial em 2026, o papel do PPP e quando vale pedir."
+wa: "Olá! Vim pelo site e quero saber se tenho direito à aposentadoria especial."
+area: aposentadoria
+crumbs:
+  - name: "Aposentadoria"
+    url: "/aposentadoria"
+  - name: "Aposentadoria especial"
+sitemap:
+  priority: 0.8
+  changefreq: monthly
+faq:
+  - q: "O que é o PPP e como consigo?"
+    a: "O Perfil Profissiográfico Previdenciário é o documento em que a empresa descreve a sua função e os agentes nocivos a que você ficou exposto. Peça ao RH da empresa. Ela é obrigada a fornecer, inclusive para ex-funcionários."
+  - q: "A empresa fechou. Ainda consigo provar o tempo especial?"
+    a: "Muitas vezes, sim. É possível usar laudos da época, documentos do sindicato, PPPs de colegas e, na Justiça, perícia em empresa do mesmo ramo."
+  - q: "O uso de EPI tira o direito?"
+    a: "No caso do ruído acima do limite, o STF decidiu que o protetor auricular não afasta o direito. Para os outros agentes, depende de o EPI ter sido de fato eficaz, o que se discute no caso concreto."
+  - q: "Posso continuar trabalhando depois da aposentadoria especial?"
+    a: "Não na mesma atividade exposta a agentes nocivos. Quem se aposenta pela especial e continua nela pode ter o benefício suspenso. Em outra atividade, sem exposição, pode."
+  - q: "Tenho tempo especial, mas não o suficiente para a aposentadoria especial. Ele serve?"
+    a: "Serve. O tempo especial trabalhado até 13/11/2019 pode ser convertido em comum, com acréscimo de 40% para o homem e de 20% para a mulher, e antecipar a aposentadoria por tempo de contribuição."
+  - q: "Quanto custa a análise?"
+    a: "A análise inicial é feita sem compromisso. Se houver um caminho viável, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "Aposentadoria especial · Pinheiros (SP) e on-line",
+  h1: "Trabalhou exposto a agentes nocivos? <em>Veja se tem direito à aposentadoria especial.</em>",
+  lead: "Ruído, calor, produtos químicos, agentes biológicos e eletricidade podem dar direito a se aposentar com menos tempo ou com valor maior. A prova é o PPP, emitido pela empresa. Com ele em mãos, calculamos o tempo especial e a regra mais vantajosa.",
+  cta: "Quero saber se tenho direito",
+  cta2: { label: "Ver as regras", href: "#regras" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  head: "Documento emitido pela empresa",
+  kicker: "Perfil Profissiográfico Previdenciário", title: "PPP",
+  who: "Função: operador de prensa<br>Período: 1998 a 2019",
+  rows: [
+    { k: "Agente nocivo: ruído", v: "92 dB(A)", s: "warn" },
+    { k: "Limite da época", v: "85 a 90 dB(A)", s: "info" },
+    { k: "Responsável pelos registros ambientais", v: "INFORMADO", s: "ok" },
+    { k: "Tempo especial no período", v: "21 ANOS", s: "ok" }
+  ],
+  foot: "Com o ruído acima do limite, o período conta como <b>tempo especial</b>.",
+  caption: "Exemplo ilustrativo de PPP."
+}) }}
+{% endcall %}
+
+<div class="container notice-wrap">
+  <div class="notice reveal">
+    <div class="n-ic">{% icon "alert" %}</div>
+    <div>
+      <h3>Sem o PPP, o INSS não reconhece o tempo especial</h3>
+      <p>Antes de pedir a aposentadoria, peça o PPP ao RH de cada empresa em que trabalhou exposto. A empresa é obrigada a fornecer. Se ela fechou, há outros caminhos de prova, como laudos da época e perícia em empresa do mesmo ramo.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section bg-white" id="regras">
+  <div class="container">
+    {{ m.head("As regras", "Como funciona a aposentadoria especial depois da reforma.", "A regra depende de quando você completou o tempo especial e de quando começou a contribuir.") }}
+    <div class="rules">
+      <div class="rule reveal">
+        <h3>Direito adquirido</h3>
+        <p class="r-sub">Para quem completou 25 anos de atividade especial até 13/11/2019.</p>
+        <dl><div><dt>Exige</dt><dd>25 anos de atividade especial, sem idade mínima</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> calculado pelas regras de antes da reforma, sem fator previdenciário.</p>
+      </div>
+      <div class="rule hl reveal d1">
+        <h3>Regra dos pontos</h3>
+        <p class="r-sub">Para quem já contribuía antes de 13/11/2019 e completa o tempo depois.</p>
+        <dl><div><dt>Exige</dt><dd>25 anos de atividade especial e 86 pontos (idade somada ao tempo de contribuição)</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> 60% da média, mais 2% por ano acima de 15 anos (mulher) ou 20 anos (homem).</p>
+      </div>
+      <div class="rule reveal d2">
+        <h3>Regra permanente</h3>
+        <p class="r-sub">Para quem começou a contribuir depois de 13/11/2019.</p>
+        <dl><div><dt>Exige</dt><dd>60 anos de idade e 25 anos de atividade especial</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> o mesmo cálculo da regra dos pontos.</p>
+      </div>
+    </div>
+    <div class="split top" style="margin-top:2.4rem">
+      <div class="panel reveal">
+        <h3>Na prática, quem chega aos 86 pontos</h3>
+        <ul>
+          <li>{% icon "check" %}56 anos de idade e 30 anos de contribuição, sendo 25 especiais</li>
+          <li>{% icon "check" %}58 anos de idade e 28 anos de contribuição, sendo 25 especiais</li>
+          <li>{% icon "check" %}Por isso a regra interessa sobretudo a quem tem 55 anos ou mais</li>
+        </ul>
+      </div>
+      <div class="panel navy reveal d1">
+        <h3>Não chega aos 25 anos especiais?</h3>
+        <ul>
+          <li>{% icon "check" %}O tempo especial trabalhado até 13/11/2019 pode ser convertido em comum</li>
+          <li>{% icon "check" %}Cada 10 anos especiais viram 14 anos para o homem e 12 para a mulher</li>
+          <li>{% icon "check" %}A conversão pode antecipar a aposentadoria por tempo de contribuição</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-band" id="quem-tem-direito">
+  <div class="container">
+    {{ m.head("Quem costuma ter direito", "As atividades que mais aparecem nos pedidos.", "O que vale é a exposição registrada no PPP. A profissão, sozinha, só garantia o tempo especial até 28/04/1995.") }}
+    {{ m.checks([
+      { t: "Indústria e metalurgia", d: "Ruído de máquinas e prensas acima do limite, calor de fornos e fundições." },
+      { t: "Enfermagem, hospitais e laboratórios", d: "Contato habitual com pacientes, materiais contaminados e agentes biológicos." },
+      { t: "Eletricistas", d: "Trabalho com energia elétrica acima de 250 volts, com risco de choque." },
+      { t: "Mecânicos e frentistas", d: "Contato com óleos, graxas, solventes e combustíveis, que são agentes químicos." },
+      { t: "Motoristas de caminhão e ônibus", d: "Conforme o PPP, ruído e vibração acima do limite. Até 1995, a categoria era especial por si só." },
+      { t: "Outras atividades com agentes químicos", d: "Pintura, galvanoplastia, gráfica e indústria química, conforme os produtos e as medições." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-white" id="documentos">
+  <div class="container">
+    {{ m.head("Para a análise", "Os documentos da aposentadoria especial.", "O PPP é o principal. Sem ele, conferimos o que existe e indicamos como conseguir.") }}
+    {{ m.docs([
+      { icon: "hat", t: "PPP", d: "De cada empresa em que trabalhou exposto a agentes nocivos." },
+      { icon: "doc", t: "LTCAT ou laudos", d: "O laudo técnico com as medições do ambiente de trabalho.", opt: "Se tiver" },
+      { icon: "list", t: "CNIS", d: "O extrato com vínculos e salários. Sai na hora no aplicativo ou no site Meu INSS." },
+      { icon: "briefcase", t: "Carteiras de trabalho", d: "Mostram a função e as datas de cada vínculo." }
+    ], "<strong>Ainda não tem o PPP?</strong> Orientamos como pedir à empresa e o que fazer se ela fechou.") }}
+  </div>
+</section>
+
+{{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário, na concessão e na revisão de aposentadorias do INSS. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
+
+{{ m.faqSection(faq, "Dúvidas sobre a aposentadoria especial.", "bg-band-end") }}
+
+{{ m.cta("Comece pelo PPP", "Trabalhou exposto? <em>Mande o PPP e o CNIS.</em>", "Calculamos o seu tempo especial e mostramos se a aposentadoria especial ou a conversão do tempo vale mais no seu caso.", wa, "Mandar o PPP pelo WhatsApp") }}

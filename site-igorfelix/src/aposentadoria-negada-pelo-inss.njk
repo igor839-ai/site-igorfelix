@@ -1,0 +1,130 @@
+---
+layout: layouts/base.njk
+permalink: /aposentadoria/negada-pelo-inss.html
+title: "Aposentadoria negada pelo INSS? Veja o que fazer agora"
+titleFull: "Aposentadoria negada pelo INSS? Veja o que fazer agora"
+description: "O INSS negou a sua aposentadoria? Veja o motivo na carta de indeferimento, o prazo de 30 dias para recorrer e quando vale um novo pedido ou uma ação judicial."
+wa: "Olá! Vim pelo site. O INSS negou a minha aposentadoria e quero saber o que fazer."
+area: aposentadoria
+crumbs:
+  - name: "Aposentadoria"
+    url: "/aposentadoria"
+  - name: "Aposentadoria negada"
+sitemap:
+  priority: 0.9
+  changefreq: monthly
+faq:
+  - q: "Qual é o prazo para recorrer da negativa do INSS?"
+    a: "30 dias, contados da data em que você tomou conhecimento da decisão. O recurso é feito pelo Meu INSS ou pela central 135 e é julgado pelas Juntas de Recursos da Previdência Social."
+  - q: "Perdi o prazo de 30 dias. E agora?"
+    a: "Ainda há caminhos. Dá para fazer um novo pedido com mais provas ou entrar com ação na Justiça Federal. A diferença está na data a partir da qual a aposentadoria é paga, por isso vale agir logo."
+  - q: "É melhor recorrer ou entrar na Justiça?"
+    a: "Depende do motivo da negativa. O recurso administrativo é gratuito e serve quando a prova já estava no processo e foi mal avaliada. A ação judicial permite perícia e testemunhas e costuma ser o caminho quando o INSS não aceita a prova de um vínculo ou do tempo especial. A análise da carta e do processo indica a opção mais adequada."
+  - q: "Se a aposentadoria for concedida depois, recebo os atrasados?"
+    a: "Em regra, sim. Se ficar provado que você já tinha direito na data do primeiro pedido, os valores são calculados desde então, com correção. Quando a prova decisiva só aparece depois, a data de início pode mudar."
+  - q: "Preciso de advogado para recorrer?"
+    a: "Não é obrigatório no recurso administrativo, nem nos Juizados Especiais Federais. A negativa, porém, costuma envolver CNIS, documentos e regras de transição, e um recurso sem as provas certas pode ser negado de novo."
+  - q: "Quanto custa a análise da negativa?"
+    a: "A análise inicial é feita sem compromisso. Se houver um caminho viável, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "Aposentadoria negada · Pinheiros (SP) e on-line",
+  h1: "Aposentadoria negada pelo INSS? <em>Veja o que fazer agora.</em>",
+  lead: "A negativa tem um motivo, escrito na carta de indeferimento. Conforme o motivo, dá para recorrer em até 30 dias, fazer um novo pedido com mais provas ou entrar com ação na Justiça Federal. Envie a carta e o CNIS para analisarmos o seu caso.",
+  cta: "Enviar a carta de indeferimento",
+  cta2: { label: "Entender os caminhos", href: "#caminhos" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  kicker: "Comunicação de", title: "Decisão",
+  who: "Requerimento de aposentadoria<br>Protocolo nº •••••••••",
+  rows: [
+    { k: "Aposentadoria por tempo de contribuição", v: "INDEFERIDO", s: "no" },
+    { k: "Motivo: tempo de contribuição insuficiente", v: "VER CNIS", s: "warn" },
+    { k: "Vínculo de 1989 a 1993 em carteira", v: "NÃO COMPUTADO", s: "no" },
+    { k: "Prazo para recorrer", v: "30 DIAS", s: "warn" }
+  ],
+  foot: "Muitas negativas vêm de falhas no CNIS e de documentos que o INSS não analisou.",
+  caption: "Exemplo ilustrativo de indeferimento."
+}) }}
+{% endcall %}
+
+<section class="section bg-band" id="motivos">
+  <div class="container">
+    {{ m.head("Por que o INSS nega", "Os motivos de negativa que mais aparecem.", "O motivo está na carta de indeferimento, que fica disponível no Meu INSS. Ele define o melhor caminho.") }}
+    {{ m.checks([
+      { t: "Tempo de contribuição insuficiente", d: "Muitas vezes porque vínculos, salários ou períodos não aparecem no CNIS e não entraram na conta." },
+      { t: "Vínculo não reconhecido", d: "Empresa que fechou, carteira com rasura ou sem os dados que o INSS exige." },
+      { t: "Tempo especial não aceito", d: "PPP incompleto ou com falhas, ou período especial contado como comum." },
+      { t: "Contribuições abaixo do mínimo ou como MEI", d: "Recolhimentos que não contam para as regras por tempo de contribuição sem complementação." },
+      { t: "Exigência não cumprida", d: "O INSS pediu um documento e o prazo terminou sem resposta." },
+      { t: "Idade ou carência não cumpridas", d: "Na aposentadoria por idade, faltou idade ou o mínimo de contribuições." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-white" id="caminhos">
+  <div class="container">
+    {{ m.head("O que fazer", "Os caminhos depois da negativa.", "A escolha depende do motivo, das provas que você tem e do tempo que cada caminho leva.") }}
+    <div class="cards">
+      <div class="card reveal">
+        <div class="c-ic">{% icon "refresh" %}</div>
+        <span class="tag">Prazo de 30 dias</span>
+        <h3>Recurso administrativo</h3>
+        <p>Pedido para as Juntas de Recursos da Previdência Social reverem a decisão, feito pelo Meu INSS. Indicado quando a prova já estava no processo e o INSS a ignorou ou avaliou mal.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="c-ic">{% icon "docCheck" %}</div>
+        <span class="tag">A qualquer tempo</span>
+        <h3>Novo pedido com mais provas</h3>
+        <p>Um novo requerimento, com o CNIS corrigido e os documentos que faltaram. Indicado quando a negativa veio de documento ausente. O benefício passa a contar da data do novo pedido.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="c-ic">{% icon "scale" %}</div>
+        <span class="tag">Depois da negativa</span>
+        <h3>Ação na Justiça Federal</h3>
+        <p>Com a negativa do INSS, a aposentadoria pode ser pedida na Justiça, com perícia e testemunhas quando necessário. Se o direito já existia no primeiro pedido, os atrasados podem contar daquela data.</p>
+      </div>
+    </div>
+    <div class="notice reveal" style="margin-top:1.8rem">
+      <div class="n-ic">{% icon "clock" %}</div>
+      <div>
+        <h3>Perdeu os 30 dias do recurso?</h3>
+        <p>Ainda dá para fazer um novo pedido ou entrar com ação na Justiça Federal. O que muda é a data a partir da qual a aposentadoria é paga.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-band" id="como-funciona">
+  <div class="container">
+    {{ m.head("Como analisamos", "Como analisamos a negativa do seu pedido.") }}
+    {{ m.steps([
+      { icon: "chat", t: "Você envia a carta", d: "A carta de indeferimento e o CNIS, pelo WhatsApp." },
+      { icon: "search", t: "Lemos o processo do INSS", d: "Conferimos o que foi analisado, o que faltou e onde está o erro." },
+      { icon: "calc", t: "Refazemos a conta", d: "Calculamos o tempo com os períodos que ficaram de fora." },
+      { icon: "route", t: "Indicamos o caminho", d: "Recurso, novo pedido ou ação, com os prós e contras de cada um." }
+    ]) }}
+  </div>
+</section>
+
+<section class="section bg-white" id="documentos">
+  <div class="container">
+    {{ m.head("Para a análise", "Os documentos da negativa.", "Com eles, conseguimos ver exatamente o que o INSS considerou e o que deixou de fora.") }}
+    {{ m.docs([
+      { icon: "docX", t: "Carta de indeferimento", d: "A comunicação da decisão. Fica no Meu INSS, em Consultar pedidos." },
+      { icon: "list", t: "CNIS", d: "O extrato com vínculos e salários. Sai na hora no aplicativo ou no site Meu INSS." },
+      { icon: "layers", t: "Cópia do processo", d: "A íntegra do pedido feito ao INSS, com os documentos analisados. Também sai no Meu INSS.", opt: "Se conseguir" },
+      { icon: "briefcase", t: "Carteiras e PPP", d: "Os documentos que provam os vínculos e o tempo especial." }
+    ], "<strong>Não encontrou a carta ou o processo?</strong> A nossa equipe orienta como baixar pelo Meu INSS.") }}
+  </div>
+</section>
+
+{{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário, na concessão e na revisão de aposentadorias do INSS. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
+
+{{ m.aval() }}
+
+{{ m.faqSection(faq, "Dúvidas de quem teve a aposentadoria negada.", "bg-band-end") }}
+
+{{ m.cta("Não deixe o prazo passar", "O INSS negou? <em>Envie a carta de indeferimento e o CNIS.</em>", "Analisamos o motivo e dizemos qual caminho faz sentido no seu caso, com atenção ao prazo de 30 dias.", wa, "Enviar a carta pelo WhatsApp") }}

@@ -1,0 +1,142 @@
+---
+layout: layouts/base.njk
+permalink: /aposentadoria/por-idade.html
+title: "Aposentadoria por idade do INSS: requisitos e valor em 2026"
+titleFull: "Aposentadoria por idade do INSS: requisitos e valor em 2026"
+description: "Mulher com 62 anos e homem com 65 podem se aposentar por idade com 15 anos de contribuição. Veja o valor, os documentos e como ajudar pai ou mãe no pedido."
+wa: "Olá! Vim pelo site e quero saber sobre a aposentadoria por idade."
+waFamilia: "Olá! Vim pelo site e quero ajudar meu pai ou minha mãe a se aposentar."
+area: aposentadoria
+crumbs:
+  - name: "Aposentadoria"
+    url: "/aposentadoria"
+  - name: "Aposentadoria por idade"
+sitemap:
+  priority: 0.8
+  changefreq: monthly
+faq:
+  - q: "Qual é a idade para a aposentadoria por idade em 2026?"
+    a: "62 anos para a mulher e 65 anos para o homem, com pelo menos 15 anos de contribuição para quem já contribuía antes de 13/11/2019. O homem que começou a contribuir depois dessa data precisa de 20 anos."
+  - q: "Tenho a idade, mas menos de 15 anos de contribuição. O que faço?"
+    a: "Antes de concluir que falta tempo, confira o CNIS com as carteiras de trabalho e os carnês. Vínculos antigos e contribuições que não aparecem podem completar os 15 anos. Se ainda faltar, dá para contribuir pelos meses restantes, com um cálculo do valor que isso traz."
+  - q: "Qual é o valor da aposentadoria por idade?"
+    a: "60% da média dos salários de contribuição desde julho de 1994, mais 2% por ano de contribuição acima de 15 anos (mulher) ou de 20 anos (homem). O valor nunca fica abaixo de um salário mínimo."
+  - q: "Quem contribuiu como MEI pode se aposentar por idade?"
+    a: "Pode. As contribuições de 5% do MEI contam para a aposentadoria por idade, calculadas sobre o salário mínimo nesses meses."
+  - q: "Posso cuidar do pedido do meu pai ou da minha mãe?"
+    a: "Pode conduzir o atendimento e reunir os documentos. O pedido é feito em nome dele ou dela, que precisa autorizar e assinar a procuração. A assinatura pode ser feita pelo celular."
+  - q: "Quanto custa a análise?"
+    a: "A análise inicial é feita sem compromisso. Se houver um caminho viável, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "Aposentadoria por idade · Pinheiros (SP) e on-line",
+  h1: "62 anos (mulher) ou 65 anos (homem)? <em>Veja se já pode se aposentar por idade.</em>",
+  lead: "Além da idade, são exigidos 15 anos de contribuição para quem contribuía antes da reforma. Muita gente acha que não tem esse tempo porque vínculos antigos não aparecem no CNIS. Conferimos o extrato e os documentos e mostramos o que falta, se faltar.",
+  cta: "Quero saber se já posso",
+  cta2: { label: "Está ajudando o seu pai ou a sua mãe?", href: "#familia" }
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  kicker: "Requisitos da", title: "Aposentadoria por idade",
+  who: "Exemplo: mulher, 62 anos",
+  rows: [
+    { k: "Idade mínima de 62 anos", v: "CUMPRE", s: "ok" },
+    { k: "Contribuições no CNIS", v: "13 ANOS E 4 MESES", s: "warn" },
+    { k: "Vínculo em carteira fora do CNIS", v: "+ 2 ANOS E 3 MESES", s: "warn" },
+    { k: "Total de contribuições", v: "15 ANOS E 7 MESES", s: "ok" }
+  ],
+  stamp: "PODE PEDIR", stampSub: "COM O VÍNCULO INCLUÍDO",
+  caption: "Exemplo ilustrativo. Um vínculo fora do CNIS pode completar os 15 anos."
+}) }}
+{% endcall %}
+
+<section class="section bg-band" id="requisitos">
+  <div class="container">
+    {{ m.head("Requisitos em 2026", "Quem pode se aposentar por idade.", "A idade e o tempo mínimo dependem de quando você começou a contribuir.") }}
+    <div class="rules">
+      <div class="rule hl reveal">
+        <h3>Contribuía antes de 13/11/2019</h3>
+        <p class="r-sub">Regra de transição da reforma.</p>
+        <dl><div><dt>Mulher</dt><dd>62 anos e 15 anos de contribuição</dd></div><div><dt>Homem</dt><dd>65 anos e 15 anos de contribuição</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> 60% da média, mais 2% por ano acima de 15 anos (mulher) ou 20 anos (homem).</p>
+      </div>
+      <div class="rule reveal d1">
+        <h3>Começou depois de 13/11/2019</h3>
+        <p class="r-sub">Regra permanente.</p>
+        <dl><div><dt>Mulher</dt><dd>62 anos e 15 anos de contribuição</dd></div><div><dt>Homem</dt><dd>65 anos e 20 anos de contribuição</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> o mesmo cálculo da regra de transição.</p>
+      </div>
+      <div class="rule reveal d2">
+        <h3>Pessoa com deficiência</h3>
+        <p class="r-sub">Regra da Lei Complementar 142.</p>
+        <dl><div><dt>Mulher</dt><dd>55 anos e 15 anos de contribuição com deficiência</dd></div><div><dt>Homem</dt><dd>60 anos e 15 anos de contribuição com deficiência</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> 70% da média, mais 1% a cada 12 contribuições. <a class="link-arrow" href="/aposentadoria/pessoa-com-deficiencia" style="font-size:.84rem">Ver a página</a></p>
+      </div>
+    </div>
+    <p class="small-note reveal">O valor nunca fica abaixo de um salário mínimo. A média usa todos os salários de contribuição desde julho de 1994.</p>
+  </div>
+</section>
+
+<section class="section bg-white" id="contribuicoes">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">Os 15 anos</span>
+      <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">Os 15 anos são contados mês a mês.</h2>
+      <div class="prose-block">
+        <p>Para a aposentadoria por idade, o INSS exige 180 meses de contribuição, a chamada carência. Contam os meses de carteira assinada, as contribuições como autônomo, facultativo ou MEI e os períodos de auxílio-doença intercalados com contribuições.</p>
+        <p>Meses pagos abaixo do salário mínimo sem complementação não contam, e contribuições pagas com atraso podem não contar como carência. Por isso a conferência do CNIS faz diferença.</p>
+      </div>
+    </div>
+    <div class="panel reveal d1">
+      <h3>O que pode completar os 15 anos</h3>
+      <ul>
+        <li>{% icon "check" %}Vínculos em carteira que não aparecem no CNIS</li>
+        <li>{% icon "check" %}Contribuições como MEI, autônomo ou facultativo</li>
+        <li>{% icon "check" %}Contribuições abaixo do mínimo, depois de complementadas</li>
+        <li>{% icon "check" %}Auxílio-doença recebido entre períodos de contribuição</li>
+      </ul>
+      <a class="btn btn-gold" href="{{ wa | waLink }}" target="_blank" rel="noopener">{% waIcon %}Conferir o meu tempo</a>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-band" id="familia">
+  <div class="container">
+    <div class="family reveal">
+      <span class="eyebrow">Para filhos e cônjuges</span>
+      <h2 style="font-size:clamp(1.6rem,3.4vw,2.35rem);margin:.85rem 0 .9rem;max-width:760px">Está ajudando o seu pai, a sua mãe ou o seu marido a se aposentar?</h2>
+      <p class="lead-text" style="margin-bottom:2rem">Muitas vezes quem nos procura é um filho, uma filha ou o cônjuge. Você pode conduzir a conversa e reunir os documentos. A pessoa que vai se aposentar só precisa autorizar o atendimento e assinar a procuração, o que pode ser feito pelo celular.</p>
+      {{ m.steps([
+        { icon: "users", t: "Converse antes com ela", d: "Explique que vai procurar um advogado e peça autorização para usar os dados dela." },
+        { icon: "list", t: "Baixe o CNIS juntos", d: "O CNIS sai no Meu INSS, com a senha do gov.br da própria pessoa." },
+        { icon: "briefcase", t: "Junte carteiras e carnês", d: "Procure carteiras antigas, carnês e qualquer documento de trabalho." },
+        { icon: "chat", t: "Mande pelo WhatsApp", d: "Você fala com a nossa equipe. A assinatura dos documentos é feita pelo celular." }
+      ]) }}
+      <div class="cards-foot">
+        <a class="btn btn-gold" href="{{ waFamilia | waLink }}" target="_blank" rel="noopener">{% waIcon %}Quero ajudar a minha família</a>
+        <span style="font-size:.88rem;color:var(--ink-soft)">Sem acesso ao gov.br? Orientamos as alternativas.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-white" id="documentos">
+  <div class="container">
+    {{ m.head("Para a análise", "Os documentos que ajudam.", "Comece pelo CNIS. O restante, envie o que tiver.") }}
+    {{ m.docs([
+      { icon: "list", t: "CNIS", d: "O extrato com vínculos e salários. Sai na hora no aplicativo ou no site Meu INSS." },
+      { icon: "briefcase", t: "Carteiras de trabalho", d: "Todas, inclusive as antigas e as que estão em mau estado." },
+      { icon: "wallet", t: "Carnês e guias", d: "Se contribuiu como autônomo, facultativo, doméstica ou MEI.", opt: "Se tiver" },
+      { icon: "doc", t: "RG e CPF", d: "De quem vai se aposentar." }
+    ]) }}
+  </div>
+</section>
+
+{{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário, na concessão e na revisão de aposentadorias do INSS. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
+
+{{ m.aval() }}
+
+{{ m.faqSection(faq, "Dúvidas sobre a aposentadoria por idade.", "bg-band-end") }}
+
+{{ m.cta("Comece agora", "Mande a idade e o CNIS. <em>Dizemos se já dá para pedir.</em>", "Pode ser o seu caso ou o de alguém da sua família. Atendimento humano e sem compromisso.", wa) }}

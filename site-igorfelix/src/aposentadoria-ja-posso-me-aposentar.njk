@@ -1,0 +1,210 @@
+---
+layout: layouts/base.njk
+permalink: /aposentadoria/ja-posso-me-aposentar.html
+title: "Já posso me aposentar? Veja quando e quanto vai receber"
+titleFull: "Já posso me aposentar? Veja quando e quanto vai receber"
+description: "Tem 58 anos ou mais e quer saber se já pode se aposentar? Conferimos o CNIS, calculamos as regras de transição e mostramos a data e o valor estimado."
+wa: "Olá! Vim pelo site e quero saber se já posso me aposentar."
+area: aposentadoria
+crumbs:
+  - name: "Aposentadoria"
+    url: "/aposentadoria"
+  - name: "Já posso me aposentar?"
+sitemap:
+  priority: 0.9
+  changefreq: monthly
+faq:
+  - q: "Com quantos anos posso me aposentar?"
+    a: "Depende da regra. Em 2026, a regra de idade mínima exige 59 anos e 6 meses (mulher) ou 64 anos e 6 meses (homem), com 30 ou 35 anos de contribuição. Na regra dos pontos não há idade fixa, mas a idade somada ao tempo de contribuição precisa chegar a 93 (mulher) ou 103 (homem). Na aposentadoria por idade, são 62 anos (mulher) ou 65 anos (homem), com 15 anos de contribuição."
+  - q: "Tenho 60 anos e 30 de contribuição. Já posso me aposentar?"
+    a: "Se for mulher, em regra sim, pela regra de idade mínima, que em 2026 exige 59 anos e 6 meses e 30 anos de contribuição. Se for homem, ainda não pelas regras de tempo de contribuição, que exigem 35 anos, nem pela aposentadoria por idade, que exige 65 anos. Nos dois casos, vale conferir o CNIS, porque um vínculo que falta ou um período especial pode mudar a resposta."
+  - q: "O simulador do Meu INSS diz que já posso. Posso confiar?"
+    a: "O simulador usa só os dados do CNIS. Se o CNIS estiver completo e correto, a data costuma bater. O valor e a escolha da regra merecem conferência, porque o simulador não avisa quando esperar alguns meses aumentaria o benefício."
+  - q: "Se eu continuar trabalhando, a aposentadoria aumenta?"
+    a: "Em geral, sim. Cada ano a mais de contribuição soma 2% nas regras de pontos, de idade mínima e por idade, até 100% da média. Salários menores no fim da carreira, porém, podem baixar a média. Por isso o cálculo indica o melhor momento para pedir."
+  - q: "Posso continuar trabalhando depois de aposentado?"
+    a: "Pode, nas aposentadorias por tempo de contribuição e por idade. A exceção é a aposentadoria especial, que não permite continuar na atividade exposta a agentes nocivos."
+  - q: "Quanto custa a análise?"
+    a: "A análise inicial é feita sem compromisso. Se houver um caminho viável, apresentamos a proposta de honorários por escrito, antes de qualquer contratação."
+---
+{% import "layouts/macros.njk" as m %}
+{% set heroData = {
+  badge: "Aposentadoria do INSS · Pinheiros (SP) e on-line",
+  h1: "Já posso me aposentar? <em>Veja quando pode pedir e quanto vai receber.</em>",
+  lead: "Você informa a idade e o tempo de contribuição. Nós conferimos o CNIS, calculamos as regras do INSS e mostramos a data em que você pode pedir e o valor estimado em cada regra.",
+  cta: "Quero saber se já posso",
+  cta2: { label: "Fazer o teste de 1 minuto", href: "#teste" },
+  note: "Está pesquisando pelo seu pai ou pela sua mãe? <a href=\"/aposentadoria/por-idade#familia\">Veja como ajudar</a>."
+} %}
+{% call m.hero(heroData, wa, crumbs) %}
+{{ m.ddoc({
+  kicker: "Análise de", title: "Aposentadoria",
+  who: "Exemplo: mulher, 60 anos<br>33 anos de contribuição",
+  rows: [
+    { k: "Regra dos pontos (93 pontos)", v: "CUMPRE", s: "ok" },
+    { k: "Idade mínima (59 anos e 6 meses)", v: "CUMPRE", s: "ok" },
+    { k: "Pedágio de 100%", v: "EM NOV/2027", s: "warn" },
+    { k: "Aposentadoria por idade (62 anos)", v: "EM 2028", s: "warn" }
+  ],
+  foot: "Pedindo agora, o valor fica em <b>96% da média</b>. No pedágio de 100%, em nov/2027, sobe para <b>100% da média</b>.",
+  caption: "Exemplo ilustrativo. A análise real depende do seu CNIS."
+}) }}
+{% endcall %}
+
+<section class="section bg-white" id="simulador">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">Antes de confiar no simulador</span>
+      <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">O simulador do Meu INSS só enxerga o que está no CNIS.</h2>
+      <div class="prose-block">
+        <p>Se um vínculo não aparece, se um salário entrou abaixo do mínimo ou se o tempo especial não foi registrado, a simulação sai errada. A data em que você pode pedir e o valor mudam.</p>
+        <p>Na análise, conferimos o CNIS período por período e comparamos com a carteira de trabalho, os carnês e os demais documentos. Só depois calculamos as regras.</p>
+      </div>
+      <a class="link-arrow" href="/aposentadoria/cnis-com-erro">Veja os erros mais comuns no CNIS {% icon "arrow" %}</a>
+    </div>
+    <div class="panel reveal d1">
+      <h3>O que costuma ficar fora da conta</h3>
+      <ul>
+        <li>{% icon "x" %}Vínculos antigos ou de empresas que fecharam</li>
+        <li>{% icon "x" %}Salários registrados abaixo do salário mínimo</li>
+        <li>{% icon "x" %}Contribuições como MEI sem a complementação</li>
+        <li>{% icon "x" %}Tempo especial de quem trabalhou exposto a agentes nocivos</li>
+        <li>{% icon "x" %}Períodos de auxílio-doença entre contribuições</li>
+        <li>{% icon "x" %}Tempo de serviço militar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-band" id="regras">
+  <div class="container">
+    {{ m.head("As regras em 2026", "As regras de aposentadoria, em linguagem simples.", "A Reforma da Previdência começou a valer em 13/11/2019. Quem já contribuía antes dessa data pode usar as regras de transição abaixo. Os números valem para pedidos feitos em 2026.") }}
+    <div class="rules">
+      <div class="rule reveal">
+        <h3>Regra dos pontos</h3>
+        <p class="r-sub">A idade somada ao tempo de contribuição. A pontuação exigida sobe 1 ponto por ano.</p>
+        <dl><div><dt>Mulher</dt><dd>93 pontos e 30 anos de contribuição</dd></div><div><dt>Homem</dt><dd>103 pontos e 35 anos de contribuição</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> 60% da média, mais 2% por ano de contribuição acima de 15 anos (mulher) ou 20 anos (homem).</p>
+      </div>
+      <div class="rule reveal d1">
+        <h3>Idade mínima progressiva</h3>
+        <p class="r-sub">A idade exigida sobe 6 meses por ano.</p>
+        <dl><div><dt>Mulher</dt><dd>59 anos e 6 meses e 30 anos de contribuição</dd></div><div><dt>Homem</dt><dd>64 anos e 6 meses e 35 anos de contribuição</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> o mesmo cálculo da regra dos pontos.</p>
+      </div>
+      <div class="rule reveal d2">
+        <h3>Pedágio de 100%</h3>
+        <p class="r-sub">Idade mínima e um pedágio igual ao tempo que faltava em 13/11/2019.</p>
+        <dl><div><dt>Mulher</dt><dd>57 anos, 30 anos de contribuição e o pedágio</dd></div><div><dt>Homem</dt><dd>60 anos, 35 anos de contribuição e o pedágio</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> 100% da média dos salários.</p>
+      </div>
+      <div class="rule reveal">
+        <h3>Pedágio de 50%</h3>
+        <p class="r-sub">Só para quem estava a até 2 anos de completar o tempo em 13/11/2019.</p>
+        <dl><div><dt>Mulher</dt><dd>30 anos de contribuição e metade do tempo que faltava</dd></div><div><dt>Homem</dt><dd>35 anos de contribuição e metade do tempo que faltava</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> a média dos salários multiplicada pelo fator previdenciário.</p>
+      </div>
+      <div class="rule reveal d1">
+        <h3>Aposentadoria por idade</h3>
+        <p class="r-sub">Para quem tem menos tempo de contribuição.</p>
+        <dl><div><dt>Mulher</dt><dd>62 anos e 15 anos de contribuição</dd></div><div><dt>Homem</dt><dd>65 anos e 15 anos de contribuição</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> 60% da média, mais 2% por ano acima de 15 anos (mulher) ou 20 anos (homem). <a class="link-arrow" href="/aposentadoria/por-idade" style="font-size:.84rem">Ver a página</a></p>
+      </div>
+      <div class="rule reveal d2">
+        <h3>Regra permanente</h3>
+        <p class="r-sub">Para quem começou a contribuir depois de 13/11/2019.</p>
+        <dl><div><dt>Mulher</dt><dd>62 anos e 15 anos de contribuição</dd></div><div><dt>Homem</dt><dd>65 anos e 20 anos de contribuição</dd></div></dl>
+        <p class="r-val"><b>Valor:</b> 60% da média, mais 2% por ano acima de 15 anos (mulher) ou 20 anos (homem).</p>
+      </div>
+    </div>
+    <p class="small-note reveal">Quem trabalhou exposto a agentes nocivos tem as regras da <a class="link-arrow" href="/aposentadoria/especial" style="font-size:.82rem">aposentadoria especial</a>. Quem tem deficiência tem as regras da <a class="link-arrow" href="/aposentadoria/pessoa-com-deficiencia" style="font-size:.82rem">LC 142</a>.</p>
+  </div>
+</section>
+
+<section class="section bg-white" id="valor">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">Quanto você vai receber</span>
+      <h2 style="font-size:clamp(1.75rem,3.6vw,2.5rem);margin:.85rem 0 1rem">O valor depende da média dos salários e da regra escolhida.</h2>
+      <div class="prose-block">
+        <p>O INSS corrige todos os salários de contribuição desde julho de 1994 e tira a média. Sobre essa média, aplica o percentual da regra. Nas regras de pontos e de idade mínima, são 60% mais 2% por ano acima de 15 anos de contribuição (mulher) ou de 20 anos (homem). No pedágio de 100%, são 100%. No pedágio de 50%, entra o fator previdenciário.</p>
+        <p>O benefício nunca fica abaixo do salário mínimo nem acima do teto do INSS. Antes de pedir, calculamos o valor em cada regra e indicamos a que paga mais, ou o momento em que vale a pena pedir.</p>
+      </div>
+    </div>
+    <div class="panel navy reveal d1">
+      <h3>Exemplo com média de R$ 4.000</h3>
+      <ul>
+        <li>{% icon "check" %}Mulher com 33 anos de contribuição, pela regra dos pontos, recebe 96% da média (R$ 3.840)</li>
+        <li>{% icon "check" %}A mesma pessoa, pelo pedágio de 100% um ano depois, recebe 100% da média (R$ 4.000)</li>
+        <li>{% icon "check" %}Diferença de R$ 160 por mês, todos os meses, pelo resto da aposentadoria</li>
+      </ul>
+      <p style="margin-top:1rem;font-size:.8rem;color:rgba(247,245,240,.6)">Exemplo ilustrativo, com valores arredondados e sem reajustes.</p>
+    </div>
+  </div>
+</section>
+
+{{ m.quiz({
+  h2: "Já posso me aposentar? Faça o teste.",
+  p: "São 5 perguntas rápidas. No fim, você envia as respostas pelo WhatsApp e recebe a orientação da nossa equipe.",
+  first: "Para quem é a aposentadoria?",
+  wa: wa
+}) }}
+<script>
+window.QUIZ = {
+  questions: [
+    { q: 'Para quem é a aposentadoria?', opts: ['Para mim', 'Para meu pai ou minha mãe', 'Para meu marido, minha esposa ou companheiro(a)'] },
+    { q: 'Quem vai se aposentar é homem ou mulher?', opts: ['Homem', 'Mulher'] },
+    { q: 'Qual é a idade de quem vai se aposentar?', opts: ['Menos de 55 anos', 'De 55 a 59 anos', 'De 60 a 61 anos', 'De 62 a 64 anos', '65 anos ou mais'] },
+    { q: 'Quanto tempo de contribuição, mais ou menos?', opts: ['Menos de 15 anos', 'De 15 a 24 anos', 'De 25 a 29 anos', 'De 30 a 34 anos', '35 anos ou mais', 'Não sei'] },
+    { q: 'Já fez o pedido de aposentadoria no INSS?', opts: ['Ainda não', 'Pedi e foi negado', 'Pedi e está em análise'] }
+  ],
+  result: function (a) {
+    var familia = a[0] !== 'Para mim';
+    var extra = familia ? ' Como você está ajudando um familiar, a nossa equipe conversa com você e orienta o que ele precisa assinar.' : '';
+    if (a[4] === 'Pedi e foi negado') {
+      return { title: 'Vale analisar a negativa do INSS', text: 'Muitas negativas vêm de falhas no CNIS ou de documentos que faltaram, e há prazo de 30 dias para recorrer. Envie as respostas e, se puder, a carta de indeferimento e o CNIS.' + extra, link: { href: '/aposentadoria/negada-pelo-inss', label: 'Ver o que fazer quando o INSS nega a aposentadoria' } };
+    }
+    if (a[4] === 'Pedi e está em análise') {
+      return { title: 'Vale conferir o pedido em andamento', text: 'Enquanto o INSS analisa, dá para conferir se o CNIS está completo e se os documentos certos foram juntados. Isso reduz o risco de negativa ou de um valor menor.' + extra };
+    }
+    if (a[3] === 'Não sei') {
+      return { title: 'O primeiro passo é o CNIS', text: 'Sem o tempo de contribuição não dá para saber qual regra se aplica. O CNIS sai na hora no aplicativo Meu INSS. Envie as respostas e nós orientamos como baixar e conferir.' + extra };
+    }
+    var homem = a[1] === 'Homem';
+    var idade = { 'Menos de 55 anos': 0, 'De 55 a 59 anos': 55, 'De 60 a 61 anos': 60, 'De 62 a 64 anos': 62, '65 anos ou mais': 65 }[a[2]];
+    var tc = { 'Menos de 15 anos': 0, 'De 15 a 24 anos': 15, 'De 25 a 29 anos': 25, 'De 30 a 34 anos': 30, '35 anos ou mais': 35 }[a[3]];
+    var porIdade = tc >= 15 && idade >= (homem ? 65 : 62);
+    var porTempo = homem ? (tc >= 35 && idade >= 60) : (tc >= 30 && idade >= 55);
+    if (porIdade || porTempo) {
+      return { title: 'Você pode estar perto da aposentadoria, ou já ter direito', text: 'Pelas respostas, uma das regras do INSS pode já estar cumprida ou perto disso. A confirmação depende do CNIS, porque um vínculo que falta muda a conta. Envie as respostas e o CNIS para a análise.' + extra };
+    }
+    if (tc < 15 && idade >= 60) {
+      return { title: 'O mínimo é de 15 anos de contribuição', text: 'A aposentadoria por idade exige pelo menos 15 anos de contribuição. Antes de concluir que falta tempo, vale procurar vínculos e períodos que não aparecem no CNIS.' + extra, link: { href: '/aposentadoria/cnis-com-erro', label: 'Ver os erros mais comuns no CNIS' } };
+    }
+    return { title: 'Ainda pode faltar um tempo, e vale planejar', text: 'Pelas respostas, as regras ainda não parecem cumpridas. Um planejamento mostra quando você chega lá, por qual regra e com qual valor, e se algum período fora do CNIS adianta a data.' + extra, link: { href: '/aposentadoria/planejamento-previdenciario', label: 'Ver como funciona o planejamento previdenciário' } };
+  },
+  summary: function (a) {
+    return 'Olá! Vim pelo site e fiz o teste "Já posso me aposentar?". Minhas respostas: 1) Para: ' + a[0] + '; 2) Homem ou mulher: ' + a[1] + '; 3) Idade: ' + a[2] + '; 4) Tempo de contribuição: ' + a[3] + '; 5) Pedido no INSS: ' + a[4] + '. Quero saber se já posso me aposentar.';
+  }
+};
+</script>
+
+<section class="section bg-white" id="documentos">
+  <div class="container">
+    {{ m.head("Para a análise", "Comece pelo CNIS.", "Com o CNIS em mãos, conferimos o tempo de contribuição e calculamos as regras. Os demais documentos ajudam a provar o que falta nele.") }}
+    {{ m.docs([
+      { icon: "list", t: "CNIS", d: "O extrato com vínculos e salários. No aplicativo Meu INSS, fica em Extrato de Contribuição (CNIS)." },
+      { icon: "briefcase", t: "Carteiras de trabalho", d: "Todas, inclusive as antigas. Provam vínculos que não aparecem no CNIS." },
+      { icon: "wallet", t: "Carnês e guias", d: "Se contribuiu como autônomo, facultativo ou MEI.", opt: "Se tiver" },
+      { icon: "hat", t: "PPP", d: "Se trabalhou exposto a ruído, calor, produtos químicos ou agentes biológicos.", opt: "Se for o caso" }
+    ], "<strong>Não conseguiu baixar o CNIS?</strong> A nossa equipe orienta pelo WhatsApp, passo a passo.") }}
+  </div>
+</section>
+
+{{ m.adv("Dr. Igor Felix, advogado previdenciário desde 2013.", "Advogado (OAB/SP 321.638) com dedicação exclusiva ao Direito Previdenciário, na concessão e na revisão de aposentadorias do INSS. Pós-graduado em Direito Previdenciário, Seguridade Social e Direito do Trabalho.", "bg-band") }}
+
+{{ m.aval() }}
+
+{{ m.faqSection(faq, "O que mais nos perguntam antes de pedir a aposentadoria.", "bg-band-end") }}
+
+{{ m.cta("Comece agora", "Mande a sua idade e o tempo de contribuição. <em>Respondemos com o próximo passo.</em>", "Se já tiver o CNIS, envie junto. A análise começa por ele. Atendimento humano e sem compromisso.", wa, "Quero saber se já posso me aposentar") }}
