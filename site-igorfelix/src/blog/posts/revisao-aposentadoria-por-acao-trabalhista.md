@@ -1,5 +1,6 @@
 ---
 title: "Revisão de aposentadoria por ação trabalhista: como uma decisão da Justiça do Trabalho pode aumentar o seu benefício no INSS"
+seoTitle: "Ação trabalhista aumenta a aposentadoria? Veja como revisar"
 description: "Ganhou uma ação trabalhista e já é aposentado? Entenda como revisar seu benefício no INSS, o quanto pode aumentar, os prazos e como pedir a revisão."
 category: acao-trabalhista
 date: 2026-08-01

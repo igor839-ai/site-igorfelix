@@ -1,5 +1,6 @@
 ---
 title: "O que foi reconhecido na Justiça do Trabalho é computado automaticamente pelo INSS na minha aposentadoria?"
+seoTitle: "Ação trabalhista entra sozinha na aposentadoria do INSS?"
 description: "Ganhou tempo ou salário na Justiça do Trabalho? Entenda se isso entra sozinho na sua aposentadoria do INSS e o quanto pode aumentar o valor do benefício."
 category: acao-trabalhista
 date: 2026-08-01
