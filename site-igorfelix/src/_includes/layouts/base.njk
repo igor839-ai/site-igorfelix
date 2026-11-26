@@ -18,10 +18,13 @@
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=20261125d">
+<link rel="preload" href="/assets/sora-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/manrope-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=20261126a">
+{%- if heroPreload %}
+<link rel="preload" as="image" href="/assets/hero-sp-800.webp" type="image/webp" media="(max-width: 700px)" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/hero-sp.webp" type="image/webp" media="(min-width: 701px)" fetchpriority="high">
+{%- endif %}
 {%- if preload %}
 <link rel="preload" as="image" href="{{ preload }}" fetchpriority="high">
 {%- endif %}
@@ -44,6 +47,7 @@
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Igor Felix Advogados Associados",
+  "alternateName": "Igor Felix Advogados",
   "description": "Escritório de advocacia previdenciária em Pinheiros, São Paulo. Atua na análise e na correção do CNIS antes da aposentadoria, no pedido de aposentadoria do INSS, em aposentadorias negadas e na revisão de aposentadoria.",
   "url": "{{ site.url }}/",
   "telephone": "+55-11-97169-4420",
@@ -57,6 +61,15 @@
   "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00"},
   "founder": {"@type": "Person", "name": "Igor Felix", "jobTitle": "Advogado previdenciário", "identifier": "OAB/SP 321.638"},
   "knowsAbout": ["Análise do CNIS", "Correção do CNIS", "Aposentadoria do INSS", "Aposentadoria negada pelo INSS", "Tempo especial", "Aposentadoria especial", "Aposentadoria da pessoa com deficiência", "Certidão de tempo de contribuição", "Revisão de aposentadoria", "Direito Previdenciário"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Igor Felix Advogados",
+  "alternateName": ["Igor Felix Advogados Associados", "igorfelixadv.com.br"],
+  "url": "{{ site.url }}/"
 }
 </script>
 {%- endif %}
