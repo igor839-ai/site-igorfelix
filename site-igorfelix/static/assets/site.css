@@ -1,4 +1,6 @@
 /* Igor Felix Advogados | estilo único do site (concessão e revisão de aposentadoria) */
+@font-face{font-family:'Sora';font-style:normal;font-display:swap;font-weight:100 700;src:url(/assets/sora-latin-wght.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-display:swap;font-weight:200 800;src:url(/assets/manrope-latin-wght.woff2) format('woff2')}
 :root{
   --navy:#0B1E36; --navy-950:#061224; --navy-soft:#17324E;
   --gold:#CBA55C; --gold-l:#E4C784; --gold-dark:#A9863F; --gold-soft:rgba(203,165,92,.12);
