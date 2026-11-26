@@ -5,9 +5,10 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for p in collections.paginas %}
-  <url><loc>{{ site.url }}{{ p.url | prettyUrl }}</loc><changefreq>{{ p.data.sitemap.changefreq or "monthly" }}</changefreq><priority>{{ p.data.sitemap.priority }}</priority></url>
+  <url><loc>{{ site.url }}{{ p.url | prettyUrl }}</loc>{% if p.data.sitemap.lastmod %}<lastmod>{{ p.data.sitemap.lastmod | isoDate }}</lastmod>{% endif %}<changefreq>{{ p.data.sitemap.changefreq or "monthly" }}</changefreq><priority>{{ p.data.sitemap.priority }}</priority></url>
 {%- endfor %}
-  <url><loc>{{ site.url }}/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+{%- set ultimoPost = collections.posts | last %}
+  <url><loc>{{ site.url }}/blog/</loc>{% if ultimoPost %}<lastmod>{{ ultimoPost.date | isoDate }}</lastmod>{% endif %}<changefreq>weekly</changefreq><priority>0.7</priority></url>
 {%- for post in collections.posts %}
   <url><loc>{{ site.url }}{{ post.url }}</loc><lastmod>{{ post.date | isoDate }}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 {%- endfor %}
