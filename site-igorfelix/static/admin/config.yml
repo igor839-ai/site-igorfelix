@@ -22,6 +22,7 @@ collections:
     format: "yaml-frontmatter"
     fields:
       - { label: "Título", name: "title", widget: "string", hint: "Título do artigo (aparece no site e no Google)." }
+      - { label: "Título para o Google (opcional)", name: "seoTitle", widget: "string", required: false, hint: "Até 60 caracteres. Se ficar vazio, o Google mostra o título do artigo." }
       - { label: "Subtítulo", name: "sub", widget: "text", required: false, hint: "Uma frase de apoio logo abaixo do título." }
       - { label: "Resumo", name: "description", widget: "text", hint: "2 a 3 linhas. Usado na listagem e no Google." }
       - label: "Categoria"
